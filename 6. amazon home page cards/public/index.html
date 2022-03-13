@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Home Page Cards</title>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        background-color: black;
+        color: white;
+      }
+      .card {
+        width: 300px;
+        margin-right: 50px;
+        padding: 5px;
+      }
+      .card-1 img {
+        width: 100%;
+        height: 290px;
+      }
+      .card-2 .card-body,
+      .card-4 .card-body {
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        margin-left: 15px;
+      }
+      .card-2 img,
+      .card-4 img {
+        width: 90%; /*images are taking 90% width of their immediatecontaining div*/
+      }
+      .card-body p {
+        font-size: 11px;
+      }
+      .card-2 .card-body,
+      .card-4 .card-body {
+        height: 300px;
+      }
+      .card-3 .card-body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+      }
+      .card-3 img {
+        height: 290px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .card-header p {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .card-footer {
+        color: rgb(106, 211, 243);
+        font-size: 13px;
+        font-weight: bold;
+        height: 100px;
+        padding: 20px;
+      }
+      .card-3 .card-footer {
+        color: white;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card card-1">
+        <div class="card-header">
+          <p>Up to 45% off|Top offers from Amazon brand - Solimo</p>
+        </div>
+        <div class="card-body">
+          <img src="../public/images/sofa.jpg" alt="sofa" />
+        </div>
+        <div class="card-footer">Shop now</div>
+      </div>
+
+      <div class="card card-2">
+        <div class="card-header">
+          <p>Explore new collection from local shops near you</p>
+        </div>
+        <div class="card-body">
+          <div>
+            <img src="../public/images/bed-linen.jpg" alt="" />
+            <p>Bed linen</p>
+          </div>
+          <div>
+            <img src="../public/images/shoe.jpg" alt="men's shoes" />
+            <p>Men's shoes</p>
+          </div>
+          <div>
+            <img src="../public/images/womenshoes.jpg" alt="women's shoes" />
+            <p>Women's shoes</p>
+          </div>
+          <div>
+            <img
+              src="../public/images/office-furniture.jpg"
+              alt="office furnitures"
+            />
+            <p>Office furniture</p>
+          </div>
+        </div>
+        <div class="card-footer">Visit the local shops store</div>
+      </div>
+
+      <div class="card card-3">
+        <div class="card-header">
+          <p>More items to consider in</p>
+        </div>
+        <div class="card-body">
+          <img
+            src="../public/images/women-sweatshirt.jpg"
+            alt="women sweatshirts"
+          />
+        </div>
+        <div class="card-footer">
+          eKools Women's Fleece Blend Winters Hoodie Sweatshirt with Pockets
+          (Flee2 series) from &#8377;598.00
+        </div>
+      </div>
+
+      <div class="card card-4">
+        <div class="card-header">
+          <p>Best-selling home electronics | Explore Games</p>
+        </div>
+        <div class="card-body">
+          <div>
+            <img
+              src="../public/images/samsung-galaxy.jpg"
+              alt="samsung mobiles"
+            />
+            <p>Samsung Galaxy M12|6000mAH Battery</p>
+          </div>
+          <div>
+            <img src="../public/images/echo-dot.jpg" alt="echo dot" />
+            <p>Echo Dot|Just ask Alexa</p>
+          </div>
+          <div>
+            <img
+              src="../public/images/spin-the-wheel.jpg"
+              alt="spin the wheel"
+            />
+            <p>Spin the wheel & win</p>
+          </div>
+          <div>
+            <img src="../public/images/fire-tv-stick.jpg" alt="fire tv stick" />
+            <p>Fire TV stick</p>
+          </div>
+        </div>
+        <div class="card-footer">See more</div>
+      </div>
+    </div>
+  </body>
+</html>
