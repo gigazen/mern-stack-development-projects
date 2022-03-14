@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 3fr 9fr;
+      background-color: lightcoral;
+    }
+    header {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      padding: 10px;
+    }
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      padding: 10px;
+    }
+    ul {
+      list-style: none;
+      margin-left: -40px;
+    }
+    li {
+      background-color: black;
+      color: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      width: 240px;
+      font-size: 30px;
+      text-align: center;
+      border-radius: 30px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+  </style>
+  <body>
+    <header>Amazon Shopping</header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="home.html" target="bodyFrame">Home</a></li>
+          <li><a href="electronics.html" target="bodyFrame">Electronics</a></li>
+          <li><a href="footwear.html" target="bodyFrame">Footwear</a></li>
+          <li><a href="fashion.html" target="bodyFrame">Fashion</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <iframe name="bodyFrame"></iframe>
+      </main>
+    </div>
+    <footer>&copy; copyright 2022</footer>
+  </body>
+</html>
