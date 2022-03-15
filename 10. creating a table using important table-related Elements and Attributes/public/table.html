@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <style>
+      table {
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <table
+      width="900"
+      bgcolor="red"
+      border="1"
+      frame="above"
+      cellspacing="10"
+      cellpadding="20"
+      background="../public/images/my-pattern.jpg"
+    >
+      <caption>
+        Product Details
+      </caption>
+      <colgroup
+        span="2"
+        style="background-color: rgba(255, 191, 71, 0.322)"
+      ></colgroup>
+      <thead>
+        <th width="200">Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Preview</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td height="150">Speaker</td>
+          <td align="right" valign="bottom">5600.45</td>
+          <td rowspan="2" align="center" valign="center">Available</td>
+          <td>
+            <img
+              src="../public/images/speaker.jpg"
+              alt="speaker"
+              width="60"
+              height="60"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Neckband</td>
+          <td>6400.29</td>
+          <td>
+            <img
+              src="../public/images/neckband.jpg"
+              alt="neckband"
+              width="60"
+              height="60"
+            />
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" align="center" bgcolor="burlywood">
+            &copy; Copyright 2022
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
