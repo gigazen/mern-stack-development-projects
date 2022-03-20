@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial</title>
+    <style>
+      .topics {
+        border: 1px solid black;
+        background-color: lightgray;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .topics:target {
+        background-color: black;
+        color: white;
+      }
+      nav {
+        background-color: black;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      li {
+        display: inline;
+        margin-right: 40px;
+      }
+      a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#js">JavaScript</a></li>
+      </ul>
+    </nav>
+    <div class="topics" id="html">
+      <h2>HTML</h2>
+      <p>It is a markup language</p>
+    </div>
+    <div class="topics" id="css">
+      <h2>CSS</h2>
+      <p>It defines styles for HTML</p>
+    </div>
+    <div class="topics" id="js">
+      <h2>JavaScript</h2>
+      <p>It is a programming language</p>
+    </div>
+  </body>
+</html>
