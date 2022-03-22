@@ -4,36 +4,48 @@
     <meta charset="utf-8" />
     <title>Checkbox</title>
 
-    <style media="screen"></style>
+    <style media="screen">
+      progress {
+        width: 50%;
+        height: 30px;
+      }
+    </style>
     <link
       rel="stylesheet"
-      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
     />
   </head>
 
-  <body>
+  <body class="container">
     <form>
-      <select size="4" multiple name="mylang">
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-        <option>English</option>
-        <option>हिन्दी</option>
-      </select>
-      <button>Submit</button>
+      <!-- HTML Progress Bar to show downloading (Old Use) -->
+      <dl>
+        <dt>Preparing for Download</dt>
+        <dd>
+          <progress></progress>
+        </dd>
+        <dt>40% Downloaded</dt>
+        <dd>
+          <progress min="1" max="100" value="40"></progress>
+        </dd>
+        <dt>Downloaded</dt>
+        <dd>
+          <progress min="1" max="100" value="100"></progress>
+        </dd>
+
+        <!-- Bootstrap Spinner to show downloading (Modern Use) -->
+        <dt>Spinners</dt>
+        <dd>
+          <button>
+            <span class="spinner-border spinner-border-sm"></span> Loading..
+          </button>
+          <button>
+            <span class="spinner-grow spinner-grow-sm"></span> Wait..
+          </button>
+        </dd>
+      </dl>
     </form>
   </body>
 </html>
