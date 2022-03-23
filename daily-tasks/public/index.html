@@ -3,38 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <title>Checkbox</title>
-
-    <style media="screen">
-      progress {
-        width: 50%;
-        height: 30px;
-      }
-    </style>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
   </head>
 
   <body class="container">
     <form>
       <fieldset>
-        <legend>Your Comments</legend>
-        <textarea
-          name="multiLine"
-          cols="40"
-          rows="4"
-          minlength="20"
-          maxlength="30"
-          placeholder="Your text..."
-        >
-Your text here...</textarea
-        >
-        <p>
-          <button>Post Comment</button>
-        </p>
+        <legend>User Name</legend>
+        <input type="text" name="UserName" value="john" />
+        <button type="submit">
+          <span class="bi bi-person-fill"></span> Submit
+        </button>
+        <button type="reset">
+          <img src="../public/images/tick.gif" alt="" /> Reset
+        </button>
       </fieldset>
     </form>
   </body>
