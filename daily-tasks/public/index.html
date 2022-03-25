@@ -4,155 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amazon SignIn Page</title>
-    <!-- for online bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!-- for online bootstrap-icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-    />
-    <!-- for locally installed bootstrap -->
-    <link
-      rel="stylesheet"
-      href="../node_modules/bootstrap/dist/css/bootstrap-grid.css"
-    />
-    <!-- for locally installed bootstrap-icons -->
-    <link
-      rel="stylesheet"
-      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <style>
-      #total {
-        width: 350px;
-        margin: auto;
-        border-bottom: gray;
-      }
-      #box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 60vh;
-      }
-      form {
-        border: 1px solid rgb(223, 221, 221);
-        padding: 20px;
-        border-radius: 5px;
-      }
-      button {
-        border: 1px solid rgb(78, 78, 3);
-      }
-      .form-control:focus {
-        border: 1px solid #ffbb00 !important;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-          0 0 8px rgba(255, 0, 0, 0.6);
-      }
-      #new1 {
-        display: grid;
-        grid-template-columns: 4fr 4fr 4fr;
-        width: 350px;
-        justify-content: center;
-        margin-top: -55px;
-        text-align: center;
-      }
-      #image-card {
-        margin-bottom: -65px;
-        display: flex;
-        justify-content: center;
-      }
-      footer {
-        padding: 20px;
-        margin: 30px auto;
-        border-top: 1px solid rgb(218, 213, 213);
-        width: 60%;
-        text-align: center;
-      }
-      #foot-link a {
-        margin-right: 20px;
-        font-size: 12px;
-      }
-    </style>
+    <title>Marquee</title>
   </head>
 
-  <body class="container-fluid small">
-    <div id="total">
-      <div id="image-card">
-        <img
-          src="https://www.citypng.com/public/uploads/preview/-11596409208veqai6z1fx.png"
-          width="140"
-          height="55.33"
-          alt=""
-        />
-      </div>
-
-      <div id="box">
-        <form action="">
-          <h2 class="mb-3 h3">Sign-In</h2>
-          <div class="mb-3">
-            <label for="emailID" class="form-label"
-              ><b>Email or mobile phone number</b></label
-            >
-            <div>
-              <input
-                type="email"
-                id="emailID"
-                class="form-control border border-secondary"
-                autofocus
-              />
-            </div>
-          </div>
-          <div class="mb-3">
-            <button
-              class="btn btn-warning w-100 border border-secondary btn-sm"
-            >
-              Continue
-            </button>
-          </div>
-          <div class="mb-3">
-            <p>
-              By continuing, you agree to Amazon's
-              <a href="#">Conditions of Use</a> and
-              <a href="#">Privacy Notice.</a>
-            </p>
-          </div>
-          <div>
-            <details>
-              <summary class="mb-2"><a href="#">Need Help?</a></summary>
-              <dd class="ms-3"><a href="#">Forgot Password</a></dd>
-              <dd class="ms-3"><a href="#">Other issues with Sign-In</a></dd>
-            </details>
-          </div>
-        </form>
-      </div>
-
-      <div id="new1">
-        <div>
-          <hr />
-        </div>
-        <p>New to Amazon?</p>
-        <div>
-          <hr />
-        </div>
-      </div>
-
-      <div>
-        <button class="btn btn-light border border-secondary w-100 btn-sm">
-          Create your Amazon account
-        </button>
-      </div>
+  <body>
+    <div>
+      <marquee
+        scrollamount="15"
+        bgcolor="springgreen"
+        behavior="scroll"
+        direction="right"
+        loop="3"
+        width="80%"
+        height="80px"
+      >
+        <h1>
+          Special Offers - 50% Sale on Mobiles
+          <img
+            src="../public/images/mobiles.jpg"
+            width="50"
+            height="50"
+            alt=""
+          />
+          - Ends in 2 days.
+        </h1>
+      </marquee>
     </div>
-    <footer>
-      <div id="foot-link" class="mb-2">
-        <a href="#">Conditions of Use</a>
-        <a href="#">Privacy Notice</a>
-        <a href="#">Help</a>
-      </div>
-      <div>&copy; 1996-2022, Amazon.com, Inc. or its affiliates</div>
-    </footer>
+
+    <div>
+      <marquee
+        scrollamount="10"
+        behavior="alternate"
+        direction="left"
+        onmouseover="this.stop()"
+        onmouseout="this.start()"
+      >
+        <img src="../public/images/neckband.jpg" width="100" height="100" />
+        <img src="../public/images/shoe-men.jpg" width="100" height="100" />
+        <img
+          src="../public/images/backpack-girls.jpg"
+          width="100"
+          height="100"
+        />
+        <img src="../public/images/speaker.jpg" width="100" height="100" />
+      </marquee>
+    </div>
   </body>
 </html>
