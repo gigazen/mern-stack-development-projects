@@ -2,25 +2,42 @@
 <html lang="en">
   <head>
     <style>
-      #heading,
-      p {
+      h2:hover {
         color: red;
       }
-      .head {
-        color: green;
-        background-color: gold;
+
+      a:link {
+        text-decoration: none;
       }
-      h1,
-      p {
-        color: dodgerblue;
-        text-align: center;
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        width: 100px;
+        transition: 3s;
+      }
+
+      img:hover {
+        width: 200px;
+        transition: 2s;
+      }
+
+      a:visited {
+        color: orange;
+      }
+
+      a:active {
+        color: red;
       }
     </style>
   </head>
+
   <body>
-    <h1 class="head" id="heading">HTML</h1>
-    <p class="head">It is a markup language</p>
-    <h1>CSS</h1>
-    <h1>JavaScript</h1>
+    <img src="../public/images/mobiles.jpg" alt="" />
+    <h2>Heading</h2>
+    <a href="demo.html">Home</a>
+    <a href="http://pvrcinemas.com">PVR Cinemas</a>
   </body>
 </html>
