@@ -2,42 +2,50 @@
 <html lang="en">
   <head>
     <style>
-      h2:hover {
-        color: red;
+      #User + span {
+        display: none;
       }
-
-      a:link {
-        text-decoration: none;
+      #User:read-only {
+        background-color: lightgray;
+        border: none;
       }
-
-      a:hover {
-        text-decoration: underline;
+      #User:read-only + span {
+        display: inline;
       }
-
-      img {
-        width: 100px;
-        transition: 3s;
+      #Email:disabled {
+        background-color: black;
+        color: white;
       }
-
-      img:hover {
-        width: 200px;
-        transition: 2s;
+      #Email:enabled {
+        background-color: orangered;
       }
-
-      a:visited {
-        color: orange;
+      #Email {
+        color: whitesmoke;
       }
-
-      a:active {
-        color: red;
+      #City + span {
+        display: none;
+      }
+      #City:focus + span {
+        display: block;
       }
     </style>
   </head>
 
   <body>
-    <img src="../public/images/mobiles.jpg" alt="" />
-    <h2>Heading</h2>
-    <a href="demo.html">Home</a>
-    <a href="http://pvrcinemas.com">PVR Cinemas</a>
+    User Name:
+    <input type="text" name="username" value="John" id="User" readonly />
+    <span>You cannot Modify Name</span>
+    <br /><br /><br />
+    <input
+      type="email"
+      name="emailID"
+      id="Email"
+      value="djb@gmail.com"
+      disabled
+    />
+    <br /><br /><br />
+    <input type="text" name="cityname" id="City" /><span
+      >City Name in Block Letters</span
+    >
   </body>
 </html>
