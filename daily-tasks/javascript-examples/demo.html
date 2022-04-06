@@ -4,25 +4,31 @@
     <title>DOM Hierarchy</title>
     <script type="text/javascript">
       function bodyload() {
-        window.document.images[1].src = "../public/images/speaker.jpg";
+        pic.src = "../public/images/neckband.jpg";
+        pic.src = "../public/images/neckband.jpg";
+        frmRegister.btnRegister.value = "Register";
+        window.document.forms[1].btnLogin.value = "Log In";
       }
     </script>
   </head>
 
   <body onload="bodyload()">
-    <div><img width="100" height="100" border="1" alt="" /></div>
     <div>
-      <form action="">
+      <img width="100" height="100" name="pic" border="1" alt="" />
+      <img width="200" height="200" name="pic" border="1" alt="" />
+    </div>
+    <div>
+      <form action="" name="frmRegister">
         <h2>Register</h2>
         <input type="email" />
-        <input type="button" />
+        <input type="button" name="btnRegister" />
       </form>
     </div>
     <div>
       <form action="">
         <h2>Login</h2>
         <input type="text" />
-        <input type="button" />
+        <input type="button" name="btnLogin" />
       </form>
     </div>
   </body>
