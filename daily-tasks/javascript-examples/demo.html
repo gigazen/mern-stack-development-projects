@@ -1,77 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DOM Hierarchy</title>
-    <link
-      rel="stylesheet"
-      href="../node_modules/bootstrap/dist/css/bootstrap.css"
-    />
-    <script type="text/javascript">
-      function bodyload() {
-        // DOM Hierarchy used for manipulation
-        window.document.images[0].src = "../public/images/jacket-men.jpg";
-        window.document.images[0].width = "300";
-
-        // name attribute used for manipulation
-        pic.src = "../public/images/mobiles.jpg";
-        pic.width = "200";
-        frmRegister.btnRegister.value = "Register";
-        window.document.forms[1].btnLogin.value = "Log In"; // DOM Hierarchy + Element Name
-
-        // id attribute used for manipulation
-        document.getElementById("picID").height = "250";
-        document.getElementById("btnRegisterID").style.border =
-          "5px solid dodgerblue";
-        document.getElementById("btnLoginID").style.border = "2px solid red";
-
-        // CSS Selector used for manipulation
-        document.querySelector("img").style.borderRadius = "50%"; // selects only the first img
-        document.querySelector("#btnRegisterID").style.fontSize = "20px";
-        document.querySelector(".btn-login").style.backgroundColor = "gold";
-
-        // Multiple elements Selector used for manipulation
-        x = document.getElementsByTagName("form"); // returns an array
-        console.log("Total Number of Forms : " + x.length);
-
-        y = document.getElementsByClassName("btn-danger");
-        console.log(
-          "Total Number of Elements using btn-danger Classes : " + y.length
-        );
-
-        z = document.getElementsByName("pic");
-        console.log("Total Number of Elements using pic Name : " + z.length);
+    <title>Output</title>
+    <script>
+      function DeleteClick() {
+        flag = confirm("Delete Record\nRecord will be deleted");
+        if (flag == true) {
+          alert("Record Deleted Successfully");
+        } else {
+          alert("You Canceled");
+        }
       }
     </script>
   </head>
-
-  <body onload="bodyload()" class="container-fluid">
-    <div>
-      <img width="100" height="100" id="picID" border="1" alt="" />
-      <img width="200" height="200" name="pic" border="1" alt="" />
-    </div>
-    <div>
-      <form action="" name="frmRegister">
-        <h2>Register</h2>
-        <input type="email" />
-        <input
-          type="button"
-          name="btnRegister"
-          id="btnRegisterID"
-          class="btn btn-danger"
-        />
-      </form>
-    </div>
-    <div>
-      <form action="">
-        <h2>Login</h2>
-        <input type="text" />
-        <input
-          type="button"
-          name="btnLogin"
-          id="btnLoginID"
-          class="btn-login"
-        />
-      </form>
-    </div>
+  <body>
+    <h2>Click Delete Button to Delete Record</h2>
+    <button onclick="DeleteClick()">Delete</button>
   </body>
 </html>
