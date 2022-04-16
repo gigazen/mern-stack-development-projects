@@ -1,25 +1,14 @@
 <script>
   "use strict";
   function f1() {
-    // x can be accessed inside this function block
-    let x;
-    x = 10;
+    // variables declared using const must have initialization from start
+    // const x;      // Uncaught SyntaxError: Missing Initializer in const declaration
 
-    if (x == 10) {
-      // y can be accessed only inside this block
-      let y = 20;
-      // x can be accessed here as this is inner block inside the block where x is defined
-      document.write("X=" + x + "<br>" + "Y=" + y); // X=10  // Y=20
-    }
-
-    // cannot access y from outside the block, so error
-    // document.write("X=" + x + "<br>" + "Y=" + y); // Uncaught ReferenceError: y is not defined
-
-    function f2() {
-      // x can be accessed in all inner blocks, even inner function blocks also, but y cannot be accessed here
-      document.write("X=" + x); // X=10
-    }
-    f2();
+    // initializing a const variable
+    const y = 10;
+    // after initialization, const variable cannot be re-assigned
+    y = 10; // Uncaught TypeError: Assignment to constant variable
+    document.write("Y=" + y);
   }
   f1();
 </script>
