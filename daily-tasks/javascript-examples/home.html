@@ -1,14 +1,12 @@
 <script>
-  "use strict";
   function f1() {
-    // variables declared using const must have initialization from start
-    // const x;      // Uncaught SyntaxError: Missing Initializer in const declaration
-
-    // initializing a const variable
-    const y = 10;
-    // after initialization, const variable cannot be re-assigned
-    y = 10; // Uncaught TypeError: Assignment to constant variable
-    document.write("Y=" + y);
+    window.message = "Good Morning!";
   }
+
+  function f2() {
+    document.write("Function 2 => " + message); // Function 2 => Good Morning!
+  }
+
   f1();
+  f2();
 </script>
