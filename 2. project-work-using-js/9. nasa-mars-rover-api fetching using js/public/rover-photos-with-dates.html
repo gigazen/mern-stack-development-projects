@@ -29,6 +29,29 @@
     />
 
     <script>
+      var days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      var months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
       function LoadRoverPhotos() {
         fetch(
           "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY"
@@ -38,6 +61,8 @@
           })
           .then(function (data) {
             for (var x of data.photos) {
+              var launchDate = new Date(x.rover.launch_date);
+              var landDate = new Date(x.rover.landing_date);
               var div = document.createElement("div");
               div.className = "card m-4";
               div.style.width = "300px";
@@ -52,6 +77,14 @@
                   <dd>${x.camera.full_name}</dd>
                   <dt>Rover Name</dt>
                   <dd>${x.rover.name}</dd>
+                  <dt>Launch Date</dt>
+                  <dd>${days[launchDate.getDay()]}, ${launchDate.getDate()} ${
+                months[launchDate.getMonth()]
+              } ${launchDate.getFullYear()}</dd>
+                  <dt>Landing Date</dt>
+                  <dd>${days[landDate.getDay()]}, ${landDate.getDate()} ${
+                months[landDate.getMonth()]
+              } ${landDate.getFullYear()}</dd>
                 </dl>
               </div>
             `;
