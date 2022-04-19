@@ -1,29 +1,68 @@
-<html>
+<!-- :valid, :invalid, :in-range, :out-of-range pseudo classes -->
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Number</title>
-    <script>
-      function CalculateClick() {
-        var age = document.getElementById("Age").value;
-        var msg = document.getElementById("Msg");
-
-        // using isNaN() to check whether user input is number or not, before testing isNaN() tries to convert the argument into number
-        if (isNaN(age)) {
-          msg.innerHTML = "Please Enter a Number"; // Please Enter a Number, for putting vg into the box
-          console.log(typeof age); // string
-          console.log(isNaN(age)); // true, for putting vg into the box
-        } else {
-          msg.innerHTML = "Your Age : " + age; // Your Age : 33, for putting 33 into the box
-          console.log(typeof age); // string
-          console.log(isNaN(age)); // true, for putting 33 into the box
-        }
+    <title>Validation State Pseudo Classes</title>
+    <style>
+      #UserName:valid + div {
+        display: none;
       }
-    </script>
-  </head>
+      #UserName:invalid + div {
+        display: block;
+      }
 
+      #Mobile:valid + div {
+        display: none;
+      }
+      #Mobile:invalid + div {
+        display: block;
+      }
+
+      #Age:in-range + div {
+        display: none;
+      }
+      #Age:out-of-range + div {
+        display: block;
+      }
+
+      #Age:in-range {
+        border: 1px solid springgreen;
+      }
+      #Age:out-of-range {
+        border: 1px solid red;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
   <body>
-    <!--takes user input and returns string value-->
-    Age : <input type="text" id="Age" autofocus />
-    <button onclick="CalculateClick()">Calculate</button>
-    <span id="Msg"></span>
+    <div>
+      <h2>Register</h2>
+      <dl>
+        <dt>User Name</dt>
+        <dd>
+          <input type="text" id="UserName" required autofocus />
+          <!-- this line should disappear when user gives username otherwise will stay -->
+          <div style="color: red">User Name is required</div>
+        </dd>
+        <dt>Mobile No.</dt>
+        <dd>
+          <input type="text" id="Mobile" pattern="\+91\d{10}" required />
+          <div style="color: red">
+            Mobile Number Required / +91 and 10 digits are missing
+          </div>
+        </dd>
+        <dt>Age</dt>
+        <dd>
+          <input type="number" id="Age" min="15" max="30" />
+          <div style="color: red">Age 15 to 30 only</div>
+        </dd>
+      </dl>
+    </div>
   </body>
 </html>
