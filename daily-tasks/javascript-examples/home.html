@@ -1,29 +1,32 @@
-<html>
+<!-- :required and :optional pseudo classes -->
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Number</title>
-    <script>
-      function CalculateClick() {
-        var age = document.getElementById("Age").value;
-        var msg = document.getElementById("Msg");
-
-        // using isNaN() to check whether user input is number or not, before testing isNaN() tries to convert the argument into number
-        if (isNaN(age)) {
-          msg.innerHTML = "Please Enter a Number"; // Please Enter a Number, for putting vg into the box
-          console.log(typeof age); // string
-          console.log(isNaN(age)); // true, for putting vg into the box
-        } else {
-          msg.innerHTML = "Your Age : " + age; // Your Age : 33, for putting 33 into the box
-          console.log(typeof age); // string
-          console.log(isNaN(age)); // true, for putting 33 into the box
-        }
+    <title>Validation State Pseudo Classes</title>
+    <style>
+      #User:required {
+        border: 2px solid coral;
+        box-shadow: 2px 2px 2px 0px coral;
+        /* box-shadow: horizontal vertical blur spread color; */
       }
-    </script>
+
+      #Email:optional {
+        border: 2px solid springgreen;
+        box-shadow: 2px 2px 2px 0px springgreen;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
   </head>
 
   <body>
-    <!--takes user input and returns string value-->
-    Age : <input type="text" id="Age" autofocus />
-    <button onclick="CalculateClick()">Calculate</button>
-    <span id="Msg"></span>
+    <div>
+      User Name : <input type="text" id="User" required /> <br /><br />
+      Email : <input type="email" id="Email" />
+    </div>
   </body>
 </html>
