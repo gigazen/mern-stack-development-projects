@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Attribute Selectors</title>
+    <title>Structural Selectors</title>
     <style>
-      p[class="Effects"] {
-        background-color: gold;
-      }
-      p[class^="Effects"] {
+      li:first-child {
         color: tomato;
       }
-      p[class$="Effects"] {
+      li:last-child {
+        color: purple;
+      }
+      li:nth-child(3) {
+        color: springgreen;
+      }
+      li:nth-child(even) {
         font-size: 30px;
       }
-      p[class~="Effects"] {
-        border: 2px solid aqua;
+      li:nth-of-type(3n + 2) {
+        background-color: gold;
       }
-      p[class|="Effects"] {
-        font-weight: 1000;
+      li:nth-last-of-type(2n + 3) {
+        font-weight: 800;
       }
     </style>
   </head>
   <body>
-    <p class="Effects">Para-1</p>
-    <p class="EffectsText">Para-2</p>
-    <p class="TextEffects">Para-3</p>
-    <p class="AnimateEffectsText">Para-4</p>
-    <p class="Effects-Text">Para-5</p>
-    <p class="Effects Text">Para-6</p>
-    <p class="Text Effects">Para-7</p>
+    <ol>
+      <li>Item-1</li>
+      <li>Item-2</li>
+      <li>Item-3</li>
+      <li>Item-4</li>
+      <li>Item-5</li>
+      <li>Item-6</li>
+      <li>Item-7</li>
+      <li>Item-8</li>
+    </ol>
   </body>
 </html>
