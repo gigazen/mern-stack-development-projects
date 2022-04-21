@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Structural Selectors</title>
     <style>
-      li:first-child {
-        color: tomato;
+      p::first-line {
+        font-size: 20px;
+        color: darkcyan;
       }
-      li:last-child {
-        color: purple;
+      p::first-letter {
+        font-size: 50px;
       }
-      li:nth-child(3) {
-        color: springgreen;
+      p::before {
+        content: "😎";
       }
-      li:nth-child(even) {
-        font-size: 30px;
+      p::after {
+        content: "❤";
+        color: red;
       }
-      li:nth-of-type(3n + 2) {
-        background-color: gold;
-      }
-      li:nth-last-of-type(2n + 3) {
-        font-weight: 800;
+      ::placeholder {
+        color: red;
+        background-color: black;
       }
     </style>
   </head>
   <body>
-    <ol>
-      <li>Item-1</li>
-      <li>Item-2</li>
-      <li>Item-3</li>
-      <li>Item-4</li>
-      <li>Item-5</li>
-      <li>Item-6</li>
-      <li>Item-7</li>
-      <li>Item-8</li>
-    </ol>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nam id
+      possimus vel optio maxime error molestias quaerat alias distinctio! Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Neque repellendus
+      labore sed laudantium atque numquam quasi incidunt fugiat totam
+      blanditiis!
+    </p>
+    <input type="text" placeholder="Write your name here" />
   </body>
 </html>
