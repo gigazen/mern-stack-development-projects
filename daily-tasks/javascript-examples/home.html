@@ -1,34 +1,28 @@
-<!-- designing a Breadcrumb like UI using pseudo classes and pseudo elements -->
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Document</title>
     <style>
-      ul {
-        display: flex;
-        list-style: none;
-        font-weight: 600;
+      p:lang(en) {
+        color: red;
       }
-      /* inserting arrow after every list item */
-      li::after {
-        content: ">>";
-        margin: 10px;
+      p:lang(fr) {
+        border: 2px solid springgreen;
       }
-      /* vanishing the arrow only after last list item */
-      li:last-child::after {
-        content: "";
-      }
-      li:last-child {
-        color: dodgerblue;
+      :lang(en) {
+        background-color: gold;
       }
     </style>
   </head>
   <body>
-    <ul>
-      <li>Home</li>
-      <li>Categories</li>
-      <li>Electronics</li>
-      <li>Mobiles</li>
-      <li>Samsung</li>
-    </ul>
+    <h1>Ok now you do it</h1>
+    <p lang="en">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, et quidem
+    </p>
+
+    <p lang="fr">
+      iste vel! Maxime expedita asperiores dolor labore! Explicabo cumque est
+      laudantium molestias, consectetur asperiores dolorum optio aliquid!
+    </p>
   </body>
 </html>
