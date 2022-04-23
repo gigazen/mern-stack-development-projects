@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Document</title>
+    <title>CSS Units</title>
     <style>
-      p:lang(en) {
-        color: red;
+      html {
+        font-size: 20px;
       }
-      p:lang(fr) {
-        border: 2px solid springgreen;
+      body {
+        font-size: 30px;
       }
-      :lang(en) {
-        background-color: gold;
+      p {
+        font-size: 1em;
+      }
+      h2 {
+        font-size: 1rem;
       }
     </style>
   </head>
   <body>
-    <h1>Ok now you do it</h1>
-    <p lang="en">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, et quidem
-    </p>
-
-    <p lang="fr">
-      iste vel! Maxime expedita asperiores dolor labore! Explicabo cumque est
-      laudantium molestias, consectetur asperiores dolorum optio aliquid!
-    </p>
+    <!-- 30px, from body -->
+    Text inside Body Normal
+    <!-- 30px, from body -->
+    <p>Paragraph Normal</p>
+    <!-- 20px, from root -->
+    <h2>Heading 2 Normal</h2>
+    <h1>
+      <!-- 30px * h1's default multiplier -->
+      Heading 1 Normal
+      <h2>
+        <!-- 20px, from root -->
+        Heading 2 inside Heading 1
+        <!-- 20px, from h2 i.e. from root -->
+        <p>Paragraph inside Heading 2 and Heading 1</p>
+      </h2>
+    </h1>
   </body>
 </html>
