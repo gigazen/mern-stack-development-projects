@@ -3,36 +3,24 @@
   <head>
     <title>CSS Units</title>
     <style>
-      html {
-        font-size: 20px;
-      }
-      body {
-        font-size: 30px;
+      .container {
+        border: 2px solid red;
+        padding: 10px;
+        color: red;
       }
       p {
-        font-size: 1em;
-      }
-      h2 {
-        font-size: 1rem;
+        /* keeping color of paragraph as original */
+        color: initial;
+        /* by default border and padding are not inherited, so inheriting it */
+        border: inherit;
+        padding: inherit;
       }
     </style>
   </head>
   <body>
-    <!-- 30px, from body -->
-    Text inside Body Normal
-    <!-- 30px, from body -->
-    <p>Paragraph Normal</p>
-    <!-- 20px, from root -->
-    <h2>Heading 2 Normal</h2>
-    <h1>
-      <!-- 30px * h1's default multiplier -->
-      Heading 1 Normal
-      <h2>
-        <!-- 20px, from root -->
-        Heading 2 inside Heading 1
-        <!-- 20px, from h2 i.e. from root -->
-        <p>Paragraph inside Heading 2 and Heading 1</p>
-      </h2>
-    </h1>
+    <div class="container">
+      Container
+      <p>Para in container</p>
+    </div>
   </body>
 </html>
