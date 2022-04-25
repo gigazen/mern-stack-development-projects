@@ -4,23 +4,34 @@
     <title>CSS Units</title>
     <style>
       .container {
-        border: 2px solid red;
-        padding: 10px;
-        color: red;
+        border-left: 15px dotted red;
+        border-top: 15px groove gold;
+        border-bottom: 15px dashed orange;
+        border-right: 15px double dodgerblue;
+
+        padding: 20px;
+
+        margin-top: 20px;
+        margin-right: 40px;
       }
-      p {
-        /* keeping color of paragraph as original */
-        color: initial;
-        /* by default border and padding are not inherited, so inheriting it */
-        border: inherit;
-        padding: inherit;
+      h2 {
+        /* border: 10px solid magenta; */
+        border-radius: 20px;
+        background-color: darkcyan;
+      }
+      img {
+        border: 0px solid transparent;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
       }
     </style>
   </head>
   <body>
     <div class="container">
       Container
-      <p>Para in container</p>
+      <p>Para1 in container</p>
     </div>
+    <h2>This is a heading</h2>
+    <img width="400" height="200" src="../public/images/mobiles.jpg" />
   </body>
 </html>
