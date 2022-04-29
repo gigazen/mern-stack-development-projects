@@ -1,76 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Island Travel Page</title>
+    <title>Display Property</title>
     <style>
-      * {
-        box-sizing: border-box;
+      #UserName:valid + span {
+        display: none;
       }
-      .header,
-      .footer {
-        background-color: lightpink;
-        color: slateblue;
-        padding: 16px;
+      #UserName:valid ~ span:nth-of-type(2) {
+        display: inline;
       }
-      .column {
-        float: left;
-        padding: 15px;
+      #UserName:invalid + span {
+        display: block;
       }
-      .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
-      }
-      .menu {
-        width: 25%;
-      }
-      .content {
-        width: 75%;
-      }
-      .menu ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0; /* otherwise list items will be indented by default */
-      }
-      .menu li {
-        background-color: dodgerblue;
-        color: white;
-        padding: 10px;
-        margin-bottom: 5px;
-      }
-      .menu li:hover {
-        background-color: navy;
+      #UserName:invalid ~ span:nth-of-type(2) {
+        display: none;
       }
     </style>
   </head>
   <body>
-    <div class="header">
-      <h1>St. Lucia</h1>
-    </div>
-    <div class="clearfix">
-      <div class="column menu">
-        <ul>
-          <li>The Flight</li>
-          <li>The City</li>
-          <li>The Island</li>
-          <li>The Food</li>
-        </ul>
-      </div>
-      <div class="column content">
-        <h2>The City</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ad,
-          veritatis eos dolor accusamus assumenda culpa distinctio! Cupiditate,
-          hic sed!
-        </p>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa,
-          sequi?
-        </p>
-      </div>
-    </div>
-    <div class="footer">
-      <p>Contact us for more travel plans</p>
-    </div>
+    <dl>
+      <dt>User Name</dt>
+      <dd>
+        <input type="text" id="UserName" required />
+        <span>User Name Required</span>
+        <span>✔</span>
+      </dd>
+    </dl>
   </body>
 </html>
