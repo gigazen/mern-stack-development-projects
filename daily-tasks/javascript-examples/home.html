@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Display Property</title>
+    <title>Table using CSS</title>
     <style>
-      #UserName:valid + span {
-        display: none;
+      div {
+        border: 1px solid red;
+        border-collapse: collapse;
       }
-      #UserName:valid ~ span:nth-of-type(2) {
-        display: inline;
+      .table {
+        display: table;
       }
-      #UserName:invalid + span {
-        display: block;
+      .row {
+        display: table-row;
       }
-      #UserName:invalid ~ span:nth-of-type(2) {
-        display: none;
-      }
-      div span {
-        display: inline-block;
-        background-color: orange;
-        width: 200px;
-        height: 40px;
+      .cell {
+        display: table-cell;
       }
     </style>
   </head>
-
   <body>
-    <dl>
-      <dt>User Name</dt>
-      <dd>
-        <input type="text" id="UserName" required />
-        <span>User Name Required</span>
-        <span>✔</span>
-      </dd>
-    </dl>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, sit ad?
-      Quam debitis dolores laudantium harum. Dolorem suscipit tempora maxime
-      quasi est dolorum quibusdam ullam! Quae, tenetur!
-      <span>This is inline element</span> Quam fugiat, incidunt enim,
-      exercitationem commodi deserunt deleniti tempora ipsam natus unde,
-      perferendis sunt consectetur sequi quis asperiores quia. Nobis dolores
-      cumque tenetur!
+    <div class="table">
+      <div class="row">
+        <div class="cell">Heroes</div>
+        <div class="cell">Epic</div>
+        <div class="cell">Rating</div>
+      </div>
+      <div class="row">
+        <div class="cell">Krishna</div>
+        <div class="cell">Mahabharata</div>
+        <div class="cell">9</div>
+      </div>
+      <div class="row">
+        <div class="cell">Rama</div>
+        <div class="cell">Ramayana</div>
+        <div class="cell">8</div>
+      </div>
+      <div class="row">
+        <div class="cell">Achilles</div>
+        <div class="cell">Iliad</div>
+        <div class="cell">7</div>
+      </div>
     </div>
   </body>
 </html>
