@@ -1,0 +1,35 @@
+/* some default styles to make each box visible */
+.box {
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+/* colors for each box */
+.box1 {
+    background: #1abc9c;
+}
+.box2 {
+    background: #34495e;
+}
+.box3 {
+    background: #e1b504;
+}
+.box4 {
+    background: #e74c3c;
+}
+.box5 {
+    background: #3498db;
+}
+
+
+
+/* flexbox will be here. The above is just page setup */
+.container {
+    display: flex;
+    border: 10px solid goldenrod;
+    min-height: 100vh;
+    flex-direction: row-reverse;
+}
