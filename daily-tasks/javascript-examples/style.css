@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* some default styles to make each box visible */
 .box {
     color: white;
@@ -45,10 +49,23 @@
 .container {
     display: flex;
     border: 10px solid goldenrod;
-    min-height: 100vh;
-    flex-wrap: wrap-reverse;
+    height: 100vh;
+    align-items: flex-start;
 }
 
 .box {
-    width: 200px;
+    width: 33.3333%;
+}
+
+.box2 {
+    padding-bottom: 200px;
+}
+
+.box6 {
+    padding-bottom: 0;
+}
+
+.box9 {
+    padding-bottom: 50px;
+    align-self: flex-end;
 }
