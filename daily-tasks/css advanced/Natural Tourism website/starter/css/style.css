@@ -69,7 +69,19 @@ body {
 }
 
 
-
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translate(100%);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
 
 
 
