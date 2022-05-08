@@ -35,7 +35,7 @@ body {
 .logo-box {
     position: absolute;
     top: 40px;
-    bottom: 40px;
+    left: 40px;
 }
 
 .logo {
@@ -68,27 +68,19 @@ body {
     letter-spacing: 16.5px;
 }
 
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translate(100%);
-    }
-    80% {
-        transform: translateX(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+div {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    animation-name: example;
+    animation-duration: 5s;
 }
 
-
-
-
-
-
-
+@keyframes example {
+    0% {background-color: green;}
+    50% {background-color: white;}
+    100% {background-color: pink;}
+}
 
 
 
