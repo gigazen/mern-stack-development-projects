@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animation</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        animation-name: first;
+        animation-duration: 5s;
+      }
+
+      @keyframes first {
+        from {
+          background-color: aqua;
+        }
+        to {
+          background-color: slateblue;
+        }
+      }
+
+      #div2 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        animation-name: second;
+        animation-duration: 5s;
+      }
+
+      @keyframes second {
+        0% {
+          width: 100px;
+          height: 100px;
+          background-color: white;
+        }
+        40% {
+          width: 150px;
+          height: 150px;
+          background-color: goldenrod;
+        }
+        80% {
+          width: 200px;
+          height: 200px;
+          background-color: dodgerblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>This is first animation</h2>
+    <div id="div1"></div>
+    <h2>This is second animation</h2>
+    <div id="div2"></div>
+  </body>
+</html>
