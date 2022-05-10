@@ -24,7 +24,7 @@ body {
 
 .header {
     height: 95vh;
-    background-image: linear-gradient(to bottom right, rgba(128, 214, 113, 0.8), rgba(40, 180, 133, 0.8)), 
+    background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), 
                                         url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
@@ -42,6 +42,10 @@ body {
     height: 35px;
 }
 
+.logo:hover {
+    animation: moveToLeft 2s 0.1s ease-out;   /* without delay it is not working?*/
+}
+
 .center-box {
     position: absolute;
     top: 40%;
@@ -52,6 +56,7 @@ body {
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+    backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -59,6 +64,9 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 32px;
+    animation-name: moveToRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
 .heading-primary-sub {
@@ -66,21 +74,50 @@ body {
     font-size: 25px;
     font-weight: 700;
     letter-spacing: 16.5px;
+    animation: moveToLeft 1s ease-out;
 }
 
-div {
-    width: 100px;
-    height: 100px;
-    background-color: tomato;
-    animation-name: example;
-    animation-duration: 5s;
+@keyframes moveToRight {
+    0% {
+        opacity: 0; 
+        transform: translateX(-100px);
+    }
+    80% {
+        opacity: 1; 
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translate(0px);
+    }
 }
 
-@keyframes example {
-    0% {background-color: green;}
-    50% {background-color: white;}
-    100% {background-color: pink;}
+@keyframes moveToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

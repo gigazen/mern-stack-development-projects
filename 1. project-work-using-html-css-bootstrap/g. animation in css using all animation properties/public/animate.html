@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animation</title>
+    <style>
+      /* first animation styles */
+      #div1 {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: tomato;
+        animation: first 4s 3s 3 alternate-reverse both;
+        /* 
+        animation-name: first;
+        animation-duration: 4s;
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        animation-direction: alternate-reverse;
+        animation-fill-mode: both; 
+        */
+      }
+
+      @keyframes first {
+        from {
+          background-color: lightcoral;
+          left: 0px;
+          top: 0px;
+        }
+        to {
+          background-color: turquoise;
+          left: 400px;
+          top: 0px;
+        }
+      }
+
+      /* second animation styles */
+      #div2 {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: greenyellow;
+        font-weight: bold;
+        animation-name: second;
+        animation-duration: 6s;
+        animation-delay: -2s;
+        animation-iteration-count: 3;
+        animation-direction: alternate;
+      }
+
+      @keyframes second {
+        0% {
+          background-color: white;
+          top: 0px;
+          left: 0px;
+        }
+        25% {
+          background-color: goldenrod;
+          top: 0px;
+          left: 400px;
+        }
+        50% {
+          background-color: dodgerblue;
+          top: -200px;
+          left: 600px;
+        }
+        75% {
+          background-color: greenyellow;
+          top: 200px;
+          left: 600px;
+        }
+        100% {
+          background-color: orange;
+          top: 0px;
+          left: 400px;
+        }
+      }
+
+      /* third animation styles */
+      .div3 {
+        width: 100px;
+        height: 50px;
+        position: relative;
+        font-weight: bold;
+        background-color: violet;
+        animation-name: third;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: backwards;
+      }
+
+      .eas {
+        animation-timing-function: ease;
+      }
+      .lin {
+        animation-timing-function: linear;
+      }
+      .easin {
+        animation-timing-function: ease-in;
+      }
+      .easout {
+        animation-timing-function: ease-out;
+      }
+      .easinout {
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes third {
+        from {
+          color: white;
+          left: 0px;
+        }
+        to {
+          left: 600px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>This is first animation</h2>
+    <div id="div1">div 1</div>
+
+    <h2>This is second animation</h2>
+    <div id="div2">div 2</div>
+
+    <h2>This is third animation</h2>
+    <div class="div3 eas">ease</div>
+    <div class="div3 lin">linear</div>
+    <div class="div3 easin">ease-in</div>
+    <div class="div3 easout">ease-out</div>
+    <div class="div3 easinout">ease-in-out</div>
+  </body>
+</html>
