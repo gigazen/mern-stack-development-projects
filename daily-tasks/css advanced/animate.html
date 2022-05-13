@@ -3,20 +3,33 @@
   <head>
     <title>2D and 3D Transforms</title>
     <style>
+      body {
+        text-align: center;
+        margin: 50px;
+      }
       div {
-        width: 300px;
+        width: 100px;
         height: 80px;
-        background-color: orangered;
         padding: 10px;
+        margin-bottom: 60px;
+        transition: all 1s;
+      }
+      #translate1 {
+        background-color: orangered;
       }
       #translate1:hover {
-        transform: translate(30px, 50px);
+        transform: translate(200px, 30px);
+      }
+      #rotate1 {
+        background-color: goldenrod;
+      }
+      #rotate1:hover {
+        transform: rotate(350deg);
       }
     </style>
   </head>
   <body>
-    <div id="translate1">
-      transform: translate() helps move from normal position along X and Y axes
-    </div>
+    <div id="translate1">transform: translate() helps move</div>
+    <div id="rotate1">transform: rotate() helps rotate</div>
   </body>
 </html>
