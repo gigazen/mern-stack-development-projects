@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>2D and 3D Transforms</title>
+    <title>2D Transforms</title>
     <style>
       body {
         text-align: center;
-        margin: 50px;
+        margin-top: 50px;
+        margin-left: 100px;
       }
       div {
-        width: 100px;
+        width: 120px;
         height: 80px;
         padding: 10px;
         margin-bottom: 60px;
         transition: all 1s;
       }
       #translate1 {
-        background-color: orangered;
+        background-color: tomato;
       }
       #translate1:hover {
         transform: translate(200px, 30px);
       }
+
       #rotate1 {
-        background-color: goldenrod;
+        background-color: springgreen;
       }
       #rotate1:hover {
         transform: rotate(350deg);
       }
+
+      #scale1 {
+        background-color: orange;
+      }
+      #scale1:hover {
+        transform: scale(2, 0.5);
+      }
+
+      #skew1 {
+        background-color: skyblue;
+      }
+      #skew1:hover {
+        transform: skew(30deg, 20deg);
+      }
+
+      #matrix1 {
+        background-color: magenta;
+      }
+      #matrix1:hover {
+        transform: matrix(2, -0.5, 0, 1, 200, 0);
+      }
     </style>
   </head>
   <body>
-    <div id="translate1">transform: translate() helps move</div>
-    <div id="rotate1">transform: rotate() helps rotate</div>
+    <div id="translate1">transform: translate() helps moving</div>
+    <div id="rotate1">transform: rotate() helps rotating</div>
+    <div id="scale1">transform: scale() helps resizing</div>
+    <div id="skew1">transform: skew() helps distorting</div>
+    <div id="matrix1">transform: matrix() combines all 2D transforms</div>
   </body>
 </html>
