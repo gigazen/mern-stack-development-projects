@@ -1,63 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>2D Transforms</title>
+    <title>CSS Transition</title>
     <style>
       body {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        height: 100vh;
-        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
       }
-      div {
-        width: 120px;
-        height: 80px;
-        padding: 10px;
-        margin-left: 60px;
-        transition: all 1s;
+      #box {
+        width: 150px;
+        height: 150px;
+        background: pink;
+        transition-property: width, height, background;
+        transition-duration: 2s, 2s, 4s;
       }
-      #translate1 {
-        background-color: tomato;
-      }
-      #translate1:hover {
-        transform: translate(200px, 30px);
-      }
-
-      #rotate1 {
-        background-color: springgreen;
-      }
-      #rotate1:hover {
-        transform: rotate(350deg);
-      }
-
-      #scale1 {
-        background-color: orange;
-      }
-      #scale1:hover {
-        transform: scale(2, 0.5);
-      }
-
-      #skew1 {
-        background-color: skyblue;
-      }
-      #skew1:hover {
-        transform: skew(30deg, 20deg);
-      }
-
-      #matrix1 {
-        background-color: magenta;
-      }
-      #matrix1:hover {
-        transform: matrix(2, -0.5, 0, 1, 200, 0);
+      #box:hover {
+        width: 300px;
+        height: 300px;
+        background: red;
       }
     </style>
   </head>
   <body>
-    <div id="translate1">transform: translate() helps moving</div>
-    <div id="rotate1">transform: rotate() helps rotating</div>
-    <div id="scale1">transform: scale() helps resizing</div>
-    <div id="skew1">transform: skew() helps distorting</div>
-    <div id="matrix1">transform: matrix() combines all 2D transforms</div>
+    <h1>CSS Transition</h1>
+    <div id="box"></div>
   </body>
 </html>
