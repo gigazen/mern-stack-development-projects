@@ -16,7 +16,7 @@
       .scene {
         width: 200px;
         height: 260px;
-        background: gray;
+        background: olive;
         perspective: 600px;
       }
       .card {
@@ -26,9 +26,10 @@
         transition: transform 2s;
         transform-style: preserve-3d;
         cursor: pointer;
+        transform-origin: center right;
       }
       .card.is-flipped {
-        transform: rotateY(180deg);
+        transform: translateX(-100%) rotateY(-180deg);
       }
       .card__face {
         position: absolute;
