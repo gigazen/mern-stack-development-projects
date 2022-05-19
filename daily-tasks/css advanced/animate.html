@@ -1,19 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BEM Naming Convention for CSS classes</title>
+    <title>3D Transforms</title>
+    <style>
+      body {
+        font-family: arial, helvetica, sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+      }
+      .scene {
+        width: 200px;
+        height: 260px;
+        background: gray;
+        perspective: 600px;
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform 2s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+      }
+      .card.is-flipped {
+        transform: rotateY(180deg);
+      }
+      .card__face {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        color: white;
+        text-align: center;
+        line-height: 260px;
+        font-weight: bold;
+        font-size: 40px;
+        backface-visibility: hidden;
+      }
+      .card__face--front {
+        background: tomato;
+      }
+      .card__face--back {
+        background: springgreen;
+        transform: rotateY(180deg);
+      }
+    </style>
+    <script>
+      function flip() {
+        let card = document.querySelector(".card");
+        card.classList.toggle("is-flipped");
+      }
+    </script>
   </head>
   <body>
-    <div class="media">
-      <img
-        src="logo.png"
-        alt="company logo"
-        class="media__img media__img--rev"
-      />
-      <div class="media__body">
-        <h3 class="alpha">Welcome to Our Website</h3>
-        <p class="beta">Our site is one of the best in the world</p>
+    <div class="container">
+      <div class="scene">
+        <div class="card" onclick="flip()">
+          <div class="card__face card__face--front">front</div>
+          <div class="card__face card__face--back">back</div>
+        </div>
       </div>
+      <p>Click card to flip</p>
     </div>
   </body>
 </html>
