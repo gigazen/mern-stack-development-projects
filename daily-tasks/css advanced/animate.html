@@ -1,113 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cube using 3D Transform</title>
+    <title>Background</title>
     <style>
-      *,
-      *::after,
-      ::before {
-        margin: 0;
-        padding: 0;
+      img:hover {
+        transform: skew(40deg);
+        transition: 2s;
       }
-      body {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
+      img {
+        transition: 2s;
       }
-      .cube {
-        /* declaring css variables to reuse them repeatedly for all elements inside cube 3d element */
-        --width: 40vmin;
-        --height: 40vmin;
-        --depth: 40vmin; /* to convert it into cuboid */
-
-        --hue: 30;
-        --alpha: 0.8;
-
-        width: var(--width);
-        height: var(--height);
-        position: relative;
-        /* create a card inside box for reference and remove it later */
-        /* background: hsla(var(--hue), 50%, 50%, var(--alpha)); */
-
-        /* establish a 3d space and keep it for all the child elements */
-        perspective: 800px;
-        transform-style: preserve-3d;
-        transform: rotateX(24deg) rotateY(24deg);
-        animation: animateCube 6s infinite linear both alternate;
-        will-change: transform;
-      }
-      .cube__face {
-        position: absolute;
-        background: hsla(var(--hue), 50%, 50%, var(--alpha));
-        left: 50%;
-        top: 50%;
-        color: #fff;
-        font-size: calc(1vw + 1rem);
-        text-align: center;
-        line-height: var(--height);
-      }
-      .cube__face--front,
-      .cube__face--back {
-        width: var(--width);
-        height: var(--height);
-        /* defining hue and alpha differently for front and back faces */
-        --hue: 120;
-        --alpha: 0.6;
-        --coeff: -0.5;
-        /* translate the front and back sides to their position */
-        transform: translate(-50%, -50%)
-          translate3d(0, 0, calc(var(--depth) * var(--coeff)));
-      }
-      .cube__face--front {
-        --coeff: 0.5;
-      }
-      .cube__face--right,
-      .cube__face--left {
-        width: var(--depth);
-        height: var(--height);
-
-        --hue: 220;
-        --alpha: 0.8;
-        --rotate: 90deg;
-        transform: translate(-50%, -50%) rotateY(var(--rotate))
-          translate3d(0, 0, calc(var(--width) * 0.5));
-      }
-      .cube__face--left {
-        --rotate: -90deg;
-      }
-      .cube__face--top,
-      .cube__face--bottom {
-        width: var(--width);
-        height: var(--depth);
-
-        --hue: 330;
-        --alpha: 0.6;
-        --rotate: 90deg;
-        transform: translate(-50%, -50%) rotateX(var(--rotate))
-          translate3d(0, 0, calc(var(--height) * 0.5));
-      }
-      .cube__face--bottom {
-        --rotate: -90deg;
-      }
-      /* animation */
-      @keyframes animateCube {
-        from {
-          transform: rotateX(0) rotateY(360deg);
-        }
-        to {
-          transform: rotateX(360deg) rotateY(0);
-        }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
     </style>
   </head>
   <body>
-    <div class="cube">
-      <div class="cube__face cube__face--front">Front</div>
-      <div class="cube__face cube__face--back">Back</div>
-      <div class="cube__face cube__face--right">Right</div>
-      <div class="cube__face cube__face--left">Left</div>
-      <div class="cube__face cube__face--top">Top</div>
-      <div class="cube__face cube__face--bottom">Bottom</div>
+    <div class="container">
+      <img src="../public/images/jacket-men.jpg" width="100" height="100" />
     </div>
   </body>
 </html>
