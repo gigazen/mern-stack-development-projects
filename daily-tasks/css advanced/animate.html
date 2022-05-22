@@ -1,144 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cube using 3D transform</title>
+    <title>Cube using 3D Transform</title>
     <style>
-      * {
-        box-sizing: border-box;
+      *,
+      *::after,
+      ::before {
+        margin: 0;
+        padding: 0;
       }
-
       body {
-        font-family: sans-serif;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
       }
-
-      .container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        height: 100vh;
-        align-items: center;
-      }
-
-      .scene {
-        width: 200px;
-        height: 200px;
-        perspective: 600px;
-        border: 1px solid #ccc;
-      }
-
       .cube {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 2s;
-        transform: translateZ(-100px);
-      }
+        /* declaring css variables to reuse them repeatedly for all elements inside cube 3d element */
+        --width: 40vmin;
+        --height: 40vmin;
+        --depth: 40vmin; /* to convert it into cuboid */
 
+        --hue: 30;
+        --alpha: 0.8;
+
+        width: var(--width);
+        height: var(--height);
+        position: relative;
+        /* create a card inside box for reference and remove it later */
+        /* background: hsla(var(--hue), 50%, 50%, var(--alpha)); */
+
+        /* establish a 3d space and keep it for all the child elements */
+        perspective: 800px;
+        transform-style: preserve-3d;
+        transform: rotateX(24deg) rotateY(24deg);
+        animation: animateCube 6s infinite linear both alternate;
+        will-change: transform;
+      }
       .cube__face {
         position: absolute;
-        width: 200px;
-        height: 200px;
-        color: white;
-        font-size: 40px;
-        font-weight: bold;
+        background: hsla(var(--hue), 50%, 50%, var(--alpha));
+        left: 50%;
+        top: 50%;
+        color: #fff;
+        font-size: calc(1vw + 1rem);
         text-align: center;
-        line-height: 200px;
-        border: 2px solid black;
+        line-height: var(--height);
       }
-
-      .cube__face--front {
-        background: hsla(0, 100%, 50%, 0.7);
-        transform: rotateY(0deg) translateZ(100px);
-      }
-      .cube__face--right {
-        background: hsla(60, 100%, 50%, 0.7);
-        transform: rotateY(90deg) translateZ(100px);
-      }
+      .cube__face--front,
       .cube__face--back {
-        background: hsla(120, 100%, 50%, 0.7);
-        transform: rotateY(180deg) translateZ(100px);
+        width: var(--width);
+        height: var(--height);
+        /* defining hue and alpha differently for front and back faces */
+        --hue: 120;
+        --alpha: 0.6;
+        --coeff: -0.5;
+        /* translate the front and back sides to their position */
+        transform: translate(-50%, -50%)
+          translate3d(0, 0, calc(var(--depth) * var(--coeff)));
+      }
+      .cube__face--front {
+        --coeff: 0.5;
+      }
+      .cube__face--right,
+      .cube__face--left {
+        width: var(--depth);
+        height: var(--height);
+
+        --hue: 220;
+        --alpha: 0.8;
+        --rotate: 90deg;
+        transform: translate(-50%, -50%) rotateY(var(--rotate))
+          translate3d(0, 0, calc(var(--width) * 0.5));
       }
       .cube__face--left {
-        background: hsla(180, 100%, 50%, 0.7);
-        transform: rotateY(-90deg) translateZ(100px);
+        --rotate: -90deg;
       }
-      .cube__face--top {
-        background: hsla(240, 100%, 50%, 0.7);
-        transform: rotateX(90deg) translateZ(100px);
+      .cube__face--top,
+      .cube__face--bottom {
+        width: var(--width);
+        height: var(--depth);
+
+        --hue: 330;
+        --alpha: 0.6;
+        --rotate: 90deg;
+        transform: translate(-50%, -50%) rotateX(var(--rotate))
+          translate3d(0, 0, calc(var(--height) * 0.5));
       }
       .cube__face--bottom {
-        background: hsla(300, 100%, 50%, 0.7);
-        transform: rotateX(-90deg) translateZ(100px);
+        --rotate: -90deg;
       }
-
-      .cube.show-front {
-        transform: translateZ(-100px) rotateY(0deg);
-      }
-      .cube.show-right {
-        transform: translateZ(-100px) rotateY(-90deg);
-      }
-      .cube.show-back {
-        transform: translateZ(-100px) rotateY(-180deg);
-      }
-      .cube.show-left {
-        transform: translateZ(-100px) rotateY(90deg);
-      }
-      .cube.show-top {
-        transform: translateZ(-100px) rotateX(-90deg);
-      }
-      .cube.show-bottom {
-        transform: translateZ(-100px) rotateX(90deg);
+      /* animation */
+      @keyframes animateCube {
+        from {
+          transform: rotateX(0) rotateY(360deg);
+        }
+        to {
+          transform: rotateX(360deg) rotateY(0);
+        }
       }
     </style>
-    <script>
-      var cube = document.getElementsByClassName(".scene .cube");
-      var radioGroup = document.getElementsByClassName(".radio-group");
-      var currentClass = "";
-
-      function changeSide() {
-        var checkedRadio = radioGroup.querySelector(":checked");
-        var showClass = "show-" + checkedRadio.value;
-        if (currentClass) {
-          cube.classList.remove(currentClass);
-        }
-        cube.classList.add(showClass);
-        currentClass = showClass;
-      }
-    </script>
   </head>
   <body>
-    <div class="scene">
-      <div class="cube">
-        <div class="cube__face cube__face--front">front</div>
-        <div class="cube__face cube__face--right">right</div>
-        <div class="cube__face cube__face--back">back</div>
-        <div class="cube__face cube__face--left">left</div>
-        <div class="cube__face cube__face--top">top</div>
-        <div class="cube__face cube__face--bottom">bottom</div>
-      </div>
-    </div>
-
-    <div class="radio-group" onchange="changeSide()">
-      <label>
-        <input type="radio" name="rotate-cube-side" value="front" checked />
-        front
-      </label>
-      <label>
-        <input type="radio" name="rotate-cube-side" value="right" /> right
-      </label>
-      <label>
-        <input type="radio" name="rotate-cube-side" value="back" /> back
-      </label>
-      <label>
-        <input type="radio" name="rotate-cube-side" value="left" /> left
-      </label>
-      <label>
-        <input type="radio" name="rotate-cube-side" value="top" /> top
-      </label>
-      <label>
-        <input type="radio" name="rotate-cube-side" value="bottom" /> bottom
-      </label>
+    <div class="cube">
+      <div class="cube__face cube__face--front">Front</div>
+      <div class="cube__face cube__face--back">Back</div>
+      <div class="cube__face cube__face--right">Right</div>
+      <div class="cube__face cube__face--left">Left</div>
+      <div class="cube__face cube__face--top">Top</div>
+      <div class="cube__face cube__face--bottom">Bottom</div>
     </div>
   </body>
 </html>
