@@ -3,24 +3,84 @@
   <head>
     <title>Background</title>
     <style>
-      img:hover {
-        transform: skew(40deg);
-        transition: 2s;
+      * {
+        font-family: "Lato";
       }
-      img {
-        transition: 2s;
-      }
-      .container {
+
+      body {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+      }
+
+      .scene {
+        width: 10em;
+        height: 10em;
+        margin: 2em;
+        border: 3px solid #ccc;
+
+        /* This is important! for z-axis effects */
+        perspective: 10em;
+      }
+
+      .square {
+        width: 100%;
+        height: 100%;
+        background-color: #0379ff;
+        line-height: 10em;
+        text-align: center;
+        color: #fff;
+      }
+
+      .square.x-axis {
+        animation: x-axis-animation 1s ease-in-out 0s infinite alternate;
+      }
+
+      .square.y-axis {
+        animation: y-axis-animation 1s ease-in-out 0s infinite alternate;
+      }
+
+      .square.z-axis {
+        animation: z-axis-animation 1s ease-in-out 0s infinite alternate;
+      }
+
+      @keyframes x-axis-animation {
+        from {
+          transform: rotateX(20deg);
+        }
+        to {
+          transform: rotateX(-20deg);
+        }
+      }
+
+      @keyframes y-axis-animation {
+        from {
+          transform: rotateY(20deg);
+        }
+        to {
+          transform: rotateY(-20deg);
+        }
+      }
+
+      @keyframes z-axis-animation {
+        from {
+          transform: rotateZ(20deg);
+        }
+        to {
+          transform: rotateZ(-20deg);
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <img src="../public/images/jacket-men.jpg" width="100" height="100" />
+    <div class="scene">
+      <div class="square x-axis">x-axis</div>
+    </div>
+
+    <div class="scene">
+      <div class="square y-axis">y-axis</div>
+    </div>
+
+    <div class="scene">
+      <div class="square z-axis">z-axis</div>
     </div>
   </body>
 </html>
