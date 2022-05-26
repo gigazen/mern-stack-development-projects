@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Transform</title>
+    <title>Perspective Property and Function</title>
     <style>
       body {
-        font-family: Arial, Helvetica, sans-serif;
         display: flex;
-        justify-content: center;
       }
-      .base {
-        width: 250px;
-        height: 150px;
-        background: grey;
-        font-size: 18px;
+      .scene {
+        width: 20em;
+        height: 14em;
+        border: 2px solid #aaa;
+        margin: 5em;
+        display: flex;
+      }
+      .scene--together {
+        perspective: 800px;
+      }
+      .scene__card {
+        width: 47.5%;
+        height: 12em;
+        background-color: dodgerblue;
+        color: #fff;
         text-align: center;
-        margin: 40px 150px;
+        padding: 1em;
+        display: flex;
+        align-items: center;
       }
-      #card1 {
-        width: 100%;
-        height: 100%;
-        background: tomato;
-        transform: perspective(800px) rotateX(40deg);
+      .scene__card + .scene__card {
+        margin-left: 5%;
       }
-      #card2 {
-        width: 100%;
-        height: 100%;
-        background: springgreen;
-        transform-origin: right center;
-        transform: perspective(800px) rotateY(120deg);
+
+      .scene--together .scene__card {
+        animation: animeTog 1s alternate infinite ease-in-out;
       }
-      #card3 {
-        width: 100%;
-        height: 100%;
-        background: cornflowerblue;
-        transform: perspective(800px) rotateZ(120deg);
+
+      .scene--separate .scene__card {
+        animation: animeSep 1s alternate infinite ease-in-out;
+      }
+
+      @keyframes animeTog {
+        from {
+          transform: rotateX(30deg);
+        }
+        to {
+          transform: rotateX(-30deg);
+        }
+      }
+      @keyframes animeSep {
+        from {
+          transform: perspective(800px) rotateX(30deg);
+        }
+        to {
+          transform: perspective(800px) rotateX(-30deg);
+        }
       }
     </style>
   </head>
   <body>
-    <div class="base">
-      <div id="card1">Card 1 - rotateX()</div>
+    <div class="scene scene--together">
+      <div class="scene__card">Shared Perspective</div>
+      <div class="scene__card">Shared Perspective</div>
     </div>
-    <div class="base">
-      <div id="card2">Card 2 - rotateY()</div>
-    </div>
-    <div class="base">
-      <div id="card3">Card 3 - rotateZ()</div>
-    </div>
-    <div class="base">
-      <div id="card4">Card 4 - translateZ()</div>
+
+    <div class="scene scene--separate">
+      <div class="scene__card">Individual Perspective</div>
+      <div class="scene__card">Individual Perspective</div>
     </div>
   </body>
 </html>
