@@ -9,6 +9,7 @@ Dark green: #28b485
 
 /* style for overall page */
 
+/* basic reset using universal selector */
 * {
     margin: 0;
     padding: 0;
@@ -65,7 +66,7 @@ body {
     margin-bottom: 60px;
 }
 
-.heading-primary-main {
+.heading-primary__main {
     display: block;
     font-size: 60px;
     font-weight: 400;
@@ -75,7 +76,7 @@ body {
     animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary__sub {
     display: block;
     font-size: 25px;
     font-weight: 700;
