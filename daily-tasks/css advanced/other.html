@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Box Sizing</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+      }
+      .box {
+        width: 350px;
+        height: 100px;
+        padding: 30px;
+        border: 20px solid red;
+        background: gold;
+      }
+      .content-box {
+        box-sizing: content-box;
+      }
+      .border-box {
+        box-sizing: border-box;
+      }
+      p {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 50px;
+        margin-bottom: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box content-box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos esse
+      voluptatem nostrum omnis ut natus quis sint, iusto quaerat molestias?
+    </div>
+    <p>box-sizing: content-box</p>
+    <br />
+    <div class="box border-box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid fugit sed
+      corporis quas, repudiandae debitis illum soluta tenetur. Quod, delectus?
+    </div>
+    <p>box-sizing: border-box</p>
+  </body>
+</html>
