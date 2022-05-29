@@ -1,51 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Background Properties</title>
     <style>
-      #User + span {
-        display: none;
-      }
-      #User:read-only {
-        background-color: lightgray;
-        border: none;
-      }
-      #User:read-only + span {
-        display: inline;
-      }
-      #Email:disabled {
-        background-color: black;
-        color: white;
-      }
-      #Email:enabled {
-        background-color: orangered;
-      }
-      #Email {
-        color: whitesmoke;
-      }
-      #City + span {
-        display: none;
-      }
-      #City:focus + span {
-        display: block;
+      .container {
+        background-image: url(images/tree-1.jpg), url(images/flying-bird.jpg);
+        background-color: aqua;
+        height: 100vh;
+        background-size: 400px 400px, 300px 300px;
+        background-repeat: no-repeat, no-repeat;
       }
     </style>
   </head>
-
   <body>
-    User Name:
-    <input type="text" name="username" value="John" id="User" readonly />
-    <span>You cannot Modify Name</span>
-    <br /><br /><br />
-    <input
-      type="email"
-      name="emailID"
-      id="Email"
-      value="djb@gmail.com"
-      disabled
-    />
-    <br /><br /><br />
-    <input type="text" name="cityname" id="City" /><span
-      >City Name in Block Letters</span
-    >
+    <div class="container"></div>
   </body>
 </html>
