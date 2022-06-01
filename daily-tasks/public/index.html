@@ -1,78 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Background Properties</title>
+    <title>Background position, origin, clip</title>
     <style>
+      body {
+        background-color: darkmagenta;
+      }
       .container {
-        background-image: url(images/flying-bird.jpg);
-        background-color: skyblue;
-        background-size: 300px 200px;
+        background-image: url(/public/images/flying-bird.jpg);
+        font-size: 100px;
+        font-weight: 800;
+        width: 50%;
+        text-align: center;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position: 300px top;
-        background-attachment: fixed;
-        height: 100%;
-        padding: 20px;
-        margin: 20px;
-        border: 10px dashed indianred;
-        color: #555;
+        background-position: 50px 0px;
+        background-origin: border-box;
+        /* background-clip: content-box; */
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        padding: 30px;
+        border: 20px dashed dodgerblue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-      voluptatibus minima adipisci iure nobis, error voluptatem nostrum dolore
-      placeat eligendi vero unde ipsam, voluptates obcaecati rem et fugit! Quis,
-      dolore. Voluptas fugiat voluptatum ducimus sit itaque laudantium, eaque
-      dolorum necessitatibus blanditiis vitae non, officiis aperiam delectus!
-      Itaque, placeat eum enim quos ipsum dicta explicabo alias reprehenderit
-      eos, minus provident adipisci perferendis cumque. Iure modi autem
-      reiciendis, obcaecati eos, ducimus veritatis corrupti fugit ut ullam esse
-      incidunt facere, consequuntur voluptatum? Nam porro explicabo eaque at
-      harum animi cum laboriosam fugit. Fuga, ex rem cumque eveniet eius sequi
-      non. Quisquam, perspiciatis alias fugiat autem, magnam vel cupiditate amet
-      nostrum ipsam dolore odit aspernatur. Quaerat amet quos iure, placeat
-      beatae, laborum suscipit vitae repudiandae sapiente officiis est nam
-      soluta asperiores quisquam cupiditate! Numquam voluptatibus soluta, veniam
-      error dolorum in doloribus incidunt autem quisquam. Voluptatum unde
-      provident architecto quam. Officiis quo ipsa dolorum ex illo dolore totam
-      dolor, fuga provident distinctio veniam quae sed! Consequatur laboriosam,
-      doloremque molestias mollitia, hic quia minus autem sit maiores nostrum
-      asperiores quae ex nisi voluptatem consequuntur unde aperiam minima
-      tempora dolore saepe nihil odit. Eaque in quis magni praesentium dolores,
-      repellat, tempora, expedita harum delectus rerum necessitatibus adipisci
-      ex recusandae! Debitis deleniti tenetur perferendis veniam eum impedit
-      blanditiis in, harum quidem hic corporis odit rem quod iste quos, esse
-      omnis temporibus soluta, animi sint nostrum! Saepe quaerat eum, fugiat
-      quam earum consequatur cumque doloremque ratione assumenda error tempora
-      reiciendis odio maiores dicta omnis esse, officiis modi sapiente adipisci.
-      Quasi illum culpa tenetur eligendi ipsa! Debitis libero fuga accusamus
-      rerum reiciendis, voluptatum assumenda totam tempora officia nisi itaque
-      eaque ad possimus deleniti incidunt quod optio repellat omnis expedita
-      commodi. Soluta perspiciatis mollitia veritatis sed ducimus ullam magni
-      sint. Tenetur doloribus ut quasi eaque, cum nisi nemo. Ullam, laudantium
-      accusamus praesentium est iure a commodi magnam natus neque velit atque
-      similique impedit iusto facere ea, sequi fugit sunt cumque provident, quod
-      laboriosam fugiat? Porro officiis a eaque. Pariatur eveniet dolores iste
-      explicabo dignissimos libero repellendus, rerum inventore id harum atque
-      enim nisi, consequatur dolore impedit voluptas beatae recusandae eos
-      repudiandae similique soluta eius veritatis quae nemo. Quisquam voluptatum
-      esse eligendi iusto pariatur amet ratione quam voluptatibus asperiores
-      doloremque, quas reprehenderit doloribus expedita aut quae, assumenda
-      vero, fugiat rerum id reiciendis dolor odit laudantium quidem.
-      Necessitatibus rerum iste dolorum ex officia, molestias praesentium
-      facilis reprehenderit, ut illum possimus exercitationem qui consequuntur
-      mollitia consectetur architecto facere dolorem nobis debitis iusto labore.
-      Repellendus quod quos iste sequi tempore molestiae ipsam temporibus. Fuga
-      iste nisi id, optio eum ipsam nostrum magnam beatae distinctio est quaerat
-      doloribus voluptate enim rem maiores sed pariatur similique? Amet iure,
-      reprehenderit placeat aliquid totam alias dignissimos debitis sequi
-      molestias enim fuga dolore aspernatur! Ad, a vitae? Nostrum inventore
-      harum eos at, quibusdam nobis nam dolorem similique pariatur, ipsa
-      consequatur accusamus laudantium sequi voluptatum error asperiores
-      explicabo ducimus fuga vel minima alias ex voluptate quaerat? Eaque,
-      magnam! Eaque architecto corrupti expedita, est sapiente, sequi, a fuga
-      tenetur deleniti harum doloribus.
-    </div>
+    <div class="container">CSS Magic</div>
   </body>
 </html>
