@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Background position, origin, clip</title>
+    <title>
+      Multiple Backgrounds using individual background properties and shorthand
+      background property
+    </title>
     <style>
-      body {
-        background-color: darkmagenta;
-      }
       .container {
-        background-image: url(/public/images/flying-bird.jpg);
-        font-size: 100px;
-        font-weight: 800;
-        width: 50%;
-        text-align: center;
-        background-size: contain;
+        background-image: url(/public/images/bubblering-nobg.png),
+          url(/public/images/fish-nobg.png),
+          linear-gradient(to bottom, rgb(14, 150, 240), rgb(10, 46, 175));
+        background-size: 450px 300px, 300px 200px, contain;
         background-repeat: no-repeat;
-        background-position: 50px 0px;
-        background-origin: border-box;
-        /* background-clip: content-box; */
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        padding: 30px;
-        border: 20px dashed dodgerblue;
+        background-position: 0px 100%, right bottom;
+
+        /* background: url(/public/images/bubblering-nobg.png) 0px 100%/450px 300px
+            no-repeat,
+          url(/public/images/fish-nobg.png) right bottom/300px 200px no-repeat,
+          linear-gradient(to bottom, rgb(14, 150, 240), rgb(10, 46, 175)); */
+
+        height: 50vh;
+        width: 50%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -30,6 +29,6 @@
     </style>
   </head>
   <body>
-    <div class="container">CSS Magic</div>
+    <div class="container"></div>
   </body>
 </html>
