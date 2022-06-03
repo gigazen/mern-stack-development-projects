@@ -1,45 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>background example</title>
+    <title>Text Shadow</title>
     <style>
       h1 {
-        background: url(https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif)
-          no-repeat center center/cover;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        margin: 0;
-        font-size: 28vmax;
-        text-align: center;
-        font-family: "segoe ui black", sans-serif;
-        text-transform: uppercase;
-      }
-
-      .color1 {
-        color: rgba(162, 0, 255, 0.411);
-      }
-      .color2 {
-        color: rgba(255, 208, 0, 0.407);
-      }
-      .color3 {
-        color: rgba(0, 255, 30, 0.608);
-      }
-      .color4 {
-        color: rgba(255, 0, 0, 0.401);
-      }
-      body {
-        background-image: linear-gradient(100deg, goldenrod, lavender);
-        background-repeat: no-repeat;
+        color: lightsalmon;
+        font-family: arial;
+        font-size: 80px;
+        text-shadow: 4px 4px 1px black, 8px 8px 1px springgreen,
+          12px 12px 1px tomato;
+        letter-spacing: 6px;
       }
     </style>
   </head>
+
   <body>
-    <h1>
-      <span class="color1">C</span>
-      <span class="color2">S</span>
-      <span class="color3">S</span>
-      <span class="color4">3</span>
-    </h1>
+    <h1>CSS Text Shadow</h1>
   </body>
 </html>
