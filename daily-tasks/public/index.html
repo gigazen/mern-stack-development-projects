@@ -1,87 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sliding Text</title>
+    <title>Text Shadow Example</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: firebrick;
-        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+        background: deepskyblue;
       }
-      .sliding-text {
-        color: white;
-        font-family: Arial;
-        font-size: 58px;
-        font-weight: 900;
-        letter-spacing: -2px;
-        text-transform: uppercase;
-        margin: 150px;
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
-      .sliding-line {
-        height: 50px;
-        overflow: hidden;
-        position: relative;
+      span {
+        font-size: 100px;
+        letter-spacing: 0.1em;
+        /* color: transparent; */
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: #fff;
+        text-shadow: 8px 8px magenta, 20px 20px #000;
       }
       p {
-        margin: 0;
-        height: 50px;
-        line-height: 50px;
-        transition: all 0.5s ease-in-out;
-      }
-
-      .sliding-line:nth-child(odd) {
-        transform: skew(60deg, -30deg) scaleY(0.667);
-      }
-      .sliding-line:nth-child(even) {
-        transform: skew(0deg, -30deg) scaleY(1.333);
-      }
-
-      .sliding-text:hover p {
-        transform: translate(0, -50px);
-        cursor: pointer;
-      }
-
-      .sliding-line:nth-child(1) {
-        left: 29px;
-      }
-      .sliding-line:nth-child(2) {
-        left: 58px;
-      }
-      .sliding-line:nth-child(3) {
-        left: 87px;
-      }
-      .sliding-line:nth-child(4) {
-        left: 116px;
-      }
-      .sliding-line:nth-child(5) {
-        left: 145px;
+        color: transparent;
+        font-size: 100px;
+        color: white;
+        letter-spacing: 0.1em;
+        /* stroke around text without using non-standard -webkit, it can be used as fallback style for browsers that do not support -webkit technique */
+        text-shadow: 1px -1px #000, 1px 1px #000, -1px 1px #000, -1px -1px #000;
       }
     </style>
   </head>
   <body>
-    <div class="sliding-text">
-      <div class="sliding-line">
-        <p></p>
-        <p>Text Sliding</p>
-      </div>
-      <div class="sliding-line">
-        <p>Text Sliding</p>
-        <p>on staircase</p>
-      </div>
-      <div class="sliding-line">
-        <p>on staircase</p>
-        <p>Text-effect</p>
-      </div>
-      <div class="sliding-line">
-        <p>Text-effect</p>
-        <p>using css</p>
-      </div>
-      <div class="sliding-line">
-        <p>using css</p>
-        <p></p>
-      </div>
+    <div class="container">
+      <span>LIFE ROCKS</span>
+      <p>GO GET IT</p>
     </div>
   </body>
 </html>
