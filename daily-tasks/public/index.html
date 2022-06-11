@@ -1,172 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <meta charset="UTF-8" />
+    <title>Black Goose Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
+      href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
-    <title>Responsive Layout using Flexbox</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-      * {
+      @charset "UTF-8";
+      /* @import url(bakery-styles.css); */
+
+      html {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
       }
+      * {
+        box-sizing: inherit;
+      }
+
       body {
-        font: 16px "Poppins", sans-serif;
-        line-height: 1.5;
-        color: #333;
-        background-color: #a1c3ff;
+        font-family: Georgia, serif;
+        font-size: 100%;
+        background-color: white;
+        margin: 0;
       }
-      img {
-        max-width: 100%;
+
+      /* link styles */
+      a:link,
+      a:visited {
+        color: #dc6903;
       }
-      h1,
-      h2 {
-        margin-bottom: 15px;
+      a:focus,
+      a:hover,
+      a:active {
+        color: #f9ab33;
       }
-      ul {
-        list-style-type: none;
-      }
-      .container {
-        max-width: 90vw;
-        margin: 0 auto;
-        padding: 0 30px;
-      }
-      .navbar {
-        background: #3474e6;
-        color: #fff;
-        height: 60px;
-      }
-      .navbar .logo {
-        font-size: x-large;
-        font-weight: bold;
-      }
-      .navbar a {
+
+      a {
         text-decoration: none;
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
+        border-bottom: 1px dotted;
+        padding-bottom: 0.2em;
       }
-      .navbar a:hover {
-        color: lightblue;
-      }
-      .navbar .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-      }
-      .navbar ul {
-        display: flex;
-      }
-      .navbar ul li {
-        margin-left: 20px;
-      }
+
+      /* header styles */
       header {
-        background-color: #0151cc;
-        color: #fff;
-        min-height: 400px;
+        color: white;
+        background: url(images/croissants_banner.jpg) no-repeat center center;
+        background-size: cover;
+        text-align: center;
+        height: 15em;
+      }
+      header p {
+        font-style: italic;
+        font-size: 1.2em;
+        margin-top: -12px;
       }
       header h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        line-height: 1.2;
-      }
-      header img {
-        max-width: 400px;
-      }
-      header .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .boxes .container {
-        display: flex;
-        justify-content: space-between;
-      }
-      .box {
-        flex: 1;
-        background-color: #0a51cc;
-        color: #fff;
-        border-radius: 10px;
-        margin: 20px 10px;
-        padding: 15px 20px;
-        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.6);
-      }
-      .box i {
-        margin-right: 10px;
+        margin-top: 1.5em;
       }
 
-      @media (max-width: 768px) {
-        .header .container {
-          flex-direction: column;
-          padding-top: 20px;
-          text-align: center;
-        }
-        .boxes .container {
-          display: block;
-          text-align: center;
-        }
+      /* nav styles */
+      nav,
+      footer {
+        font-family: verdana, sans-serif;
+        background-color: #783f27;
       }
+      nav ul li a:link,
+      nav ul li a:visited {
+        color: #f9ab33;
+      }
+      nav ul li a:focus,
+      nav ul li a:hover,
+      nav ul li a:active {
+        color: #fff;
+      }
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+      nav ul li a {
+        display: block;
+        border: 1px solid;
+        border-radius: 0.5em;
+        padding: 0.5em 1em;
+        margin: 0.5em;
+      }
+
+      /* main "products" styles */
+      main {
+        font-family: "Stint Ultra Expanded", Georgia, serif;
+        background-color: white;
+        line-height: 1.8em;
+        color: #555;
+        padding: 1em;
+        border: double 4px #eaddc4;
+        border-radius: 25px;
+        margin: 2.5%;
+      }
+      h3 {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #7a0002;
+        border-top: 1px solid;
+        border-left: 3px solid;
+        padding-left: 1em;
+        margin-top: 2.5em;
+      }
+      p.more {
+        font-family: verdana, sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        clear: left;
+      }
+      main img {
+        float: left;
+        margin: 0 1em 1em 0;
+      }
+
+      img[src*="bread"] {
+        -webkit-shape-outside: ellipse(130px 95px at 50% 50%);
+        shape-outside: ellipse(130px 95px at 50% 50%);
+      }
+
+      img[src*="muffin"] {
+        margin-left: 50px;
+        -webkit-shape-outside: circle(125px);
+        shape-outside: circle(125px);
+        -webkit-shape-outside: polygon(
+          0px 0px,
+          197px 0px,
+          241px 31px,
+          241px 68px,
+          226px 82px,
+          219px 131px,
+          250px 142px,
+          250px 158px,
+          0px 158px
+        );
+        shape-outside: polygon(
+          0px 0px,
+          197px 0px,
+          241px 31px,
+          241px 68px,
+          226px 82px,
+          219px 131px,
+          250px 142px,
+          250px 158px,
+          0px 158px
+        );
+      }
+
+      /* aside "hours" styles */
+      aside {
+        background: url(images/scallop.png) repeat-y left top;
+        background-color: #f6f3ed;
+        padding: 1em;
+        padding-left: 45px;
+        border-top-right-radius: 25px;
+        margin: 1em 2.5% 0 10%;
+      }
+      /* misc styles */
+      footer {
+        color: #eaddc4;
+        text-align: center;
+        font-size: 0.8em;
+        padding: 1em;
+      }
+      #award {
+        position: fixed;
+        top: 30px;
+        left: 50px;
+      }
+      h2 {
+        font-family: "Stint Ultra Expanded", Georgia, serif;
+      }
+      .day {
+        color: #783f27;
+        font-family: verdana, sans-serif;
+        font-size: 0.8em;
+        text-transform: uppercase;
+      }
+      /* CSS Document */
     </style>
   </head>
-  <body>
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">Flexbox</div>
-        <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <header class="header">
-      <div class="container">
-        <div>
-          <h1>Responsive Layout using Flexbox</h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
-            laborum aut vitae libero molestiae, corporis sed magni aspernatur
-            quam odit?
-          </p>
-        </div>
-        <img src="images/grid.png" alt="grid photo" />
-      </div>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="">Menu</a></li>
+          <li><a href="">News</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+      <h1><img src="images/bgb_logo.png" alt="Black Goose Bakery" /></h1>
+      <p>
+        The delicious baked goods you love at Black Goose Bistro...now available
+        to go!
+      </p>
     </header>
 
-    <section class="boxes">
-      <div class="container">
-        <div class="box">
-          <h2><i class="fas fa-arrows-alt-v"></i>Alignment and Space</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae,
-            magni?
-          </p>
-        </div>
+    <main>
+      <h2>Fresh from the Oven</h2>
+      <h3>Breads</h3>
+      <p>
+        <img
+          src="images/bread.png"
+          alt="round loaf of bread on cutting board"
+        />
+        Our breads are made daily from highest-quality whole grain flour, water,
+        salt, and yeast or sourdough starter. Simply and naturally, and never
+        any preservatives. Patience is key to achieving the proper level of
+        fermentation and baking each loaf to perfection. Available in whole
+        grain, sourdough, olive loaf, classic rye, and potato-onion.
+      </p>
+      <p class="more"><a href="">Learn more about our baking process...</a></p>
 
-        <div class="box">
-          <h2><i class="fas fa-arrows-alt"></i>Tricky Positioning</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam,
-            eum.
-          </p>
-        </div>
+      <h3>Muffins</h3>
+      <p>
+        <img src="images/muffin.png" alt="one chocolate chip muffin" /> Every
+        day, we offer a large selection of muffins, including blueberry,
+        multi-berry, bran, corn, lemon-poppyseed, and chocolate. Our muffins are
+        made from scratch each day. Stop by to see our seasonal muffin flavors!
+      </p>
+      <p class="more">
+        <a href="">Learn more about how we make our muffins...</a>
+      </p>
+    </main>
 
-        <div class="box">
-          <h2><i class="fas fa-mobile"></i>Responsive Design</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, est!
-          </p>
-        </div>
+    <aside>
+      <h2>Hours</h2>
+      <p><span class="day">Monday:</span> 5am to 3pm</p>
+      <p><span class="day">Tuesday:</span> 5am to 3pm</p>
+      <p><span class="day">Wednesday:</span> 5am to 3pm</p>
+      <p><span class="day">Thursday:</span> 5am to 3pm</p>
+      <p><span class="day">Friday:</span> 5am to 3pm</p>
+      <p><span class="day">Saturday:</span> 6am to 4pm</p>
+      <p><span class="day">Sunday:</span> 6am to 4pm</p>
+    </aside>
+
+    <footer>
+      <p>All content copyright &copy; 2017, Black Goose Bistro.</p>
+      <div id="award">
+        <img src="images/award.png" alt="Farmers' Market Award" />
       </div>
-    </section>
+    </footer>
   </body>
 </html>
