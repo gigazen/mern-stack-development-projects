@@ -4,7 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flexbox Demo</title>
+    <title>Navbar using Flexbox</title>
+    <style>
+      ul {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        list-style: none;
+        padding: 0.5em;
+        margin: 0;
+        background-color: #00af8f;
+      }
+      li {
+        margin: 0 1em;
+        color: #fff;
+        font-size: 20px;
+      }
+      img {
+        width: 60px;
+        border-radius: 50px;
+      }
+      li.logo {
+        margin-right: auto;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <ul>
+      <li class="logo">
+        <img src="/public/images/bytemargin-logo-small.png" />
+      </li>
+      <li>About</li>
+      <li>Blog</li>
+      <li>Shop</li>
+      <li>Contact</li>
+    </ul>
+  </body>
 </html>
