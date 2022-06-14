@@ -11,7 +11,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
       body {
-        background-color: bisque;
+        background-color: black;
         font-family: "Poppins", sans-serif;
       }
       #mycontent {
@@ -20,6 +20,30 @@
         justify-content: center;
         align-items: center;
         height: 80vh;
+      }
+      #pageNum {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: slateblue;
+        padding: 20px;
+        color: #fff;
+        width: 20%;
+        border-radius: 10px;
+      }
+      label {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 0.8;
+        letter-spacing: 1px;
+      }
+      input {
+        width: 100px;
+        height: 30px;
+        text-align: center;
       }
       #container {
         display: flex;
@@ -56,8 +80,6 @@
         justify-content: center;
       }
       #btn {
-        display: flex;
-        justify-content: center;
         margin-top: 30px;
       }
       button {
@@ -66,34 +88,17 @@
         font-family: "comic sans ms", sans-serif;
         letter-spacing: 2px;
         font-weight: 800;
-        font-size: 20px;
         padding: 10px;
-        background-color: rgb(212, 212, 245);
         border-radius: 10px;
       }
-      #pageNum {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-        background-color: slateblue;
-        padding: 20px;
-        color: #fff;
-        width: 20%;
-        border-radius: 10px;
+      .btn-light {
+        background-color: rgb(212, 212, 245) !important;
       }
-      label {
-        margin-bottom: 20px;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 0.8;
-        letter-spacing: 1px;
-      }
-      input {
-        width: 100px;
-        height: 30px;
-        text-align: center;
+      .btn-light:hover,
+      .btn-light:active,
+      .btn-light:visited {
+        background-color: rgb(195, 195, 225) !important;
+        border-color: #000;
       }
     </style>
     <script>
@@ -119,7 +124,9 @@
         <h3>Number of Pages Read Today</h3>
         <div id="counter-label">0</div>
         <div id="btn">
-          <button onclick="incrementClick()">Click</button>
+          <button onclick="incrementClick()" class="btn btn-light">
+            Click
+          </button>
         </div>
       </div>
     </div>
