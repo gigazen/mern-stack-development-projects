@@ -11,7 +11,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
       body {
-        background-color: bisque;
+        background-color: #000;
         font-family: "Poppins", sans-serif;
       }
       #mycontent {
@@ -20,6 +20,30 @@
         justify-content: center;
         align-items: center;
         height: 80vh;
+      }
+      #pageNum {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: slateblue;
+        padding: 20px;
+        color: #fff;
+        width: 20%;
+        border-radius: 10px;
+      }
+      label {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 0.8;
+        letter-spacing: 1px;
+      }
+      input {
+        width: 100px;
+        height: 30px;
+        text-align: center;
       }
       #container {
         display: flex;
@@ -37,7 +61,7 @@
         line-height: 1.2;
         text-align: center;
         font-size: 26px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 1px;
         margin-bottom: 30px;
       }
@@ -46,7 +70,7 @@
         width: 100px;
         height: 100px;
         font-size: 80px;
-        font-weight: 600;
+        font-weight: 700;
         color: #000;
         text-align: center;
         border-radius: 20px;
@@ -55,45 +79,57 @@
         align-items: center;
         justify-content: center;
       }
-      #btn {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-      }
-      button {
-        width: 140px;
-        height: 50px;
-        font-family: "comic sans ms", sans-serif;
-        letter-spacing: 2px;
-        font-weight: 800;
+
+      .btn:link,
+      .btn:visited {
+        text-decoration: none;
+        font-family: 'Comic Sans MS', sans-serif;
         font-size: 20px;
-        padding: 10px;
-        background-color: rgb(212, 212, 245);
-        border-radius: 10px;
-      }
-      #pageNum {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-        background-color: slateblue;
-        padding: 20px;
-        color: #fff;
-        width: 20%;
-        border-radius: 10px;
-      }
-      label {
-        margin-bottom: 20px;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 0.8;
+        font-weight: 700;
         letter-spacing: 1px;
+        padding: 10px 40px;
+        display: inline-block;
+        border-radius: 10px;
+        transition: all 0.2s;
+        position: relative;
       }
-      input {
-        width: 100px;
-        height: 30px;
-        text-align: center;
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-white {
+        color: #444;
+        background-color: rgb(238, 238, 250);
+        margin-top: 20px;
+      }
+
+      .btn::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+      }
+
+      .btn-white::after {
+        background-color: rgb(238, 238, 252);
+      }
+
+      .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
       }
     </style>
     <script>
@@ -118,8 +154,7 @@
       <div id="container">
         <h3>Number of Pages Read Today</h3>
         <div id="counter-label">0</div>
-        <div id="btn">
-          <button onclick="incrementClick()">Click</button>
+        <a href="#" class="btn btn-white" onclick="incrementClick()">Click</a>
         </div>
       </div>
     </div>
