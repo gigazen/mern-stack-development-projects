@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Example</title>
+    <style>
+      #layout {
+        color: #fff;
+        font-weight: 600;
+        display: grid;
+        grid-template-rows: [header-start] 100px [header-end content-start] 400px [footer-start] 100px;
+        grid-template-columns: [ads] 200px [main] minmax(300px, 600px) [links] 200px;
+
+        /* grid-template-areas:
+          "header header header"
+          "ads main links"
+          "footer footer footer"; */
+      }
+      #one {
+        /* grid-row-start: header-start; */
+        /* grid-row-end: header-end; */
+        /* grid-column-start: 1; */
+        /* grid-column-end: 4; */
+
+        /* grid-area: header; */
+
+        /* grid-area: 1 / 1 / 2 / 4; */
+
+        grid-area: 1 / 1 / 2 / span 3;
+      }
+      #two {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+      }
+      #four {
+        grid-row-start: 2;
+        grid-column-end: -1;
+      }
+      #five {
+        grid-row-start: 3;
+        grid-column: 1 / span 3;
+        /* grid-column-start: 1; */
+        /* grid-column-end: span 3; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="layout">
+      <div id="one" style="background-color: red">One</div>
+      <div id="two" style="background-color: orange">Two</div>
+      <div id="three" style="background-color: greenyellow">Three</div>
+      <div id="four" style="background-color: dodgerblue">Four</div>
+      <div id="five" style="background-color: purple">Five</div>
+    </div>
+  </body>
+</html>
