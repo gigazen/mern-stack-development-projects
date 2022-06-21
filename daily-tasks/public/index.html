@@ -1,59 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid Example</title>
+    <title>Implicit Grid</title>
     <style>
-      #layout {
+      body {
+        font-size: 90px;
         color: #fff;
-        font-weight: 600;
+      }
+      #littlegrid {
         display: grid;
-        grid-template-rows: [header-start] 100px [header-end content-start] 400px [footer-start] 100px;
-        grid-template-columns: [ads] 200px [main] minmax(300px, 600px) [links] 200px;
-
-        /* grid-template-areas:
-          "header header header"
-          "ads main links"
-          "footer footer footer"; */
+        grid-template-rows: 200px 200px;
+        grid-template-columns: 200px 200px;
+        grid-auto-rows: 100px;
+        grid-auto-columns: 100px;
       }
-      #one {
-        /* grid-row-start: header-start; */
-        /* grid-row-end: header-end; */
-        /* grid-column-start: 1; */
-        /* grid-column-end: 4; */
-
-        /* grid-area: header; */
-
-        /* grid-area: 1 / 1 / 2 / 4; */
-
-        grid-area: 1 / 1 / 2 / span 3;
+      #A {
+        background-color: deepskyblue;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
       }
-      #two {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-      }
-      #four {
-        grid-row-start: 2;
-        grid-column-end: -1;
-      }
-      #five {
-        grid-row-start: 3;
-        grid-column: 1 / span 3;
-        /* grid-column-start: 1; */
-        /* grid-column-end: span 3; */
+      #B {
+        background-color: tomato;
+        grid-row: 3 / 4;
+        grid-column: 5 / 6;
       }
     </style>
   </head>
-
   <body>
-    <div id="layout">
-      <div id="one" style="background-color: red">One</div>
-      <div id="two" style="background-color: orange">Two</div>
-      <div id="three" style="background-color: greenyellow">Three</div>
-      <div id="four" style="background-color: dodgerblue">Four</div>
-      <div id="five" style="background-color: purple">Five</div>
+    <div id="littlegrid">
+      <div id="A">A</div>
+      <div id="B">B</div>
     </div>
   </body>
 </html>
