@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Efforts Counter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+      body {
+        background-color: #000;
+        font-family: "Poppins", sans-serif;
+      }
+      #mycontent {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        gap: 20px;
+      }
+      #start {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: dodgerblue;
+        padding: 20px;
+        color: #fff;
+        width: 20%;
+        border-radius: 15px;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.673) inset;
+      }
+      label {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 0.8;
+        letter-spacing: 1px;
+      }
+      input {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+      }
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: deepskyblue;
+        padding: 20px;
+        color: #fff;
+        width: 20%;
+        border-radius: 15px;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.673) inset;
+      }
+      h3 {
+        line-height: 1.2;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+      #counter-label {
+        background-color: tomato;
+        width: 100px;
+        height: 100px;
+        font-size: 80px;
+        font-weight: 700;
+        color: #000;
+        text-align: center;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn:link,
+      .btn:visited {
+        text-decoration: none;
+        font-family: "Comic Sans MS", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 10px 40px;
+        display: inline-block;
+        border-radius: 10px;
+        transition: all 0.2s;
+        position: relative;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-white {
+        color: #444;
+        background-color: rgb(238, 238, 250);
+        margin-top: 20px;
+      }
+
+      .btn::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+      }
+
+      .btn-white::after {
+        background-color: rgb(238, 238, 252);
+      }
+
+      .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+      #target {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: purple;
+        padding: 20px;
+        color: #fff;
+        width: 20%;
+        border-radius: 15px;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.673) inset;
+      }
+    </style>
+    <script>
+      var counterVal = 0;
+
+      function incrementClick() {
+        updateDisplay(++counterVal);
+      }
+
+      function updateDisplay(val) {
+        document.getElementById("counter-label").innerHTML = val;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="mycontent">
+      <div id="start" class="form-group">
+        <label for="num1">Start Page</label>
+        <input type="number" name="num1" class="form-control" />
+      </div>
+
+      <div id="container">
+        <h3>Number of Pages Done Today</h3>
+        <div id="counter-label">0</div>
+        <a href="#" class="btn btn-white" onclick="incrementClick()">Click</a>
+      </div>
+
+      <div id="target" class="form-group">
+        <label for="num2">Target Page</label>
+        <input type="number" name="num2" class="form-control" />
+      </div>
+    </div>
+  </body>
+</html>
