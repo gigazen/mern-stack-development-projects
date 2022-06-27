@@ -7,37 +7,27 @@
     <title>Document</title>
     <style>
       .container {
-        width: 400px;
-        height: 200px;
         display: grid;
-        grid-template-areas:
+        grid-template-rows: [header-start] 100px [content-start] 400px [footer-start] 100px;
+        grid-template-columns: [ads] 200px [main] minmax(200px, 1fr) [links] 200px;
+        /* grid-template-areas:
           "header header header"
           "ads main links"
-          "footer footer footer";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+          "footer footer footer"; */
       }
       .box1 {
-        grid-area: header;
         background-color: deepskyblue;
       }
       .box2 {
-        grid-area: ads;
         background-color: lightcoral;
       }
       .box3 {
-        grid-area: main;
         background-color: gold;
       }
       .box4 {
-        grid-area: links;
         background-color: silver;
       }
       .box5 {
-        grid-area: footer;
         background-color: yellowgreen;
       }
     </style>
