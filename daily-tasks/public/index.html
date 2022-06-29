@@ -8,13 +8,9 @@
     <style>
       .container {
         display: grid;
-        grid-template-rows: [header-start] 100px [content-start] 400px [footer-start] 100px;
+        grid-template-rows: 50px 100px 50px;
         grid-template-columns: repeat(auto-fit, 100px 50px);
-        justify-content: space-around;
-        /* grid-template-areas:
-          "header header header"
-          "ads main links"
-          "footer footer footer"; */
+        justify-content: space-between;
       }
       .box1 {
         background-color: deepskyblue;
@@ -38,7 +34,7 @@
       <div class="box1">header</div>
       <div class="box2">ads</div>
       <div class="box3">main</div>
-      <div class="box4">links</div>
+      <div class="box4"></div>
       <div class="box5">footer</div>
     </div>
   </body>
