@@ -1,67 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
     <style>
-      .container {
+      @media screen and (orientation: landscape) {
+        body {
+          background-color: skyblue;
+        }
+      }
+      @media screen and (orientation: portrait) {
+        body {
+          background-color: coral;
+        }
+      }
+      body {
         text-align: center;
         display: grid;
-        font-size: 14px;
-        grid: 100px 100px / repeat(8, 100px);
-        gap: 20px 20px;
-      }
-      [class^="abox"] {
-        width: 20px;
-        height: 100%;
-        border: 2px solid black;
-      }
-      [class^="bbox"] {
-        width: 20px;
-        height: 100%;
-        border: 2px solid black;
-      }
-      .abox1 {
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        writing-mode: vertical-rl;
-      }
-      .abox2 {
-        grid-area: 1 / 2 / 2 / 3;
-        justify-self: end;
-        writing-mode: vertical-rl;
-      }
-      .abox3 {
-        grid-area: 1 / 3 / 2 / 4;
-        justify-self: center;
-        writing-mode: vertical-rl;
-      }
-      .abox4 {
-        grid-area: 1 / 4 / 2 / 5;
-        justify-self: self-start;
-        writing-mode: vertical-rl;
+        align-items: center;
+        height: 80vh;
+        background-image: linear-gradient(135deg, #f6d242 10%, #ff52e5 100%);
       }
     </style>
   </head>
-
   <body>
-    <div class="container">
-      <div class="abox1">Start</div>
-      <div class="abox2">End</div>
-      <div class="abox3">Center</div>
-      <div class="abox4">Self-Start</div>
-      <div class="abox5">Self-End</div>
-      <div class="abox6">Left</div>
-      <div class="abox7">Right</div>
-      <div class="box8">Stretch</div>
-
-      <div class="bbox9">Start</div>
-      <div class="bbox10">End</div>
-      <div class="bbox11">Center</div>
-      <div class="bbox12">Self-Start</div>
-      <div class="bbox13">Self-End</div>
-      <div class="bbox14">Left</div>
-      <div class="bbox15">Right</div>
-      <div class="bbox16">Stretch</div>
-    </div>
+    <h1>Hello!</h1>
   </body>
 </html>
