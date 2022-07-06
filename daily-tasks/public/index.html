@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Queries</title>
     <style>
-      @media screen and (orientation: landscape) {
-        body {
-          background-color: skyblue;
-        }
-      }
-      @media screen and (orientation: portrait) {
-        body {
-          background-color: coral;
-        }
-      }
       body {
         text-align: center;
         display: grid;
@@ -20,9 +13,19 @@
         height: 80vh;
         background-image: linear-gradient(135deg, #f6d242 10%, #ff52e5 100%);
       }
+      /* first design for the browsers that do not support @media */
+      h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      /* then design for increasingly larger screen sizes */
+      @media screen and (min-width: 40em) {
+        h1 {
+          font-family: "Lobster", cursive;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Hello!</h1>
+    <h1>Hello! This is Media Query</h1>
   </body>
 </html>
