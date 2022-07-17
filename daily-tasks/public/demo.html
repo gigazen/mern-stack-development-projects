@@ -6,19 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      body {
+        background-color: palegoldenrod;
+      }
       .container {
         display: flex;
+        font-family: "Roboto";
+        width: 400px;
+        border: 5px solid black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      [class^="box"] {
+        text-align: center;
+        min-width: 60px;
+        min-height: 80px;
+        font-size: 60px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .box1 {
+        background-color: red;
+      }
+      .box2 {
+        background-color: orange;
+      }
+      .box3 {
+        background-color: yellowgreen;
+      }
+      .box4 {
+        background-color: #be10be;
+      }
+      .box5 {
+        background-color: dodgerblue;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <div class="box box1">1</div>
-      <div class="box box2">2</div>
-      <div class="box box3">3</div>
-      <div class="box box4">4</div>
-      <div class="box box5">5</div>
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+      <div class="box4">4</div>
+      <div class="box5">5</div>
     </div>
   </body>
 </html>
