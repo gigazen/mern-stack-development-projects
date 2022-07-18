@@ -8,12 +8,15 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
       body {
-        background-color: palegoldenrod;
+        background-color: gold;
       }
       .container {
         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
         font-family: "Roboto";
         width: 400px;
+        height: 400px;
         border: 5px solid black;
         position: absolute;
         top: 50%;
@@ -21,26 +24,31 @@
         transform: translate(-50%, -50%);
       }
       [class^="box"] {
+        width: 25%;
+        padding: 5px;
         text-align: center;
-        min-width: 60px;
-        min-height: 80px;
         font-size: 60px;
         font-weight: 600;
         color: #fff;
       }
-      .box1 {
+      .box1,
+      .box8 {
         background-color: red;
       }
-      .box2 {
+      .box2,
+      .box6 {
         background-color: orange;
       }
-      .box3 {
+      .box3,
+      .box7 {
         background-color: yellowgreen;
       }
-      .box4 {
-        background-color: #be10be;
+      .box4,
+      .box10 {
+        background-color: #a98dff;
       }
-      .box5 {
+      .box5,
+      .box9 {
         background-color: dodgerblue;
       }
     </style>
@@ -53,6 +61,11 @@
       <div class="box3">3</div>
       <div class="box4">4</div>
       <div class="box5">5</div>
+      <div class="box6">6</div>
+      <div class="box7">7</div>
+      <div class="box8">8</div>
+      <div class="box9">9</div>
+      <div class="box10">10</div>
     </div>
   </body>
 </html>
