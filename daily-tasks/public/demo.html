@@ -32,32 +32,17 @@
         font-family: "Roboto", sans-serif;
       }
       .box {
-        flex: 0 1 auto;
+        flex: 1 1 auto;
         padding: 5px;
       }
-      #container1 > .box4 {
-        flex: initial;
-        /* flex: 0 1 auto; */
+      #container1 > .box2 {
+        order: 1;
       }
-      #container2 > .box4 {
-        flex: auto;
-        /* flex: 1 1 auto; */
+      #container1 > .box3 {
+        order: 1;
       }
-      #container3 > .box4 {
-        flex: none;
-        /* flex: 0 0 auto; */
-      }
-      #container4 > .box3 {
-        flex: 1;
-        /* flex: 1 1 0%; */
-      }
-      #container4 > .box4 {
-        flex: 2;
-        /* flex: 2 1 0%; */
-      }
-      #container4 > .box5 {
-        flex: 5;
-        /* flex: 5 1 0px; */
+      #container1 > .box5 {
+        order: -1;
       }
       .box1 {
         background-color: red;
@@ -79,27 +64,6 @@
   <body>
     <div id="object">
       <div id="container1">
-        <div class="box box1">1</div>
-        <div class="box box2">2</div>
-        <div class="box box3">3</div>
-        <div class="box box4">4</div>
-        <div class="box box5">5</div>
-      </div>
-      <div id="container2">
-        <div class="box box1">1</div>
-        <div class="box box2">2</div>
-        <div class="box box3">3</div>
-        <div class="box box4">4</div>
-        <div class="box box5">5</div>
-      </div>
-      <div id="container3">
-        <div class="box box1">1</div>
-        <div class="box box2">2</div>
-        <div class="box box3">3</div>
-        <div class="box box4">4</div>
-        <div class="box box5">5</div>
-      </div>
-      <div id="container4">
         <div class="box box1">1</div>
         <div class="box box2">2</div>
         <div class="box box3">3</div>
