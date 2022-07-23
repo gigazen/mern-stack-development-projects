@@ -1,286 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Black Goose Bakery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded"
-      rel="stylesheet"
-    />
-    <style>
-      @charset "UTF-8";
-      /* @import url(bakery-styles.css); */
-
-      html {
-        box-sizing: border-box;
-      }
-      * {
-        box-sizing: inherit;
-      }
-
-      body {
-        font-family: Georgia, serif;
-        font-size: 100%;
-        background-color: #b6e2fd;
-        margin: 0;
-      }
-
-      /* link styles */
-      a:link,
-      a:visited {
-        color: #dc6903;
-      }
-      a:focus,
-      a:hover,
-      a:active {
-        color: #f9ab33;
-      }
-
-      a {
-        text-decoration: none;
-        border-bottom: 1px dotted;
-        padding-bottom: 0.2em;
-      }
-
-      /* header styles */
-      header {
-        color: white;
-        background: url(images/croissants_banner.jpg) no-repeat center center;
-        background-size: cover;
-        text-align: center;
-        height: 15em;
-      }
-      header p {
-        font-style: italic;
-        font-size: 1.2em;
-        margin-top: -12px;
-      }
-      header h1 {
-        margin-top: 1.5em;
-      }
-
-      /* nav styles */
-      nav,
-      footer {
-        font-family: verdana, sans-serif;
-        background-color: #783f27;
-      }
-      nav ul li a:link,
-      nav ul li a:visited {
-        color: #f9ab33;
-      }
-      nav ul li a:focus,
-      nav ul li a:hover,
-      nav ul li a:active {
-        color: #fff;
-      }
-      nav ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-      }
-      nav ul li {
-        font-size: 0.8em;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-      }
-      nav ul li a {
-        display: block;
-        border: 1px solid;
-        border-radius: 0.5em;
-        padding: 0.5em 1em;
-        margin: 0.5em;
-      }
-
-      /* main "products" styles */
-      main {
-        font-family: "Stint Ultra Expanded", Georgia, serif;
-        background-color: white;
-        line-height: 1.8em;
-        color: #555;
-        padding: 1em;
-        border: double 4px #eaddc4;
-        border-radius: 25px;
-        margin: 2.5%;
-      }
-      h3 {
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: #7a0002;
-        border-top: 1px solid;
-        border-left: 3px solid;
-        padding-left: 1em;
-        margin-top: 2.5em;
-      }
-      p.more {
-        font-family: verdana, sans-serif;
-        text-transform: uppercase;
-        font-size: 0.8em;
-        clear: left;
-      }
-      main img {
-        float: left;
-        margin: 0 1em 1em 0;
-      }
-
-      img[src*="bread"] {
-        -webkit-shape-outside: ellipse(130px 95px at 50% 50%);
-        shape-outside: ellipse(130px 95px at 50% 50%);
-      }
-
-      img[src*="muffin"] {
-        margin-left: 50px;
-        -webkit-shape-outside: circle(125px);
-        shape-outside: circle(125px);
-        -webkit-shape-outside: polygon(
-          0px 0px,
-          197px 0px,
-          241px 31px,
-          241px 68px,
-          226px 82px,
-          219px 131px,
-          250px 142px,
-          250px 158px,
-          0px 158px
-        );
-        shape-outside: polygon(
-          0px 0px,
-          197px 0px,
-          241px 31px,
-          241px 68px,
-          226px 82px,
-          219px 131px,
-          250px 142px,
-          250px 158px,
-          0px 158px
-        );
-      }
-
-      /* aside "hours" styles */
-      aside {
-        background: url(images/scallop.png) repeat-y left top;
-        background-color: #f9efdc;
-        padding: 1em;
-        padding-left: 45px;
-        /* border-top-right-radius: 25px; */
-        /* margin: 1em 2.5% 0 10%; */
-      }
-      /* misc styles */
-      footer {
-        color: #eaddc4;
-        text-align: center;
-        font-size: 0.8em;
-        padding: 1em;
-      }
-      #award {
-        position: fixed;
-        top: 30px;
-        left: 50px;
-      }
-      h2 {
-        font-family: "Stint Ultra Expanded", Georgia, serif;
-      }
-      .day {
-        color: #783f27;
-        font-family: verdana, sans-serif;
-        font-size: 0.8em;
-        text-transform: uppercase;
-      }
-      /* Grid Style */
-      .container {
-        display: grid;
-        grid-template-rows: auto auto 5em;
-        grid-template-columns: minmax(25em, 1fr) 16em;
-        color: #f5d3d8;
-        grid-template-areas:
-          "banner banner"
-          "main hours"
-          "footer footer";
-      }
-      header {
-        grid-area: banner;
-      }
-      main {
-        grid-area: main;
-      }
-      aside {
-        grid-area: hours;
-      }
-      footer {
-        grid-area: footer;
-      }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Form Design</title>
   </head>
-
   <body>
-    <div class="container">
-      <header>
-        <nav>
-          <ul>
-            <li><a href="">Menu</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-        </nav>
-        <h1><img src="images/bgb_logo.png" alt="Black Goose Bakery" /></h1>
-        <p>
-          The delicious baked goods you love at Black Goose Bistro...now
-          available to go!
-        </p>
-      </header>
+    <form action="" method="POST">
+      <h2>Custom Sneaker Order Form</h2>
 
-      <main>
-        <h2>Fresh from the Oven</h2>
-        <h3>Breads</h3>
-        <p>
-          <img
-            src="images/bread.png"
-            alt="round loaf of bread on cutting board"
-          />
-          Our breads are made daily from highest-quality whole grain flour,
-          water, salt, and yeast or sourdough starter. Simply and naturally, and
-          never any preservatives. Patience is key to achieving the proper level
-          of fermentation and baking each loaf to perfection. Available in whole
-          grain, sourdough, olive loaf, classic rye, and potato-onion.
-        </p>
-        <p class="more">
-          <a href="">Learn more about our baking process...</a>
-        </p>
-
-        <h3>Muffins</h3>
-        <p>
-          <img src="images/muffin.png" alt="one chocolate chip muffin" /> Every
-          day, we offer a large selection of muffins, including blueberry,
-          multi-berry, bran, corn, lemon-poppyseed, and chocolate. Our muffins
-          are made from scratch each day. Stop by to see our seasonal muffin
-          flavors!
-        </p>
-        <p class="more">
-          <a href="">Learn more about how we make our muffins...</a>
-        </p>
-      </main>
-
-      <aside>
-        <h2>Hours</h2>
-        <p><span class="day">Monday:</span> 5am to 3pm</p>
-        <p><span class="day">Tuesday:</span> 5am to 3pm</p>
-        <p><span class="day">Wednesday:</span> 5am to 3pm</p>
-        <p><span class="day">Thursday:</span> 5am to 3pm</p>
-        <p><span class="day">Friday:</span> 5am to 3pm</p>
-        <p><span class="day">Saturday:</span> 6am to 4pm</p>
-        <p><span class="day">Sunday:</span> 6am to 4pm</p>
-      </aside>
-
-      <footer>
-        <p>All content copyright &copy; 2017, Black Goose Bistro.</p>
-        <div id="award">
-          <img src="images/award.png" alt="Farmers' Market Award" />
-        </div>
-      </footer>
-    </div>
+      <ul>
+        <li><label>Name: </label><input type="text" /></li>
+        <li><label>Email: </label><input type="mail" /></li>
+        <li><label>Telephone: </label><input type="tel" /></li>
+        <li>
+          <label>Tell us about yourself: </label
+          ><textarea
+            name=""
+            id=""
+            cols="22"
+            rows="2"
+            placeholder="No more than 600 characters long"
+          ></textarea>
+        </li>
+        <li>
+          <label>Size: </label
+          ><select name="" id="">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+          </select>
+          <span>Sizes reflect normal men's sizes</span>
+        </li>
+        <li>
+          <label>Sneaker Color: </label>
+          <fieldset>
+            <legend>Color</legend>
+            <ul>
+              <li><input type="radio" name="color" id="" />Red</li>
+              <li><input type="radio" name="color" id="" />Blue</li>
+              <li><input type="radio" name="color" id="" />Black</li>
+              <li><input type="radio" name="color" id="" />Silver</li>
+            </ul>
+          </fieldset>
+        </li>
+        <li>
+          <label for="">Add-on Features: </label>
+          <fieldset>
+            <legend>Feature</legend>
+            <ul>
+              <li><input type="checkbox" name="" id="" />Sparkley laces</li>
+              <li>
+                <input type="checkbox" name="" id="" checked />Metallic logo
+              </li>
+              <li><input type="checkbox" name="" id="" />Light-up heels</li>
+              <li><input type="checkbox" name="" id="" />MP3-enabled</li>
+            </ul>
+          </fieldset>
+        </li>
+        <li><button>ENTER</button></li>
+      </ul>
+    </form>
   </body>
 </html>
