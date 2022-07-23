@@ -15,61 +15,67 @@
       *:after {
         box-sizing: inherit;
       }
-      #object {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      [id^="container"] {
-        width: 400px;
-        border: 5px solid navy;
-        margin-bottom: 30px;
-        display: flex;
-        font-size: 50px;
+      #container {
         color: #fff;
-        text-align: center;
         font-family: "Roboto", sans-serif;
       }
-      .box {
-        flex: 1 1 auto;
+      header,
+      footer {
+        background-color: dodgerblue;
         padding: 5px;
       }
-      #container1 > .box2 {
-        order: 1;
+      main {
+        color: #000;
+        display: flex;
       }
-      #container1 > .box3 {
-        order: 1;
+      article {
+        background-color: bisque;
+        flex: 1 1 50%;
+        order: 2;
+        padding: 10px;
       }
-      #container1 > .box5 {
-        order: -1;
-      }
-      .box1 {
-        background-color: red;
-      }
-      .box2 {
+      #news {
         background-color: yellowgreen;
+        flex: 1 1 25%;
+        order: 1;
+        padding: 10px;
       }
-      .box3 {
-        background-color: orange;
-      }
-      .box4 {
-        background-color: turquoise;
-      }
-      .box5 {
-        background-color: #a98dff;
+      #contact {
+        background-color: lightcoral;
+        flex: 1 1 25%;
+        order: 3;
+        padding: 10px;
       }
     </style>
   </head>
   <body>
-    <div id="object">
-      <div id="container1">
-        <div class="box box1">1</div>
-        <div class="box box2">2</div>
-        <div class="box box3">3</div>
-        <div class="box box4">4</div>
-        <div class="box box5">5</div>
-      </div>
+    <div id="container">
+      <header><h2>The Heading</h2></header>
+      <main>
+        <article>
+          <h2>Today's Content</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ut
+            corrupti magnam vel quisquam cum? Quis sed necessitatibus quae
+            cupiditate rem explicabo incidunt quasi repellat hic, quos nostrum
+            ducimus recusandae eius voluptatem vel consectetur. Ratione culpa
+            incidunt voluptas. Doloribus vel eligendi eius id illum? Accusamus,
+            rem. Aliquam delectus dolore quos animi aut perspiciatis autem vero
+            saepe voluptate illo, quia laudantium iste a. Sequi accusamus
+            aspernatur perferendis quae optio minus omnis, laudantium
+            repudiandae molestias beatae excepturi temporibus repellat illo,
+            reiciendis voluptate soluta facilis, similique sit. Quidem, possimus
+            eum exercitationem voluptate optio excepturi officiis ducimus
+            distinctio veritatis suscipit, ipsum beatae quis ex culpa harum ea!
+            Odio dolore impedit amet accusantium nemo necessitatibus magnam
+            velit voluptatum vitae aliquam deleniti deserunt ex similique,
+            ratione, quaerat.
+          </p>
+        </article>
+        <aside id="news"><h2>News</h2></aside>
+        <aside id="contact"><h2>Contact</h2></aside>
+      </main>
+      <footer>All rights reserved</footer>
     </div>
   </body>
 </html>
