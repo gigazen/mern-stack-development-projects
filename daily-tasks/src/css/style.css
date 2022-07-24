@@ -1,0 +1,32 @@
+body {
+  background: dodgerblue;
+  font-family: Arial, Helvetica, sans-serif; }
+
+h1 {
+  color: dodgerblue;
+  font-size: 20px; }
+
+span {
+  color: dodgerblue; }
+
+#header {
+  background-color: #fff;
+  display: inline-block;
+  padding: 0 15px; }
+
+ul {
+  list-style: none;
+  display: flex; }
+
+a {
+  padding: 6px 12px;
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+  transition: 0.8s; }
+  a:hover {
+    color: orange;
+    font-size: 20px;
+    transition: 0.8s; }
+
+/*# sourceMappingURL=style.css.map */

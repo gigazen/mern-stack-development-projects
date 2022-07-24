@@ -5,28 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Form Design</title>
+    <style type="text/css">
+      html {
+        box-sizing: border-box;
+      }
+      *, *-before, *-after {
+        box-sizing: inherit;
+      }
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 100%;
+      }
+    </style>
   </head>
+
   <body>
     <form action="" method="POST">
       <h2>Custom Sneaker Order Form</h2>
 
       <ul>
-        <li><label>Name: </label><input type="text" /></li>
-        <li><label>Email: </label><input type="mail" /></li>
-        <li><label>Telephone: </label><input type="tel" /></li>
+        <li><label for="form-name">Name: </labelfor><input type="text" id="form-name" /></li>
+        <li><label for="form-email">Email: </label><input type="mail" id="form-email" /></li>
+        <li><label for="form-tel">Telephone: </label><input type="tel" id="form-tel" /></li>
+
         <li>
-          <label>Tell us about yourself: </label
+          <label for="form-story">Tell us about yourself: </label
           ><textarea
             name=""
-            id=""
-            cols="22"
-            rows="2"
+            id="form-story"
+            maxlength="600"
             placeholder="No more than 600 characters long"
           ></textarea>
         </li>
+
         <li>
-          <label>Size: </label
-          ><select name="" id="">
+          <label for="sizes">Size: </label
+          ><select name="" id="sizes">
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
@@ -37,35 +51,37 @@
             <option value="12">12</option>
             <option value="13">13</option>
           </select>
-          <span>Sizes reflect normal men's sizes</span>
+          <em>Sizes reflect normal men's sizes</em>
         </li>
+
         <li>
-          <label>Sneaker Color: </label>
-          <fieldset>
+          <label for="colors">Sneaker Color: </label>
+          <fieldset id="colors">
             <legend>Color</legend>
             <ul>
-              <li><input type="radio" name="color" id="" />Red</li>
-              <li><input type="radio" name="color" id="" />Blue</li>
-              <li><input type="radio" name="color" id="" />Black</li>
-              <li><input type="radio" name="color" id="" />Silver</li>
+              <li><input type="radio" name="color" value="red" />Red</li>
+              <li><input type="radio" name="color" value="blue" />Blue</li>
+              <li><input type="radio" name="color" value="black" />Black</li>
+              <li><input type="radio" name="color" value="silver" />Silver</li>
             </ul>
           </fieldset>
         </li>
+
         <li>
-          <label for="">Add-on Features: </label>
-          <fieldset>
+          <label for="features">Add-on Features: </label>
+          <fieldset id="features">
             <legend>Feature</legend>
             <ul>
-              <li><input type="checkbox" name="" id="" />Sparkley laces</li>
+              <li><input type="checkbox" name="feature" value="laces" />Sparkley laces</li>
               <li>
-                <input type="checkbox" name="" id="" checked />Metallic logo
+                <input type="checkbox" name="feature" value="logo" checked />Metallic logo
               </li>
-              <li><input type="checkbox" name="" id="" />Light-up heels</li>
-              <li><input type="checkbox" name="" id="" />MP3-enabled</li>
+              <li><input type="checkbox" name="feature" value="heels" />Light-up heels</li>
+              <li><input type="checkbox" name="feature" value="mp3" />MP3-enabled</li>
             </ul>
           </fieldset>
         </li>
-        <li><button>ENTER</button></li>
+        <li class="buttons"><input type="submit" value="ENTER"></li>
       </ul>
     </form>
   </body>
