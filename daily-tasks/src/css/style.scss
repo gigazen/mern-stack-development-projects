@@ -3,6 +3,14 @@ body {
     background: $primary-color;
     font-family: Arial, Helvetica, sans-serif;
 }
+#container {
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 h1 {
     color: $primary-color;
     font-size: 20px;
@@ -12,13 +20,115 @@ span {
 }
 #header {
     background-color: #fff;
-    display: inline-block;
-    padding: 0 15px;
+    padding: 1px 10px;
+    text-align: center;
 }
 ul {
     list-style: none;
     display: flex;
+    border: 2px solid white;
+    padding: 10px;
+    justify-content: space-between
 }
-@import "links"
+@import "links";
 
+#content {
+    display: flex;
+    height: 80%;
+}
+
+#sidebar {
+    background-color: skyblue;
+    padding: 20px;
+    width: 800px;
+}
+
+#ads {
+    background-color: gold;
+    @extend #sidebar;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin bd-radius($rad) {
+    -webkit-border-radius: $rad;
+    -moz-border-radius: $rad;
+    border-radius: $rad;
+}
+@mixin box-shadow($top: 10px, $left: 10px, $blur: 10px, $color: burlywood) {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+}
+#article1 {
+    background-color: lightpink;
+    width: 50%;
+    padding: 15px;
+    align-self: center;
+    @include bd-radius(5px);
+    @include box-shadow(10px, 10px, 10px, rgb(255, 234, 0));
+}
+#article2 {
+    background-color: khaki;
+    @include bd-radius(20px);
+    @include box-shadow(-10px, 10px, 10px, magenta);
+    @extend #article1;
+}
+%article-style {  // invisible placeholder (for reusable code)
+    width: 50%;
+    padding: 15px;
+    align-self: center;
+}
+#article3 {
+    background-color: yellowgreen;
+    @include bd-radius(20px);
+    @include box-shadow();
+    @extend %article-style;
+}
+
+#equality-relational-boolean-operators {
+    padding: 10px == 10px;       // : true
+    padding: 10px == 10em;       // : false
+    padding: 10px != 20px;       // : true
+    padding: 'arial' == arial;   // : true
+    padding: (5px 7px 10px) == (5px 7px 10px);   // : true 
+    padding: (6px 7px 10px)==(5px 7px 10px);     // : false
+
+    padding: 100px > 30px;       // : true
+    padding: 1000ms <= 1s;       // : true
+    padding: 1000ms >= 2s;       // : false
+    // padding: 1000px <= 1s;    // : error, different units, cannot convert scss to css 
+
+    padding: arial == 'arial' and 10px == 10;  // : true 
+    padding: arial == 'arial' and 10px == 20;  // : false 
+    padding: arial == 'arial' or 10px == 20;  // : true 
+    padding: not 10 == 10px;     // : false 
+    padding: not 10 != 10px;     // : true 
+}
+
+$var1: 10;
+$var2: 2;
+
+#concatenation-arithmetic-operators {
+    padding: $var1 + $var2 + px;   // : 12px, addition betn numbers, concatenation betn str-str, num-str
+    padding: $var1 - $var2 + px;   // : 8px
+    padding: $var1 * $var2 + px;   // : 20px
+    padding: $var1 / $var2 + px;   // : 5px
+    padding: $var1 % $var2 + px;   // : 0px
+}
+
+// interpolation 
+@mixin margin($position, $amount){
+    margin-#{$position}: $amount + px;
+}
+#sidebar {
+    @include margin(left, 10);
+}
+#ads {
+    @include margin(right, 10);
+}
 

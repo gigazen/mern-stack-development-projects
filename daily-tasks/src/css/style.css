@@ -2,6 +2,14 @@ body {
   background: dodgerblue;
   font-family: Arial, Helvetica, sans-serif; }
 
+#container {
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 h1 {
   color: dodgerblue;
   font-size: 20px; }
@@ -11,12 +19,15 @@ span {
 
 #header {
   background-color: #fff;
-  display: inline-block;
-  padding: 0 15px; }
+  padding: 1px 10px;
+  text-align: center; }
 
 ul {
   list-style: none;
-  display: flex; }
+  display: flex;
+  border: 2px solid white;
+  padding: 10px;
+  justify-content: space-between; }
 
 a {
   padding: 6px 12px;
@@ -28,5 +39,86 @@ a {
     color: orange;
     font-size: 20px;
     transition: 0.8s; }
+
+#content {
+  display: flex;
+  height: 80%; }
+
+#sidebar, #ads {
+  background-color: skyblue;
+  padding: 20px;
+  width: 800px; }
+
+#ads {
+  background-color: gold; }
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+#article1, #article2 {
+  background-color: lightpink;
+  width: 50%;
+  padding: 15px;
+  align-self: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 10px #ffea00;
+  -moz-box-shadow: 10px 10px 10px #ffea00;
+  box-shadow: 10px 10px 10px #ffea00; }
+
+#article2 {
+  background-color: khaki;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: -10px 10px 10px magenta;
+  -moz-box-shadow: -10px 10px 10px magenta;
+  box-shadow: -10px 10px 10px magenta; }
+
+#article3 {
+  width: 50%;
+  padding: 15px;
+  align-self: center; }
+
+#article3 {
+  background-color: yellowgreen;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 10px burlywood;
+  -moz-box-shadow: 10px 10px 10px burlywood;
+  box-shadow: 10px 10px 10px burlywood; }
+
+#equality-relational-boolean-operators {
+  padding: true;
+  padding: false;
+  padding: true;
+  padding: true;
+  padding: true;
+  padding: false;
+  padding: true;
+  padding: true;
+  padding: false;
+  padding: true;
+  padding: false;
+  padding: true;
+  padding: false;
+  padding: true; }
+
+#concatenation-arithmetic-operators {
+  padding: 12px;
+  padding: 8px;
+  padding: 20px;
+  padding: 5px;
+  padding: 0px; }
+
+#sidebar, #ads {
+  margin-left: 10px; }
+
+#ads {
+  margin-right: 10px; }
 
 /*# sourceMappingURL=style.css.map */
