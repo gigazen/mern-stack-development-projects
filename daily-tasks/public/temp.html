@@ -29,7 +29,7 @@
         color: rgba(0, 0, 0, 0.4);
       }
       ul {
-        list-style: none;
+        list-style-type: none;
         margin: 0;
         padding: 0;
       }
@@ -47,6 +47,7 @@
         padding: 1em;
         background-color: #f2f5d5;
       }
+      /* each li has label and input field, so making li element flex and wrap, will wrap the label and input field one above another when space is less */
       li {
         display: flex;
         flex-wrap: wrap;
@@ -62,8 +63,60 @@
       fieldset {
         flex: 1 1 20em;
       }
+      #features label,
+      #colors label {
+        flex: 1 1 auto;
+        color: #000;
+      }
       #colors ul {
         display: flex;
+        flex-wrap: wrap;
+      }
+      /* modifying the form input, bootstrap style */
+      input.textinput {
+        height: 2em;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        padding-left: 6px;
+        font-family: inherit;
+        font-size: 0.875em;
+      }
+      textarea {
+        display: block;
+        height: 5em;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        padding-left: 6px;
+        font-family: inherit;
+        font-size: 0.875em;
+        line-height: 1.25;
+        overflow: auto;
+        resize: none;
+      }
+      select {
+        width: 6em;
+        font-size: inherit;
+        margin-right: 10px;
+      }
+      input[type="submit"] {
+        width: 10em;
+        height: 2em;
+        background: white;
+        border: 1px solid #04699d;
+        border-radius: 4px;
+        font-size: inherit;
+        flex: 0 1 8em;
+        margin: 0 auto;
+      }
+      fieldset {
+        padding: 0;
+        border: none;
+      }
+      legend {
+        /* hide the legend, but it will still be read by screenreaders 
+	      for each checkbox/button option for acccessibility */
+        /* there is also a label that displays for each fieldset, so make sure the label and legend are different as not to have the same term read twice */
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
       }
     </style>
   </head>
@@ -75,15 +128,15 @@
       <ul>
         <li>
           <label for="form-name">Name: </label
-          ><input type="text" id="form-name" />
+          ><input type="text" id="form-name" class="textinput" />
         </li>
         <li>
           <label for="form-email">Email: </label
-          ><input type="mail" id="form-email" />
+          ><input type="mail" id="form-email" class="textinput" />
         </li>
         <li>
           <label for="form-tel">Telephone: </label
-          ><input type="tel" id="form-tel" />
+          ><input type="tel" id="form-tel" class="textinput" />
         </li>
 
         <li>
@@ -116,11 +169,28 @@
           <label for="colors">Sneaker Color: </label>
           <fieldset id="colors">
             <legend>Color</legend>
+            <!-- always put radio/checkbox input tag and choice name inside enclosing label tag of a list item, li > label > radio input -->
             <ul>
-              <li><input type="radio" name="color" value="red" />Red</li>
-              <li><input type="radio" name="color" value="blue" />Blue</li>
-              <li><input type="radio" name="color" value="black" />Black</li>
-              <li><input type="radio" name="color" value="silver" />Silver</li>
+              <li>
+                <label>
+                  <input type="radio" name="color" value="red" />Red
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="color" value="blue" />Blue
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="color" value="black" />Black
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="color" value="silver" />Silver
+                </label>
+              </li>
             </ul>
           </fieldset>
         </li>
@@ -129,25 +199,38 @@
           <label for="features">Add-on Features: </label>
           <fieldset id="features">
             <legend>Feature</legend>
+            <!-- always put radio/checkbox input tag and choice name inside enclosing label tag of a list item, li > label > checkbox input -->
             <ul>
               <li>
-                <input type="checkbox" name="feature" value="laces" />Sparkley
-                laces
+                <label>
+                  <input type="checkbox" name="feature" value="laces" />Sparkley
+                  laces
+                </label>
               </li>
               <li>
-                <input
-                  type="checkbox"
-                  name="feature"
-                  value="logo"
-                  checked
-                />Metallic logo
+                <label>
+                  <input
+                    type="checkbox"
+                    name="feature"
+                    value="logo"
+                    checked
+                  />Metallic logo
+                </label>
               </li>
               <li>
-                <input type="checkbox" name="feature" value="heels" />Light-up
-                heels
+                <label>
+                  <input type="checkbox" name="feature" value="heels" />Light-up
+                  heels
+                </label>
               </li>
               <li>
-                <input type="checkbox" name="feature" value="mp3" />MP3-enabled
+                <label>
+                  <input
+                    type="checkbox"
+                    name="feature"
+                    value="mp3"
+                  />MP3-enabled
+                </label>
               </li>
             </ul>
           </fieldset>
