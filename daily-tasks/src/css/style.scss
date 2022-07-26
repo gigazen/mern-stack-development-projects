@@ -121,14 +121,94 @@ $var2: 2;
     padding: $var1 % $var2 + px;   // : 0px
 }
 
-// interpolation 
+
+// interpolation for variable in property name and css selector name
 @mixin margin($position, $amount){
-    margin-#{$position}: $amount + px;
+    margin-#{$position}: $amount + px;  // cannot use margin-$position: $amount + px 
 }
 #sidebar {
     @include margin(left, 10);
 }
 #ads {
     @include margin(right, 10);
+}
+
+@mixin set-icon($name){
+    .icon-#{$name}{
+        background-image: url("/icons/#{$name}.png");
+    }
+}
+@include set-icon(duck);    // .icon-duck {background-image: url("/icons/duck.png");}
+
+
+// function returns value, mixin cannot 
+$container-width: 1200;
+
+@function half($width){
+    @return $width/2 + px;
+}
+@function one-third($width){
+    @return $width/3 + px;
+}
+@function one-fourth($width){
+    @return $width/4 + px;
+}
+
+.half-width {
+    width: half($container-width);          // width: 600px;
+}
+.one-third-width{
+    width: one-third($container-width);     // width: 400px;
+}
+.one-fourth-width{
+    width: one-fourth($container-width);    // width: 300px;
+}
+
+
+// in-built function types : numbers, strings, colors, lists, selectors, introspection
+// number related functions
+.testNumber {
+    margin: abs(-10)+px;        // margin: 10px;
+    margin: ceil(4.2)+px;       // margin: 5px;
+    margin: ceil(9.0)+px;       // margin: 9px;
+    margin: floor(3.8)+px;      // margin: 3px;
+    margin: round(7.5)+px;      // margin: 8px;
+    margin: round(7.45)+px;     // margin: 7px;
+    margin: max(1px, 3px, 5px); // margin: 5px;
+    margin: min(1px, 3px, 5px); // margin: 1px;
+    margin: percentage(0.2);    // margin: 20%;
+    margin: percentage(100px / 40px);   // margin: 250%;
+
+    margin: comparable(1px, 5px);   // margin: true;
+    margin: comparable(1px, 5em);   // margin: false;
+    margin: comparable(1cm, 12mm);  // margin: true;
+    margin: random();           // margin: 0.9123877233; margin: 0.8456866765;
+    margin: random(100);        // margin: 62; margin: 100;
+    margin: unit(100em);        // margin: "em";
+    margin: unit(100%*2px);     // margin: "%*px";
+    margin: unitless(100px);    // margin: false; 
+    margin: unitless(100);      // margin: true;
+}
+
+// string related functions
+.testString {
+    font-family: quote(Arial);       // font-family: "Arial";
+    font-family: unquote("20");      // font-family: 20;
+    font-family: to-upper-case('Arial'); // font-family: "ARIAL"
+    font-family: to-upper-case(Arial);   // font-familyn: Arial
+    font-family: to-lower-case(Arial);   // font-family: arial;
+    font-family: str-length("Helvetica Neue"); // font-family: 14;
+    
+    font-family: str-index("Helvetica Neue", "Neue");   // font-family: 11;
+    font-family: str-insert("Helvetica Neue", "Mono", 3);  // font-family: "HeMonolvetica Neue";
+    font-family: str-slice("Helvetica Neue", 3);    // font-family: "lvetica Neue";
+    font-family: str-slice("Helvetica Neue", 3, 10);   // font-family: "lvetica "; 
+    font-family: str-slice("Helvetica Neue", 3, -7);   // font-family: "lvetic"; 
+    font-family: unique-id();       // font-family: ugt968z6h or uhc5p42t2; 9 char id 
+}
+
+// color related functions
+.testColor {
+    margin: 10;
 }
 

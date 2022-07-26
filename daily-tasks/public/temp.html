@@ -9,12 +9,61 @@
       html {
         box-sizing: border-box;
       }
-      *, *-before, *-after {
+      *,
+      *-before,
+      *-after {
         box-sizing: inherit;
       }
       body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 100%;
+        margin: 2em 10%;
+        line-height: 1;
+      }
+      h2 {
+        font-size: 1.2em;
+        margin: 0 0 1.5em 0;
+      }
+      em {
+        font-size: 0.8em;
+        color: rgba(0, 0, 0, 0.4);
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 1em;
+      }
+      #colors ul li,
+      #features ul li {
+        margin-bottom: 0;
+      }
+      form {
+        max-width: 40em;
+        border: 1px solid #666;
+        border-radius: 10px;
+        padding: 1em;
+        background-color: #f2f5d5;
+      }
+      li {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      label {
+        flex: 0 0 8em;
+        margin-right: 1em;
+        margin-bottom: 4px;
+        color: #04699d;
+      }
+      input,
+      textarea,
+      fieldset {
+        flex: 1 1 20em;
+      }
+      #colors ul {
+        display: flex;
       }
     </style>
   </head>
@@ -24,9 +73,18 @@
       <h2>Custom Sneaker Order Form</h2>
 
       <ul>
-        <li><label for="form-name">Name: </labelfor><input type="text" id="form-name" /></li>
-        <li><label for="form-email">Email: </label><input type="mail" id="form-email" /></li>
-        <li><label for="form-tel">Telephone: </label><input type="tel" id="form-tel" /></li>
+        <li>
+          <label for="form-name">Name: </label
+          ><input type="text" id="form-name" />
+        </li>
+        <li>
+          <label for="form-email">Email: </label
+          ><input type="mail" id="form-email" />
+        </li>
+        <li>
+          <label for="form-tel">Telephone: </label
+          ><input type="tel" id="form-tel" />
+        </li>
 
         <li>
           <label for="form-story">Tell us about yourself: </label
@@ -72,16 +130,29 @@
           <fieldset id="features">
             <legend>Feature</legend>
             <ul>
-              <li><input type="checkbox" name="feature" value="laces" />Sparkley laces</li>
               <li>
-                <input type="checkbox" name="feature" value="logo" checked />Metallic logo
+                <input type="checkbox" name="feature" value="laces" />Sparkley
+                laces
               </li>
-              <li><input type="checkbox" name="feature" value="heels" />Light-up heels</li>
-              <li><input type="checkbox" name="feature" value="mp3" />MP3-enabled</li>
+              <li>
+                <input
+                  type="checkbox"
+                  name="feature"
+                  value="logo"
+                  checked
+                />Metallic logo
+              </li>
+              <li>
+                <input type="checkbox" name="feature" value="heels" />Light-up
+                heels
+              </li>
+              <li>
+                <input type="checkbox" name="feature" value="mp3" />MP3-enabled
+              </li>
             </ul>
           </fieldset>
         </li>
-        <li class="buttons"><input type="submit" value="ENTER"></li>
+        <li class="buttons"><input type="submit" value="ENTER" /></li>
       </ul>
     </form>
   </body>

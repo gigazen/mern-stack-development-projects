@@ -121,4 +121,54 @@ a {
 #ads {
   margin-right: 10px; }
 
+.icon-duck {
+  background-image: url("/icons/duck.png"); }
+
+.half-width {
+  width: 600px; }
+
+.one-third-width {
+  width: 400px; }
+
+.one-fourth-width {
+  width: 300px; }
+
+.testNumber {
+  margin: 10px;
+  margin: 5px;
+  margin: 9px;
+  margin: 3px;
+  margin: 8px;
+  margin: 7px;
+  margin: 5px;
+  margin: 1px;
+  margin: 20%;
+  margin: 250%;
+  margin: true;
+  margin: false;
+  margin: true;
+  margin: 0.8933844494;
+  margin: 77;
+  margin: "em";
+  margin: "%*px";
+  margin: false;
+  margin: true; }
+
+.testString {
+  font-family: "Arial";
+  font-family: 20;
+  font-family: "ARIAL";
+  font-family: ARIAL;
+  font-family: arial;
+  font-family: 14;
+  font-family: 11;
+  font-family: "HeMonolvetica Neue";
+  font-family: "lvetica Neue";
+  font-family: "lvetica ";
+  font-family: "lvetic";
+  font-family: un5pnbtnv; }
+
+.testColor {
+  margin: 10; }
+
 /*# sourceMappingURL=style.css.map */
