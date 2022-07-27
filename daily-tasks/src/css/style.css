@@ -58,7 +58,7 @@ a {
   justify-content: space-between; }
 
 #article1, #article2 {
-  background-color: lightpink;
+  background-color: khaki;
   width: 50%;
   padding: 15px;
   align-self: center;
@@ -70,7 +70,7 @@ a {
   box-shadow: 10px 10px 10px #ffea00; }
 
 #article2 {
-  background-color: khaki;
+  background-color: lightpink;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -99,9 +99,11 @@ a {
   padding: true;
   padding: true;
   padding: false;
+  padding: '----------';
   padding: true;
   padding: true;
   padding: false;
+  padding: '----------';
   padding: true;
   padding: false;
   padding: true;
@@ -144,11 +146,12 @@ a {
   margin: 1px;
   margin: 20%;
   margin: 250%;
+  margin: '----------';
   margin: true;
   margin: false;
   margin: true;
-  margin: 0.8933844494;
-  margin: 77;
+  margin: 0.4552424235;
+  margin: 33;
   margin: "em";
   margin: "%*px";
   margin: false;
@@ -161,14 +164,58 @@ a {
   font-family: ARIAL;
   font-family: arial;
   font-family: 14;
+  font-family: '----------';
   font-family: 11;
   font-family: "HeMonolvetica Neue";
   font-family: "lvetica Neue";
   font-family: "lvetica ";
   font-family: "lvetic";
-  font-family: un5pnbtnv; }
+  font-family: ulvstu1zg; }
 
-.testColor {
-  margin: 10; }
+#article2 {
+  background-color: pink; }
+
+#article2:hover {
+  background-color: #ff274d; }
+
+#article2:active {
+  background-color: white; }
+
+#article3:hover {
+  background-color: #66cd32; }
+
+#article3:active {
+  background-color: #abff00;
+  background-color: #848d72;
+  background-color: #4d6799;
+  background-color: rgba(154, 205, 50, 0.2); }
+
+.test {
+  padding: 3px;
+  padding: 3;
+  padding: 3;
+  padding: 2;
+  padding: 20px;
+  padding: 30px;
+  padding: 10, 20, 30px;
+  padding: 10px 20px 4em;
+  padding: 10px 20px 30px;
+  padding: Roboto, Arial, Verdana;
+  padding: 2;
+  padding: 3;
+  padding: '----------';
+  padding: 10px 20px 30px 10 20 30px;
+  padding: 1, 2, 3, 4, 5, 6;
+  padding: 1 2 3 4 5 6;
+  padding: 1, 2, 3, 4, 5, 6;
+  padding: 1, 2, 3, 4, 5, 6;
+  padding: space;
+  padding: comma;
+  padding: 10px 20px 30px 70px 80px;
+  padding: 10px, 20px, 30px, 70px 80px;
+  padding: 10 20 30px 70px 80px;
+  padding: 10px 10, 20px 20, 30px 30px;
+  padding: red 10px, green 15px, blue 5px;
+  padding: false; }
 
 /*# sourceMappingURL=style.css.map */

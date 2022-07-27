@@ -65,7 +65,7 @@ ul {
     box-shadow: $top $left $blur $color;
 }
 #article1 {
-    background-color: lightpink;
+    background-color: khaki;
     width: 50%;
     padding: 15px;
     align-self: center;
@@ -73,7 +73,7 @@ ul {
     @include box-shadow(10px, 10px, 10px, rgb(255, 234, 0));
 }
 #article2 {
-    background-color: khaki;
+    background-color: lightpink;
     @include bd-radius(20px);
     @include box-shadow(-10px, 10px, 10px, magenta);
     @extend #article1;
@@ -91,34 +91,36 @@ ul {
 }
 
 #equality-relational-boolean-operators {
-    padding: 10px == 10px;       // : true
-    padding: 10px == 10em;       // : false
-    padding: 10px != 20px;       // : true
-    padding: 'arial' == arial;   // : true
+    padding: 10px == 10px;       // true
+    padding: 10px == 10em;       // false
+    padding: 10px != 20px;       // true
+    padding: 'arial' == arial;   // true
     padding: (5px 7px 10px) == (5px 7px 10px);   // : true 
     padding: (6px 7px 10px)==(5px 7px 10px);     // : false
+    padding: '----------';
 
-    padding: 100px > 30px;       // : true
-    padding: 1000ms <= 1s;       // : true
-    padding: 1000ms >= 2s;       // : false
-    // padding: 1000px <= 1s;    // : error, different units, cannot convert scss to css 
+    padding: 100px > 30px;       // true
+    padding: 1000ms <= 1s;       // true
+    padding: 1000ms >= 2s;       // false
+    // padding: 1000px <= 1s;    // error, different units, cannot convert scss to css 
+    padding: '----------';
 
-    padding: arial == 'arial' and 10px == 10;  // : true 
-    padding: arial == 'arial' and 10px == 20;  // : false 
-    padding: arial == 'arial' or 10px == 20;  // : true 
-    padding: not 10 == 10px;     // : false 
-    padding: not 10 != 10px;     // : true 
+    padding: arial == 'arial' and 10px == 10;  // true 
+    padding: arial == 'arial' and 10px == 20;  // false 
+    padding: arial == 'arial' or 10px == 20;  // true 
+    padding: not 10 == 10px;     // false 
+    padding: not 10 != 10px;     // true 
 }
 
 $var1: 10;
 $var2: 2;
 
 #concatenation-arithmetic-operators {
-    padding: $var1 + $var2 + px;   // : 12px, addition betn numbers, concatenation betn str-str, num-str
-    padding: $var1 - $var2 + px;   // : 8px
-    padding: $var1 * $var2 + px;   // : 20px
-    padding: $var1 / $var2 + px;   // : 5px
-    padding: $var1 % $var2 + px;   // : 0px
+    padding: $var1 + $var2 + px;   // 12px, addition betn numbers, concatenation betn str-str, num-str
+    padding: $var1 - $var2 + px;   // 8px
+    padding: $var1 * $var2 + px;   // 20px
+    padding: $var1 / $var2 + px;   // 5px
+    padding: $var1 % $var2 + px;   // 0px
 }
 
 
@@ -168,47 +170,112 @@ $container-width: 1200;
 // in-built function types : numbers, strings, colors, lists, selectors, introspection
 // number related functions
 .testNumber {
-    margin: abs(-10)+px;        // margin: 10px;
-    margin: ceil(4.2)+px;       // margin: 5px;
-    margin: ceil(9.0)+px;       // margin: 9px;
-    margin: floor(3.8)+px;      // margin: 3px;
-    margin: round(7.5)+px;      // margin: 8px;
-    margin: round(7.45)+px;     // margin: 7px;
-    margin: max(1px, 3px, 5px); // margin: 5px;
-    margin: min(1px, 3px, 5px); // margin: 1px;
-    margin: percentage(0.2);    // margin: 20%;
-    margin: percentage(100px / 40px);   // margin: 250%;
+    margin: abs(-10)+px;        // 10px;
+    margin: ceil(4.2)+px;       // 5px;
+    margin: ceil(9.0)+px;       // 9px;
+    margin: floor(3.8)+px;      // 3px;
+    margin: round(7.5)+px;      // 8px;
+    margin: round(7.45)+px;     // 7px;
+    margin: max(1px, 3px, 5px); // 5px;
+    margin: min(1px, 3px, 5px); // 1px;
+    margin: percentage(0.2);    // 20%;
+    margin: percentage(100px / 40px);   // 250%;
+    margin: '----------';
 
-    margin: comparable(1px, 5px);   // margin: true;
-    margin: comparable(1px, 5em);   // margin: false;
-    margin: comparable(1cm, 12mm);  // margin: true;
-    margin: random();           // margin: 0.9123877233; margin: 0.8456866765;
-    margin: random(100);        // margin: 62; margin: 100;
-    margin: unit(100em);        // margin: "em";
-    margin: unit(100%*2px);     // margin: "%*px";
-    margin: unitless(100px);    // margin: false; 
-    margin: unitless(100);      // margin: true;
+    margin: comparable(1px, 5px);   // true;
+    margin: comparable(1px, 5em);   // false;
+    margin: comparable(1cm, 12mm);  // true;
+    margin: random();           // 0.9123877233; 0.8456866765;
+    margin: random(100);        // 62; 100;
+    margin: unit(100em);        // "em";
+    margin: unit(100%*2px);     // "%*px";
+    margin: unitless(100px);    // false; 
+    margin: unitless(100);      // true;
 }
 
 // string related functions
 .testString {
-    font-family: quote(Arial);       // font-family: "Arial";
-    font-family: unquote("20");      // font-family: 20;
-    font-family: to-upper-case('Arial'); // font-family: "ARIAL"
-    font-family: to-upper-case(Arial);   // font-familyn: Arial
-    font-family: to-lower-case(Arial);   // font-family: arial;
-    font-family: str-length("Helvetica Neue"); // font-family: 14;
+    font-family: quote(Arial);       // "Arial";
+    font-family: unquote("20");      // 20;
+    font-family: to-upper-case('Arial'); // "ARIAL"
+    font-family: to-upper-case(Arial);   // ARIAL
+    font-family: to-lower-case(Arial);   // arial;
+    font-family: str-length("Helvetica Neue"); // 14;
+    font-family: '----------';
     
-    font-family: str-index("Helvetica Neue", "Neue");   // font-family: 11;
-    font-family: str-insert("Helvetica Neue", "Mono", 3);  // font-family: "HeMonolvetica Neue";
-    font-family: str-slice("Helvetica Neue", 3);    // font-family: "lvetica Neue";
-    font-family: str-slice("Helvetica Neue", 3, 10);   // font-family: "lvetica "; 
-    font-family: str-slice("Helvetica Neue", 3, -7);   // font-family: "lvetic"; 
-    font-family: unique-id();       // font-family: ugt968z6h or uhc5p42t2; 9 char id 
+    font-family: str-index("Helvetica Neue", "Neue");   // 11;
+    font-family: str-insert("Helvetica Neue", "Mono", 3);  // "HeMonolvetica Neue";
+    font-family: str-slice("Helvetica Neue", 3);    // "lvetica Neue";
+    font-family: str-slice("Helvetica Neue", 3, 10);   // "lvetica "; 
+    font-family: str-slice("Helvetica Neue", 3, -7);   // "lvetic"; 
+    font-family: unique-id();       // ugt968z6h or uhc5p42t2; 9 char id 
 }
 
-// color related functions
-.testColor {
-    margin: 10;
+// color related functions 
+$base-color: pink;
+
+#article2 {
+    background-color: $base-color;
 }
+#article2:hover {
+    background-color: darken($base-color, 30);  // background-color: #ff274d;
+}
+#article2:active {
+    background-color: lighten($base-color, 30);   // background-color: white;
+}
+
+$base-color: yellowgreen;
+
+#article3:hover {
+    background-color: adjust-hue($base-color, 20)   // background-color: #66cd32;
+}
+
+#article3:active {
+    background-color: saturate($base-color, 50);    // background-color: #abff00;
+    background-color: desaturate($base-color, 50);  // background-color: #848d72;
+    background-color: mix($base-color, blue, 50); // background-color: #4d6799;
+    background-color: transparentize($base-color, 0.8); // background-color: rgba(154, 205, 50, 0.2);
+}
+
+
+// list related functions 
+$list1 : 10px 20px 30px;
+$list2 : 10, 20, 30px;
+$list3 : (10, 20, 30);
+
+.test {
+    padding: length($list1)+px;     // 3px;
+    padding: length($list2);        // 3;
+    padding: length($list3);        // 3;
+    padding: length((width: 20px, height: 10px)); // 2;
+    padding: nth($list1, 2);        // 20px;
+    padding: nth($list2, -1);       // 30px;
+    padding: nth((list1 $list2 list3), -2);  // 10, 20, 30px; 
+    padding: set-nth($list1, 3, 4em);   // 10px 20px 4em;
+    padding: $list1;                // 10px 20px 30px; not changed at origin 
+    padding: set-nth((Helvetica, Arial, Verdana), 1, Roboto);   // padding: Roboto, Arial, Verdana;
+    padding: index($list1, 20px);   // 2
+    padding: index($list2, 30);     // 3
+    padding: index($list3, 50);     // nothing printed 
+    padding: '----------';
+
+    padding: join($list1, $list2);  // 10px 20px 30px 10 20 30px;
+    padding: join((1, 2, 3), (4 5 6));  // 1, 2, 3, 4, 5, 6;
+    padding: join((1, 2, 3), (4 5 6), space);   // 1 2 3 4 5 6;
+    padding: join((1, 2, 3), (4 5 6), auto);    // 1, 2, 3, 4, 5, 6;
+    padding: join((1, 2, 3), (4 5 6), comma);   // 1, 2, 3, 4, 5, 6;
+    padding: list-separator($list1);    // space;
+    padding: list-separator($list2);    // comma;
+    padding: append($list1, 70px 80px);      // 10px 20px 30px 70px 80px;
+    padding: append($list1, 70px 80px, comma);  // 10px, 20px, 30px, 70px 80px;  appended values are treated as one
+    padding: append((10, 20, 30px), 70px 80px, space);  // 10 20 30px 70px 80px
+    padding: zip($list1, $list2);   // 10px 10, 20px 20, 30px 30px;
+    padding: zip(red green blue, 10px 15px 5px);    // red 10px, green 15px, blue 5px;
+    padding: is-bracketed($list3);  // false;
+    // padding: is-bracketed([10px 20px 30]);  // true;
+}
+
+// selectors related functions 
+
+
 
