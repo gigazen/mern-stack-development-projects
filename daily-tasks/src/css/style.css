@@ -150,8 +150,8 @@ a {
   margin: true;
   margin: false;
   margin: true;
-  margin: 0.4552424235;
-  margin: 33;
+  margin: 0.5610174035;
+  margin: 52;
   margin: "em";
   margin: "%*px";
   margin: false;
@@ -170,7 +170,7 @@ a {
   font-family: "lvetica Neue";
   font-family: "lvetica ";
   font-family: "lvetic";
-  font-family: ulvstu1zg; }
+  font-family: up0sjrv3n; }
 
 #article2 {
   background-color: pink; }
@@ -217,5 +217,129 @@ a {
   padding: 10px 10, 20px 20, 30px 30px;
   padding: red 10px, green 15px, blue 5px;
   padding: false; }
+
+ul li {
+  overflow: auto; }
+
+.abc p, .xyz p {
+  overflow: auto; }
+
+.abc_copy {
+  overflow: auto; }
+
+.abc_copy, .abc_image {
+  overflow: auto; }
+
+.abc:hover {
+  overflow: auto; }
+
+a.active {
+  overflow: auto; }
+
+.abc_copy {
+  overflow: auto; }
+
+.abc_copy, .abc_image {
+  overflow: auto; }
+
+a.link {
+  overflow: auto; }
+
+a.abc {
+  overflow: auto; }
+
+.abc .xyz {
+  overflow: auto; }
+
+.abc .xyz li, .xyz .abc li {
+  overflow: auto; }
+
+true {
+  overflow: auto; }
+
+false {
+  overflow: auto; }
+
+a, .abc {
+  overflow: auto; }
+
+a.active {
+  overflow: auto; }
+
+a.active.disable {
+  overflow: auto; }
+
+.active main a, main .active a {
+  overflow: auto; }
+
+.test {
+  font-weight: 500;
+  font-weight: "regular", "medium", "bold";
+  font-weight: 400, 500, 700;
+  font-weight: "regular", "medium", "bold", "lightest", "light";
+  font-weight: 400, 500, 700, 100, 300;
+  font-weight: "medium", "bold";
+  font-weight: true;
+  font-weight: false;
+  font-weight: "medium" 500; }
+
+.test {
+  padding: true;
+  padding: true;
+  padding: false;
+  padding: true;
+  padding: false;
+  padding: true;
+  padding: true;
+  padding: true;
+  padding: '-------';
+  padding: string;
+  padding: list;
+  padding: map; }
+
+.abc {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-style: dashed;
+  padding: 5px; }
+
+.block {
+  color: green; }
+
+#menu .block {
+  color: coral; }
+
+.button {
+  border: 1px solid black; }
+  .button:hover {
+    border-width: 2px; }
+
+body {
+  background: deepskyblue; }
+
+@media screen and (max-width: 1300px) {
+  body {
+    background: red; } }
+@media screen and (max-width: 1000px) {
+  body {
+    background: skyblue; } }
+@media screen and (max-width: 700px) {
+  body {
+    background: gold; } }
+/* ----------------------------- */
+body {
+  background: deepskyblue; }
+
+@media screen and (max-width: 1300px) {
+  body {
+    background: red; } }
+@media screen and (max-width: 1000px) {
+  body {
+    background: skyblue; } }
+@media screen and (max-width: 700px) {
+  body {
+    background: gold; } }
+/* ----------------------------- */
 
 /*# sourceMappingURL=style.css.map */
