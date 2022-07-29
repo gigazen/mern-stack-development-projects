@@ -44,7 +44,7 @@ a {
   display: flex;
   height: 80%; }
 
-#sidebar, #ads {
+#sidebar {
   background-color: skyblue;
   padding: 20px;
   width: 800px; }
@@ -99,11 +99,11 @@ a {
   padding: true;
   padding: true;
   padding: false;
-  padding: '----------';
+  padding: "----------";
   padding: true;
   padding: true;
   padding: false;
-  padding: '----------';
+  padding: "----------";
   padding: true;
   padding: false;
   padding: true;
@@ -117,7 +117,7 @@ a {
   padding: 5px;
   padding: 0px; }
 
-#sidebar, #ads {
+#sidebar {
   margin-left: 10px; }
 
 #ads {
@@ -146,12 +146,12 @@ a {
   margin: 1px;
   margin: 20%;
   margin: 250%;
-  margin: '----------';
+  margin: "----------";
   margin: true;
   margin: false;
   margin: true;
-  margin: 0.5610174035;
-  margin: 52;
+  margin: 0.6997461766;
+  margin: 19;
   margin: "em";
   margin: "%*px";
   margin: false;
@@ -164,13 +164,13 @@ a {
   font-family: ARIAL;
   font-family: arial;
   font-family: 14;
-  font-family: '----------';
+  font-family: "----------";
   font-family: 11;
   font-family: "HeMonolvetica Neue";
   font-family: "lvetica Neue";
   font-family: "lvetica ";
   font-family: "lvetic";
-  font-family: up0sjrv3n; }
+  font-family: ujif10j6r; }
 
 #article2 {
   background-color: pink; }
@@ -203,7 +203,7 @@ a {
   padding: Roboto, Arial, Verdana;
   padding: 2;
   padding: 3;
-  padding: '----------';
+  padding: "----------";
   padding: 10px 20px 30px 10 20 30px;
   padding: 1, 2, 3, 4, 5, 6;
   padding: 1 2 3 4 5 6;
@@ -292,11 +292,12 @@ a.active.disable {
   padding: true;
   padding: true;
   padding: true;
-  padding: '-------';
+  padding: "-------";
   padding: string;
   padding: list;
   padding: map; }
 
+/* ----------------------------- */
 .abc {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -340,6 +341,106 @@ body {
 @media screen and (max-width: 700px) {
   body {
     background: gold; } }
+/* ----------------------------- */
+.container {
+  width: 1100px;
+  margin: 0px auto; }
+
+@media screen and (max-width: 1150px) {
+  .container {
+    width: 900px; } }
+@media screen and (max-width: 950px) {
+  .container {
+    width: 700px; } }
+/* ----------------------------- */
+.container {
+  width: 1100px;
+  margin: 0px auto; }
+  @media screen and (max-width: 1150px) {
+    .container {
+      width: 900px; } }
+  @media screen and (max-width: 950px) {
+    .container {
+      width: 700px; } }
+
+/* ----------------------------- */
+.item {
+  color: red; }
+  .item .item-wrapper {
+    color: green; }
+    .item .item-wrapper img {
+      width: 100%; }
+  .item .item-child {
+    background: pink; }
+
+/* ----------------------------- */
+.item {
+  color: red; }
+  .item-wrapper {
+    color: green; }
+    .item-wrapper img {
+      width: 100%; }
+  .item .item-child {
+    background: pink; }
+
+@media print {
+  .item {
+    color: red; } }
+/* ----------------------------- */
+@media print {
+  .container {
+    font-size: 12px;
+    color: green; } }
+  .container {
+    font-size: 15px;
+    color: black; }
+
+/* ----------------------------- */
+p {
+  color: red;
+  font-size: 20px; }
+
+p {
+  color: blue;
+  font-size: 20px; }
+
+p {
+  color: aquamarine;
+  font-size: 12px; }
+
+p {
+  color: green; }
+
+.test1 {
+  font-size: 20px;
+  color: green; }
+
+.test2 {
+  font-size: 100px;
+  color: cornflowerblue; }
+
+#ads {
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  margin: 25px;
+  width: 600px;
+  font-family: Arial, Helvetica, sans-serif; }
+  #ads p {
+    font-size: 20px;
+    color: #fff; }
+
+#sidebar {
+  background-color: lightgray;
+  color: #000;
+  padding: 20px;
+  margin: 25px;
+  width: 600px;
+  font-family: Arial, Helvetica, sans-serif; }
+  #sidebar p {
+    font-size: 20px;
+    color: #000; }
+
 /* ----------------------------- */
 
 /*# sourceMappingURL=style.css.map */
