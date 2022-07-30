@@ -150,8 +150,8 @@ a {
   margin: true;
   margin: false;
   margin: true;
-  margin: 0.6997461766;
-  margin: 19;
+  margin: 0.1660725012;
+  margin: 65;
   margin: "em";
   margin: "%*px";
   margin: false;
@@ -170,7 +170,7 @@ a {
   font-family: "lvetica Neue";
   font-family: "lvetica ";
   font-family: "lvetic";
-  font-family: ujif10j6r; }
+  font-family: uosnnm242; }
 
 #article2 {
   background-color: pink; }
@@ -440,6 +440,87 @@ p {
   #sidebar p {
     font-size: 20px;
     color: #000; }
+
+/* ----------------------------- */
+.list-1 {
+  width: 200px;
+  background-color: #ff5a77;
+  color: #404040;
+  padding: 9px; }
+
+.list-2 {
+  width: 400px;
+  background-color: #f3002a;
+  color: gray;
+  padding: 9px; }
+
+.list-3 {
+  width: 600px;
+  background-color: #8d0019;
+  color: #bfbfbf;
+  padding: 9px; }
+
+.list-4 {
+  width: 800px;
+  background-color: #270007;
+  color: white;
+  padding: 9px; }
+
+/* ----------------------------- */
+.normal {
+  font-weight: normal; }
+
+.bold {
+  font-weight: bold; }
+
+.italic {
+  font-weight: italic; }
+
+.test {
+  font-weight: normal; }
+
+.test {
+  font-weight: bold; }
+
+.test {
+  font-weight: italic; }
+
+.normal {
+  font-style: bold;
+  font-size: 10px; }
+
+.emphasis {
+  font-style: italic;
+  font-size: 15px; }
+
+.normal {
+  font-weight: normal;
+  font-size: 12px; }
+
+.bold {
+  font-weight: bold;
+  font-size: 13px; }
+
+.italic {
+  font-weight: italic;
+  font-size: 14px; }
+
+/* ----------------------------- */
+.pd-10 {
+  padding-left: 10px;
+  font-size: 10px; }
+
+.pd-20 {
+  padding-left: 20px;
+  font-size: 12px; }
+
+.pd-30 {
+  padding-left: 30px;
+  font-size: 14px; }
+
+.pd-40 {
+  padding-left: 40px;
+  font-size: 16px; }
 
 /* ----------------------------- */
 

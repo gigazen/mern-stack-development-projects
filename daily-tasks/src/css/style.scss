@@ -831,10 +831,139 @@ p {
 
 /* ----------------------------- */
 
-// @for loop 
+// @for loop directive
+// @for <var> from <start> through <end>{statement} runs from <start> to <end>
+// @for <var> from <start> to <end>{statement} runs from <start> to <end-1>
+@for $i from 1 through 4 {
+  // cannot use .list-$i, have to use interpolation for variable selector names
+  .list-#{$i} {
+    width: 200px * $i;
+    background-color: darken(pink, $i * 20%);
+    color: lighten(#000, $i * 25%);
+    padding: 9px;
+  }
+}
+// .list-1 {
+//   width: 200px;
+//   background-color: #ff5a77;
+//   color: #404040;
+//   padding: 9px;}
+// .list-2 {
+//   width: 400px;
+//   background-color: #f3002a;
+//   color: gray;
+//   padding: 9px;}
+// .list-3 {
+//   width: 600px;
+//   background-color: #8d0019;
+//   color: #bfbfbf;
+//   padding: 9px;}
+// .list-4 {
+//   width: 800px;
+//   background-color: #270007;
+//   color: white;
+//   padding: 9px;}
+
+/* ----------------------------- */
+
+// @each directive 
+// @each <var> in <list or map> {} runs for each item in list or each key-value in map. To pick the items/key-value pairs of list/map, in place of <var> we can use multiple variables in similar style 
+// @each with simple list, list can also be non-bracketed i.e. just normal, bold, italic 
+@each $i in (normal, bold, italic){ 
+  .#{$i}{
+    font-weight: $i;
+  }
+}
+// .normal{
+//   font-weight: normal;}
+// .bold{
+//   font-weight: bold;}
+// .italic{
+//   font-weight: italic;}
 
 
+$list: normal, bold, italic;
 
+@each $i in $list{
+  .test{
+    font-weight: $i;
+  }
+}
+// .test {
+//   font-weight: normal;}
+// .test {
+//   font-weight: bold;}
+// .test {
+//   font-weight: italic;}
+
+
+// @each with multiple assignments from a multi-dimensional list 
+$multi-list: ((normal, bold, 10px), (emphasis, italic, 15px));
+
+@each $name, $style, $size in $multi-list {
+  .#{$name}{
+    font-style: $style;
+    font-size: $size;
+  }
+}
+// .normal{
+//   font-style: bold;
+//   font-size: 10px;}
+// .emphasis{
+//   font-style: italic;
+//   font-size: 15px;}
+
+
+// @each with multiple assignments from a map 
+$map:(normal: 12px, bold: 13px, italic: 14px);
+
+@each $key, $value in $map{
+  .#{$key}{
+    font-weight: $key;
+    font-size: $value;
+  }
+}
+// .normal {
+//   font-weight: normal;
+//   font-size: 12px;}
+// .bold {
+//   font-weight: bold;
+//   font-size: 13px;}
+// .italic {
+//   font-weight: italic;
+//   font-size: 14px;}
+
+/* ----------------------------- */
+
+// @while directive
+// @while loop runs based on condition, @for loop runs based on given number range, @each loop runs based on for each item in given list/map 
+// @while loop runs until a condition is true and we must increment or decrement the variable value used in condition otherwise won't get any css output, no chance of overflowing 
+$i: 10;
+$font-size: 10;
+
+@while $i <= 40{
+  .pd-#{$i}{
+    padding-left: 1px * $i;
+    font-size: $font-size + px;
+  }
+  $i: $i + 10;
+  $font-size: $font-size + 2;
+}
+
+// .pd-10 {
+//   padding-left: 10px;
+//   font-size: 10px;}
+// .pd-20 {
+//   padding-left: 20px;
+//   font-size: 12px;}
+// .pd-30 {
+//   padding-left: 30px;
+//   font-size: 14px;}
+// .pd-40 {
+//   padding-left: 40px;
+//   font-size: 16px;}
+
+/* ----------------------------- */
 
 
 
