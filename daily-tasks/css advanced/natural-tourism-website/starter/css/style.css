@@ -14,6 +14,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 10px;
 }
 *, *-before, *-after {
     box-sizing: inherit;
@@ -22,10 +23,10 @@ html {
 body {
     font-family: "lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
 }
 
 /* heading background image setting */
@@ -43,12 +44,12 @@ body {
 
 .logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 /* heading text */
@@ -65,14 +66,14 @@ body {
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary__main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 32px;
+    letter-spacing: 3.2rem;
     animation-name: moveToRight;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -80,9 +81,9 @@ body {
 
 .heading-primary__sub {
     display: block;
-    font-size: 25px;
+    font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 16.5px;
+    letter-spacing: 1.65rem;
     animation: moveToLeft 1s ease-out;
 }
 
@@ -91,41 +92,41 @@ body {
 @keyframes moveToRight {
     0% {
         opacity: 0; 
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
     80% {
         opacity: 0.5; 
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
     100% {
         opacity: 1; 
-        transform: translate(0px);
+        transform: translate(0rem);
     }
 }
 
 @keyframes moveToLeft {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
     80% {
         opacity: 0.5;
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
     100% {
         opacity: 1;
-        transform: translate(0px);
+        transform: translate(0rem);
     }
 }
 
 @keyframes moveToTop {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
     100% {
         opacity: 1;
-        transform: translate(0px);
+        transform: translate(0rem);
     }
 }
 
@@ -134,21 +135,21 @@ body {
 .btn:link, .btn:visited {
     text-decoration: none;
     text-transform: uppercase;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -183,16 +184,12 @@ body {
     animation-fill-mode: backwards;
 }
 
-.parent {
-    font-size: 20px;
-    line-height: 150%;
-    border: 2px solid red;
-}
 
-.child {
-    font-size: 25px;
-    border: 2px solid black;
-}
+
+
+
+
+
 
 
 
