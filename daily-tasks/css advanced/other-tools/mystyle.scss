@@ -1,0 +1,98 @@
+// SCSS Demo for $variable, @mixin, @include, @function, @return, %placeholder-code, @extend, nesting, without space nesting using &, darken(color, %), lighten(color, %)
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+$color-primary: gold;
+$color-secondary: darkorange;
+$color-tertiary: lime;
+$color-text-dark: #333; // darkgray
+$color-text-light: #eee;
+
+$width-button: 150px;
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@function divide($a, $b) {
+  @return $a / $b;
+}
+
+nav {
+  margin: divide(60, 2) * 1px;
+  background-color: $color-primary;
+  @include clearfix;
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    a:link {
+      @include style-link-text($color-text-dark);
+    }
+  }
+}
+
+.buttons {
+  float: right;
+}
+
+%btn-placeholder {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  width: $width-button;
+  border-radius: 100px;
+  @include style-link-text($color-text-light);
+}
+
+.btn-main {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $color-secondary;
+  }
+
+  &:hover {
+    background-color: darken($color-secondary, 5);
+  }
+}
+
+.btn-hot {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $color-tertiary;
+  }
+
+  &:hover {
+    background-color: lighten($color-tertiary, 20);
+  }
+}
