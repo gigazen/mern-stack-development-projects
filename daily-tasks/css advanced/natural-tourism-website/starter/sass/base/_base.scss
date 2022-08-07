@@ -1,0 +1,16 @@
+/* basic reset using universal selector */
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // this defines 1rem which is the basis of our design, that's why it is inside _base, not in _typography
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
