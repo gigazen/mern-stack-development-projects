@@ -66,7 +66,7 @@ body {
 
 /* line 10, ../sass/base/_typography.scss */
 .heading-primary {
-  color: #ffd;
+  color: red;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -120,11 +120,11 @@ body {
 /* line 32, ../sass/components/button.scss */
 .btn--white {
   color: #777;
-  background-color: #ffd;
+  background-color: red;
 }
 /* line 36, ../sass/components/button.scss */
 .btn--white::after {
-  background-color: #ffd;
+  background-color: red;
 }
 /* line 41, ../sass/components/button.scss */
 .btn::after {
@@ -156,7 +156,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* heading text */
 }
-/* line 16, ../sass/layout/_header.scss */
+/* line 18, ../sass/layout/_header.scss */
 .header__text-box {
   position: absolute;
   top: 40%;
@@ -166,14 +166,14 @@ body {
 }
 
 /* logo */
-/* line 27, ../sass/layout/_header.scss */
+/* line 29, ../sass/layout/_header.scss */
 .logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-/* line 33, ../sass/layout/_header.scss */
+/* line 35, ../sass/layout/_header.scss */
 .logo {
   height: 3.5rem;
 }
