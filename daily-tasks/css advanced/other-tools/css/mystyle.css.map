@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,IAAK;EACD,SAAS,EALA,KAAK;EAMd,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,MAAM;EAEd,qBAAmB;IACf,aAAa,EATH,IAAI",
+"sources": ["../sass/grid.scss"],
+"names": [],
+"file": "mystyle.css"
+}

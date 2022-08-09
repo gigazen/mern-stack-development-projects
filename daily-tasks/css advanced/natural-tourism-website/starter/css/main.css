@@ -66,7 +66,7 @@ body {
 
 /* line 10, ../sass/base/_typography.scss */
 .heading-primary {
-  color: red;
+  color: #ffd;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -91,7 +91,7 @@ body {
 }
 
 /* button of heading */
-/* line 5, ../sass/components/button.scss */
+/* line 5, ../sass/components/_button.scss */
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -102,31 +102,31 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
-/* line 17, ../sass/components/button.scss */
+/* line 17, ../sass/components/_button.scss */
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
-/* line 21, ../sass/components/button.scss */
+/* line 21, ../sass/components/_button.scss */
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-/* line 27, ../sass/components/button.scss */
+/* line 27, ../sass/components/_button.scss */
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-/* line 32, ../sass/components/button.scss */
+/* line 32, ../sass/components/_button.scss */
 .btn--white {
   color: #777;
-  background-color: red;
+  background-color: #ffd;
 }
-/* line 36, ../sass/components/button.scss */
+/* line 36, ../sass/components/_button.scss */
 .btn--white::after {
-  background-color: red;
+  background-color: #ffd;
 }
-/* line 41, ../sass/components/button.scss */
+/* line 41, ../sass/components/_button.scss */
 .btn::after {
   content: "";
   display: inline-block;
@@ -139,7 +139,7 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-/* line 54, ../sass/components/button.scss */
+/* line 54, ../sass/components/_button.scss */
 .btn--animated {
   animation: moveToTop 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
