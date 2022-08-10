@@ -4,11 +4,13 @@
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 5rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
   .row .col-1-of-2 {
     width: calc((100% - 4rem) / 2);
     background-color: orangered;
     float: left; }
     .row .col-1-of-2:not(:last-child) {
       margin-right: 4rem; }
-
-/*# sourceMappingURL=grid.css.map */

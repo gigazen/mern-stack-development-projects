@@ -1,0 +1,85 @@
+@import "variables";
+@import "mixins";
+
+.row {
+  max-width: $grid-width;
+  background-color: #eee;
+  margin: 0 auto;
+
+  // .row:not(:last-child){} means all except .row:last-child {}
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix; // .row::after {}
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+
+    // center the text vertically and horizontally
+    line-height: 3rem; // make line-height same as height
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - #{$gutter-horizontal} * 2) / 3);
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      100% - #{$gutter-horizontal} - calc((100% - #{$gutter-horizontal} * 2) / 3)
+    );
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - #{$gutter-horizontal} * 3) / 4);
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-2-of-4 {
+    width: calc(100% - #{$gutter-horizontal} * 2 - calc((100% - #{$gutter-horizontal} * 3) / 4) * 2);
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+  
+  .col-3-of-4 {
+    width: calc(100% - #{gutter-horizontal} - calc((100% - #{$gutter-horizontal} * 3) / 4));
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+}
