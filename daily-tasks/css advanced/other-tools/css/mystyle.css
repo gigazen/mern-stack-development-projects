@@ -8,53 +8,25 @@
     content: "";
     display: table;
     clear: both; }
+  .row [class^="col"] {
+    background-color: orangered;
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center; }
+    .row [class^="col"]:not(:last-child) {
+      margin-right: 4rem; }
   .row .col-1-of-2 {
-    width: calc((100% - 4rem) / 2);
-    background-color: orangered;
-    float: left;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center; }
-    .row .col-1-of-2:not(:last-child) {
-      margin-right: 4rem; }
+    width: calc((100% - 4rem) / 2); }
   .row .col-1-of-3 {
-    width: calc((100% - 4rem * 2) / 3);
-    background-color: orangered;
-    float: left;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center; }
-    .row .col-1-of-3:not(:last-child) {
-      margin-right: 4rem; }
-  .row .col-2-of-3 {
-    width: calc( 100% - 4rem - calc((100% - 4rem * 2) / 3) );
-    background-color: orangered;
-    float: left;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center; }
+    width: calc((100% - 4rem * 2) / 3); }
   .row .col-1-of-4 {
-    width: calc((100% - 4rem * 3) / 4);
-    background-color: orangered;
-    float: left;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center; }
-    .row .col-1-of-4:not(:last-child) {
-      margin-right: 4rem; }
+    width: calc((100% - 4rem * 3) / 4); }
+  .row .col-2-of-3 {
+    width: calc(2 * (100% - 4rem * 2) / 3 + 4rem); }
   .row .col-2-of-4 {
-    width: calc(100% - 4rem * 2 - calc((100% - 4rem * 3) / 4) * 2);
-    background-color: orangered;
-    float: left;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center; }
+    width: calc(2 * (100% - 4rem * 3) / 4 + 4rem); }
   .row .col-3-of-4 {
-    width: calc(100% - gutter-horizontal - calc((100% - 4rem * 3) / 4));
-    background-color: orangered;
-    float: left;
-    height: 3rem;
-    line-height: 3rem;
-    text-align: center; }
+    width: calc(3 * (100% - 4rem * 3) / 4 + 2 * 4rem); }
 
 /*# sourceMappingURL=mystyle.css.map */

@@ -1,9 +1,5 @@
-@import "variables";
-@import "mixins";
-
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto;
 
   // .row:not(:last-child){} means all except .row:last-child {}
@@ -14,13 +10,8 @@
   @include clearfix; // .row::after {}
 
   [class^="col"] {
-    background-color: orangered;
     float: left;
     height: 3rem;
-
-    // center the text vertically and horizontally
-    line-height: 3rem; // make line-height same as height
-    text-align: center;
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
