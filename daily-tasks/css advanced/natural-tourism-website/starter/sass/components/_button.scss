@@ -1,4 +1,4 @@
-/* button of heading */
+// button of heading
 
 .btn {
 
@@ -11,7 +11,7 @@
         border-radius: 10rem;
         transition: all 0.2s;
         position: relative;
-        font-size: 1.6rem;
+        font-size: $default-font-size;
     }
 
     &:hover {
@@ -56,3 +56,37 @@
         animation-fill-mode: backwards;
     }
 }
+
+// small button
+.btn-text {
+    &:link, &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;   // helps to give padding around the text, also width   
+        text-decoration: none;   // delete default underline  
+        border-bottom: 1px solid $color-primary; // but create custom underline
+        padding: 3px;   // so that distance between text and padding can be controlled 
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);  // moves the button up 
+    }
+    &:active {
+        // upon clicking, shorten the vertical shadow and make the shadow darker, less blur
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);  
+        transform: translate(0);      // brings the button back to initial position 
+    }
+}
+
+
+
+
+
+
+
+
+
+
