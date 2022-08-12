@@ -1,5 +1,4 @@
-/* heading background image setting */
-
+// HEADING BACKGROUND IMAGE SETTING 
 .header {
   height: 95vh;
   background-image: linear-gradient(
@@ -13,8 +12,7 @@
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-  /* heading text */
-
+  // HEADING TEXT 
   &__text-box {
     position: absolute;
     top: 40%;
@@ -24,8 +22,7 @@
   }
 }
 
-/* logo */
-
+// LOGO 
 .logo-box {
   position: absolute;
   top: 4rem;
