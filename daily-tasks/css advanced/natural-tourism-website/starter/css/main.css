@@ -258,14 +258,39 @@ body {
   transform: scale(0.95);
 }
 
+/* line 1, ../sass/components/_feature-box.scss */
+.feature-box {
+  background-color: rgba(255, 255, 221, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s;
+}
+/* line 10, ../sass/components/_feature-box.scss */
+.feature-box__icon {
+  font-size: 6rem;
+  margin-bottom: .5rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+/* line 19, ../sass/components/_feature-box.scss */
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
 /* line 1, ../sass/layout/_grid.scss */
 .row {
-  max-width: 100rem;
+  max-width: 114rem;
   margin: 0 auto;
 }
 /* line 6, ../sass/layout/_grid.scss */
 .row:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
 }
 /* line 2, ../sass/abstracts/_mixins.scss */
 .row::after {
@@ -276,33 +301,32 @@ body {
 /* line 12, ../sass/layout/_grid.scss */
 .row [class^="col"] {
   float: left;
-  height: 3rem;
 }
-/* line 16, ../sass/layout/_grid.scss */
+/* line 15, ../sass/layout/_grid.scss */
 .row [class^="col"]:not(:last-child) {
   margin-right: 6rem;
 }
-/* line 21, ../sass/layout/_grid.scss */
+/* line 20, ../sass/layout/_grid.scss */
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
 }
-/* line 24, ../sass/layout/_grid.scss */
+/* line 23, ../sass/layout/_grid.scss */
 .row .col-1-of-3 {
   width: calc((100% - 6rem * 2) / 3);
 }
-/* line 27, ../sass/layout/_grid.scss */
+/* line 26, ../sass/layout/_grid.scss */
 .row .col-1-of-4 {
   width: calc((100% - 6rem * 3) / 4);
 }
-/* line 30, ../sass/layout/_grid.scss */
+/* line 29, ../sass/layout/_grid.scss */
 .row .col-2-of-3 {
   width: calc(2 * (100% - 6rem * 2) / 3 + 6rem);
 }
-/* line 33, ../sass/layout/_grid.scss */
+/* line 32, ../sass/layout/_grid.scss */
 .row .col-2-of-4 {
   width: calc(2 * (100% - 6rem * 3) / 4 + 6rem);
 }
-/* line 36, ../sass/layout/_grid.scss */
+/* line 35, ../sass/layout/_grid.scss */
 .row .col-3-of-4 {
   width: calc(3 * (100% - 6rem * 3) / 4 + 2 * 6rem);
 }
@@ -349,6 +373,12 @@ body {
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
   background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+}
+/* line 19, ../sass/pages/_home.scss */
+.section-features > * {
+  transform: skewY(7deg);
 }
 
 /*# sourceMappingURL=main.css.map */

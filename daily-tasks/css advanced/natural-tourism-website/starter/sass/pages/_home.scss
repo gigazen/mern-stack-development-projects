@@ -1,11 +1,23 @@
 .section-about {
-    background-color: $color-grey-light-1;
-    padding: 25rem 0;
-    margin-top: -20vh;
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
 }
 
 .section-features {
-    padding: 20rem 0;
-    background-image: linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)), url(../../img/nat-4.jpg);
-    background-size: cover;
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../../img/nat-4.jpg);
+  background-size: cover;
+  // works to replace clip-path property for background
+  transform: skewY(-7deg);
+  // .section-features .row {}, selects all direct child of feature section, unskews the feature boxes
+  & > * {
+    transform: skewY(7deg);
+  }
+  margin-top: -10rem;
 }
