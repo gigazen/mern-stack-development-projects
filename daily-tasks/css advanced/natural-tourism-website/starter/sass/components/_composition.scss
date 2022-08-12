@@ -1,4 +1,4 @@
-// composition of images in about section  
+// COMPOSITION OF IMAGES IN ABOUT SECTION   
 .composition {
   position: relative;
 
@@ -22,11 +22,16 @@
       top: 10rem;
     }
     &:hover {
-      // upon hovering increases size and elongates, darkens vertical shadow
-      transform: scale(1.05);
+      // upon hovering increases size, moves slightly upwards and elongates, darkens vertical shadow 
+      transform: scale(1.05) translateY(-.5rem);
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
       z-index: 20; // brings hovered image at the top
       outline: 1.5rem solid $color-primary; // gives outline with space around image
     }
+  }
+
+  // upon hovering an image, makes other not hovered images smaller 
+  &:hover &__photo:not(:hover) {    // .composition:hover composition__photo:not(:hover){}
+    transform: scale(.95);
   }
 }
