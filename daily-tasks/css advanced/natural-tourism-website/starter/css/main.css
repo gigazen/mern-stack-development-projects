@@ -219,6 +219,37 @@ body {
   transform: translate(0);
 }
 
+/* line 1, ../sass/components/_card.scss */
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+/* line 5, ../sass/components/_card.scss */
+.card__side {
+  background-color: orangered;
+  color: #fff;
+  font-size: 2rem;
+  height: 50rem;
+  transition: all 0.8s;
+}
+/* line 12, ../sass/components/_card.scss */
+.card__side--front {
+  background-color: orangered;
+}
+/* line 15, ../sass/components/_card.scss */
+.card__side--back {
+  background-color: green;
+  transform: rotateY(180deg);
+}
+/* line 23, ../sass/components/_card.scss */
+.card:hover .card__side--front {
+  transform: rotateY(180deg);
+}
+/* line 27, ../sass/components/_card.scss */
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+
 /* line 2, ../sass/components/_composition.scss */
 .composition {
   position: relative;
@@ -361,14 +392,14 @@ body {
   height: 3.5rem;
 }
 
-/* line 1, ../sass/pages/_home.scss */
+/* line 2, ../sass/pages/_home.scss */
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh;
 }
 
-/* line 7, ../sass/pages/_home.scss */
+/* line 9, ../sass/pages/_home.scss */
 .section-features {
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
@@ -376,9 +407,16 @@ body {
   transform: skewY(-7deg);
   margin-top: -10rem;
 }
-/* line 19, ../sass/pages/_home.scss */
+/* line 21, ../sass/pages/_home.scss */
 .section-features > * {
   transform: skewY(7deg);
+}
+
+/* line 28, ../sass/pages/_home.scss */
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
 }
 
 /*# sourceMappingURL=main.css.map */
