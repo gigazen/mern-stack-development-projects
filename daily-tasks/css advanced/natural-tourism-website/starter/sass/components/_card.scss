@@ -1,16 +1,14 @@
 // card - 3d element
 .card {
+  // FUNCTIONALITY
   // to get 3d effect, larger value less 3d effect
   perspective: 150rem;
-  -moz-perspective: 150rem;
   position: relative;
   // give height to card parent of sides children, to prevent card parent going to 0 height after sides go out from flow because of abs positioning
   height: 50rem;
 
   // side - 2d element, has 2 variants - front and back
   &__side {
-    color: #fff;
-    font-size: 2rem;
     height: 50rem;
     transition: all 0.8s ease;
     // make the front and back sides to overlap on each other
@@ -20,6 +18,8 @@
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
+    // don't allow image within card side to overflow and jeopardize border-radius
+    overflow: hidden;
     box-shadow: $box-shadow-1;
 
     &--front {
@@ -30,17 +30,72 @@
       transform: rotateY(180deg);
 
       &-1 {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
       }
     }
   }
 
-  // upon hovering front side goes to 180deg, .card:hover .card__side--front {}
+  // upon hovering front side goes from 0 to -180deg, i.e. rotates via left side, .card:hover .card__side--front {}
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
-  // upon hovering back side comes to 0deg, .card:hover .card__side--back {}
+  // upon hovering back side comes from 180deg to 0deg, i.e. rotates via right side, .card:hover .card__side--back {}
   &:hover &__side--back {
     transform: rotateY(0deg);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    // blending 2 background images - one is gradient and another is image
+    background-blend-mode: screen;
+    // use -webkit- vendor prefix for partially supported css properties, so that if regular browser cannot support that property, at least webkit browser engine can support that
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // clip the picture using x y co-ordinates at 4 corners starting from top left in clockwise direction
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      // image address must be w.r.t. compiled css file, not w.r.t. sass file
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url();
+    }
+    &--3 {
+      background-image: url();
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    // make the heading to be on top of image and on right side 
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+    }
   }
 }
