@@ -222,14 +222,11 @@ body {
 /* line 2, ../sass/components/_card.scss */
 .card {
   perspective: 150rem;
-  -moz-perspective: 150rem;
   position: relative;
   height: 50rem;
 }
 /* line 11, ../sass/components/_card.scss */
 .card__side {
-  color: #fff;
-  font-size: 2rem;
   height: 50rem;
   transition: all 0.8s ease;
   position: absolute;
@@ -238,6 +235,7 @@ body {
   width: 100%;
   backface-visibility: hidden;
   border-radius: 3px;
+  overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 /* line 25, ../sass/components/_card.scss */
@@ -252,13 +250,55 @@ body {
 .card__side--back-1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
 }
-/* line 39, ../sass/components/_card.scss */
-.card:hover .card__side--front {
-  transform: rotateY(180deg);
-}
 /* line 43, ../sass/components/_card.scss */
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+/* line 47, ../sass/components/_card.scss */
 .card:hover .card__side--back {
   transform: rotateY(0deg);
+}
+/* line 52, ../sass/components/_card.scss */
+.card__picture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+/* line 62, ../sass/components/_card.scss */
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+}
+/* line 71, ../sass/components/_card.scss */
+.card__picture--2 {
+  background-image: url();
+}
+/* line 74, ../sass/components/_card.scss */
+.card__picture--3 {
+  background-image: url();
+}
+/* line 79, ../sass/components/_card.scss */
+.card__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #ffd;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  width: 75%;
+}
+/* line 92, ../sass/components/_card.scss */
+.card__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+/* line 97, ../sass/components/_card.scss */
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
 }
 
 /* line 2, ../sass/components/_composition.scss */
@@ -380,9 +420,10 @@ body {
   background-size: cover;
   background-position: center top;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
-/* line 16, ../sass/layout/_header.scss */
+/* line 19, ../sass/layout/_header.scss */
 .header__text-box {
   position: absolute;
   top: 40%;
@@ -391,14 +432,14 @@ body {
   text-align: center;
 }
 
-/* line 26, ../sass/layout/_header.scss */
+/* line 29, ../sass/layout/_header.scss */
 .logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-/* line 32, ../sass/layout/_header.scss */
+/* line 35, ../sass/layout/_header.scss */
 .logo {
   height: 3.5rem;
 }
