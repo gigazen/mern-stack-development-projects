@@ -1,21 +1,37 @@
+// card - 3d element
 .card {
+  // to get 3d effect, larger value less 3d effect
   perspective: 150rem;
   -moz-perspective: 150rem;
+  position: relative;
+  // give height to card parent of sides children, to prevent card parent going to 0 height after sides go out from flow because of abs positioning
+  height: 50rem;
 
+  // side - 2d element, has 2 variants - front and back
   &__side {
-    background-color: orangered;
     color: #fff;
     font-size: 2rem;
     height: 50rem;
-    transition: all 0.8s;
+    transition: all 0.8s ease;
+    // make the front and back sides to overlap on each other
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: $box-shadow-1;
 
     &--front {
-        background-color: orangered;
+      background-color: $color-white;
     }
     &--back {
-        // initially back side is 180deg rotated
-        background-color: green;
-        transform: rotateY(180deg);
+      // initially back side is 180deg rotated
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
     }
   }
 

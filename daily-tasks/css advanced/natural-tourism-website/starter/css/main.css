@@ -219,33 +219,44 @@ body {
   transform: translate(0);
 }
 
-/* line 1, ../sass/components/_card.scss */
+/* line 2, ../sass/components/_card.scss */
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
 }
-/* line 5, ../sass/components/_card.scss */
+/* line 11, ../sass/components/_card.scss */
 .card__side {
-  background-color: orangered;
   color: #fff;
   font-size: 2rem;
   height: 50rem;
-  transition: all 0.8s;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
-/* line 12, ../sass/components/_card.scss */
+/* line 25, ../sass/components/_card.scss */
 .card__side--front {
-  background-color: orangered;
+  background-color: #ffd;
 }
-/* line 15, ../sass/components/_card.scss */
+/* line 28, ../sass/components/_card.scss */
 .card__side--back {
-  background-color: green;
   transform: rotateY(180deg);
 }
-/* line 23, ../sass/components/_card.scss */
+/* line 32, ../sass/components/_card.scss */
+.card__side--back-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+/* line 39, ../sass/components/_card.scss */
 .card:hover .card__side--front {
   transform: rotateY(180deg);
 }
-/* line 27, ../sass/components/_card.scss */
+/* line 43, ../sass/components/_card.scss */
 .card:hover .card__side--back {
   transform: rotateY(0deg);
 }
