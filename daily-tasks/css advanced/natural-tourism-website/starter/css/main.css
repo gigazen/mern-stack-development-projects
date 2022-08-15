@@ -223,11 +223,11 @@ body {
 .card {
   perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 }
 /* line 11, ../sass/components/_card.scss */
 .card__side {
-  height: 50rem;
+  height: 52rem;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
@@ -272,7 +272,7 @@ body {
 }
 /* line 71, ../sass/components/_card.scss */
 .card__picture--2 {
-  background-image: url();
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
 }
 /* line 74, ../sass/components/_card.scss */
 .card__picture--3 {
@@ -296,9 +296,55 @@ body {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-/* line 97, ../sass/components/_card.scss */
+/* line 98, ../sass/components/_card.scss */
 .card__heading-span--1 {
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+/* line 107, ../sass/components/_card.scss */
+.card__details {
+  padding: 3rem;
+}
+/* line 110, ../sass/components/_card.scss */
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 0;
+}
+/* line 116, ../sass/components/_card.scss */
+.card__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+/* line 121, ../sass/components/_card.scss */
+.card__details ul li:not(:last-child) {
+  border-bottom: 1.7px solid #eee;
+}
+/* line 129, ../sass/components/_card.scss */
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+/* line 137, ../sass/components/_card.scss */
+.card__price-box {
+  color: #ffd;
+  margin-bottom: 8rem;
+}
+/* line 142, ../sass/components/_card.scss */
+.card__price-only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+/* line 147, ../sass/components/_card.scss */
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 300;
+  margin-top: 0px;
 }
 
 /* line 2, ../sass/components/_composition.scss */
