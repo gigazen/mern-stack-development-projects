@@ -1,15 +1,15 @@
 // card - 3d element
 .card {
   // FUNCTIONALITY
-  // to get 3d effect, larger value less 3d effect
+  // use perspective to get 3d effect, larger the value less 3d effect
   perspective: 150rem;
   position: relative;
-  // give height to card parent of sides children, to prevent card parent going to 0 height after sides go out from flow because of abs positioning
-  height: 50rem;
+  // give height to card parent of card side child, it prevents card parent going to 0 height after card side goes out from flow because of abs positioning
+  height: 52rem;
 
   // side - 2d element, has 2 variants - front and back
   &__side {
-    height: 50rem;
+    height: 52rem;
     transition: all 0.8s ease;
     // make the front and back sides to overlap on each other
     position: absolute;
@@ -60,7 +60,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
     &--1 {
-      // image address must be w.r.t. compiled css file, not w.r.t. sass file
+      // image address must be w.r.t. compiled css file, not w.r.t. current sass file
       background-image: linear-gradient(
           to right bottom,
           $color-secondary-light,
@@ -69,7 +69,7 @@
         url(../img/nat-5.jpg);
     }
     &--2 {
-      background-image: url();
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
     }
     &--3 {
       background-image: url();
@@ -82,7 +82,7 @@
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
-    // make the heading to be on top of image and on right side 
+    // make the heading to be on top of image and on right side
     position: absolute;
     top: 12rem;
     right: 2rem;
@@ -91,11 +91,62 @@
 
   &__heading-span {
     padding: 1rem 1.5rem;
+    // box decoration properties like padding will be applied to each fragmented box of same element which are at different lines, as if they are different elements
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 
     &--1 {
-      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
     }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      padding-left: 0;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1.7px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // BACK SIDE STYLING 
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  &__price-box {
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 300;
+    margin-top: 0px;
   }
 }
