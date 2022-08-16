@@ -1,0 +1,40 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  // bring the parallelogram effect as can be done using clip path
+  transform: skewX(-13deg);
+
+  // unskew all direct children of .story to make them look straight. Same as writing this property inside .story__shape and .story__img. But cannot work if any of the child element has another transform property. Then add skewX() to that transform property 
+  & > * {
+    transform: skewX(13deg);
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    // bring the picture and text side by side
+    float: left;
+    // text content around figure flows in circular shape
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    // figure itself takes circular shape
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // transform: translateX(-3rem) skewX(13deg);
+  }
+
+  &__img {
+    // width of the image is greater than height, so width: 100% would shrink the height too much that it won't cover whole height of .story__shape parent, that's why make the image height 100% of its parent 
+    height: 100%;
+  }
+  &__text {
+  }
+}
+
+
