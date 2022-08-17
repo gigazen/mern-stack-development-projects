@@ -1,0 +1,21 @@
+//BACKGROUND VIDEO 
+.bg-video {
+    // give absolute position to the video wrapper, also give relative position to its parent, .section-stories, let the video wrapper to take 100% width, height of its parent container 
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    // ensure the video is beneath all the elements in story section and is opaque 
+    z-index: -1;
+    opacity: .5;
+    // overflow: hidden just hides the extra parts, prevents horizontal scrolling, but cannot fit the video inside wrapper while maintaining aspect ratio 
+    overflow: hidden;
+
+    &__content {
+        // don't allow overflow of the video content, directly select the video element and let it to take 100% width, height of its parent wrapper and make it fit inside the wrapper by clipping extra parts to maintain aspect ratio. Same as backgournd-size: cover. Giving double height, width for video wrapper and video content is a must 
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

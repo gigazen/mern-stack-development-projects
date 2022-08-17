@@ -1,0 +1,77 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  // bring the parallelogram effect as can be done using clip path
+  transform: skewX(-12deg);
+
+  // unskew all direct children of .story to make them look straight. Same as writing this property inside .story__shape and .story__img children. But cannot work if any of the child element has another transform property. Just add skewX() to that transform property
+  //   & > * {
+  //     transform: skewX(12deg);
+  //   }
+
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    // bring the picture and text side by side
+    float: left;
+    // text content around figure flows in circular shape
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    // figure itself takes circular shape
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+
+  &__img {
+    // width of the image is greater than height, so width: 100% would shrink the height too much that it won't cover whole height of .story__shape parent, that's why make the image height 100% of its parent
+    height: 100%;
+    // center the image along X axis i.e. across width
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    // initially position the caption on image at slightly lower position with 0 opacity i.e. no visibility, then upon hovering the story, caption will appear and will rise to middle
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    // fix any weird things happened in translation and animation
+    backface-visibility: hidden;
+  }
+
+  // hover on the .story then animation in .story__caption will start
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  // writing &:hover inside .story__img {} does not work. Hover on .story block then animation in .story__img will start
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    // upon hovering blur and darken the image. More value to the blur() fn more blur the image, above 100% value to brightness() fn gives brighter image and below 100% gives darker image
+    filter: blur(3px) brightness(80%);
+  }
+}
