@@ -68,7 +68,7 @@
               neque ipsa repudiandae error quo adipisci.
             </p>
 
-            <!-- create button -->
+            <!-- create button, with double right angle quote at end -->
             <a href="#" class="btn-text">Learn more &raquo;</a>
           </div>
           <div class="col-1-of-2">
@@ -260,6 +260,7 @@
           </div>
         </div>
 
+        <!-- add a large button below all the tour cards -->
         <div class="u-center-text u-margin-top-huge">
           <a href="#" class="btn btn--green">Discover all tours</a>
         </div>
@@ -267,11 +268,23 @@
 
       <!-- STORIES SECTION -->
       <section class="section-stories">
+        
+        <!-- background video -->
+        <div class="bg-video">
+          <video class="bg-video__content" autoplay muted loop>
+            <source src="../img/video2.mp4" type="video/mp4"></source>
+            <source src="../img/video.webm" type="video/webm"></source>
+          </video>
+        </div>
+
+        <!-- heading of stories section -->
         <div class="u-center-text u-margin-bottom-big">
           <div class="heading-secondary">We make people genuinely happy</div>
         </div>
 
+        <!-- picture and text in 2 story blocks -->
         <div class="row">
+
           <div class="story">
             <!-- picture part in story -->
             <figure class="story__shape">
@@ -280,8 +293,11 @@
                 alt="Person on a tour"
                 class="story__img"
               />
+              <!-- name over image -->
+              <figcaption class="story__caption">Mary Smith</figcaption>
             </figure>
-            <!-- text part in story -->
+
+            <!-- text part in story block -->
             <div class="story__text">
               <h3 class="heading-tertiary u-margin-bottom-small">
                 I had the best week ever with my family
@@ -294,6 +310,33 @@
               </p>
             </div>
           </div>
+
+          <div class="story">
+            <figure class="story__shape">
+              <img
+                src="../img/nat-9.jpg"
+                alt="Person on a tour"
+                class="story__img"
+              />
+              <figcaption class="story__caption">Jack Wilson</figcaption>
+            </figure>
+
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                WOW! My life is completely different now
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                vitae fuga magni, dicta saepe odio, error molestiae a aliquam
+                autem natus repellat harum repudiandae delectus
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- add a small button below all the stories -->
+        <div class="u-center-text u-margin-top-big">
+          <a href="#" class="btn btn--green">Read all stories &raquo;</a>
         </div>
       </section>
     </main>
