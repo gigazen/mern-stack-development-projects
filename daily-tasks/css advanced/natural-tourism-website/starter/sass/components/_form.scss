@@ -1,14 +1,85 @@
 .form {
-    &__group:not(:last-child) {
-        margin-bottom: 2rem;
+  // box containing all form inputs and labels
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  // form input boxes 
+  &__input {
+    font-size: 1.5rem;
+    // inherit font-family and color from body element inside typography file
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    // keep the space for custom outline in normal state also but as transparent outline, otherwise after clicking an input box, the below input box will go down by 3px 
+    border-bottom: 3px solid transparent;
+    width: 70%;
+    // only input box is in a line
+    display: block;
+    // any type of transition or change will be animated, so color change of border-bottom of .form-input is animated 
+    transition: all .5s;
+
+    // form input in focus state 
+    &:focus {
+      // remove default outline in focused state. But for accessibility reasons user must understand that a particular input box is clicked. That's why give custom outline for focused state of input box 
+      outline: none;
+      // custom outline with border and box-shadow upon clicking, also keep border space reserved in normal state of .form__input, otherwise upon clicking one input box, below input box will go down by 3px 
+      border-bottom: 3px solid $color-primary;
+      // rgba(red) is not valid but rgba(red, .5) is valid in sass only, but not in css 
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+      // while input box is in focus state, keep different border color for invalid input, .form__input:focus:invalid { } 
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
     }
-    &__input {
-        font-size: 1.5rem;
-        font-family: inherit;
-        padding: 1.5rem 2rem;
-        border-radius: 2px;
-        background-color: rgba($color-white, .5);
-        border: none;
+
+    // select the placeholder text of input box using .form__input::placeholder selector. Placeholder text will be of light grey and while writing, text color will be of dark grey. So also inherit default dark grey text color from body to .form__input 
+    &::placeholder {
+      color: $color-grey-dark-2;
     }
-    &__label {}
+    // for edge, also supports -ms prefix 
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  // align form labels right below placeholder text. While writing starts in input box, placeholders are not shown and it should look like placeholders converted to labels 
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    // as label is inline element that's why without converting to block element, margin-top cannot be applied 
+    display: block;
+    margin-top: .7rem;
+    transition: all .5s; 
+  }
+
+  // placeholders inside input boxes shown, labels get hidden on top of input boxes. Writing starts inside box i.e. placeholders not shown then using animation labels go to original positions below input boxes 
+  // + is adjacent sibling selector, also can use general sibling selector, ~ here  
+  &__input:placeholder-shown + &__label {
+    // just visibility hidden can't help in animation as labels will go hidden abruptly. Using opacity helps animation to go from opacity 0 to 1 smoothly 
+    opacity: 0;
+    // opacity 0 makes label hidden just from view but it still will be there on top of input boxes, that's why mouse pointer won't change to text cursor or caret while hovering over text input boxes. Using visibility hidden, make the label text gone completely 
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

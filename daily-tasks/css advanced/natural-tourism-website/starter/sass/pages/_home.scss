@@ -39,8 +39,9 @@
 
 // BOOKING SECTION
 .section-book {
-  padding: 15px 0;
-  // make the background color as gradient of green
+  // inside .section-book, there is .book section which will have padding around it 
+  padding: 15rem 0;
+  // .section-book will have background color as linear gradient of green, except inside .book section which will have an image 
   background-image: linear-gradient(
     to bottom right,
     $color-primary-light,
@@ -48,24 +49,30 @@
   );
 }
 
-// element containing background image
+// .book contains solid gradient over background image, as we will never use solid gradient over image in other places, means it is home page specific, that's why put it here instead of inside components folder 
 .book {
-  // from 0 to 50% solid white color at 105deg angle on background image
+  // from 0 to 50% of .book section there is solid white color at 105deg angle over background image 
   background-image: linear-gradient(
       105deg,
-      rgba($color-white, 0.9) 0%,
-      rgba($color-white, 0.9) 50%,
+      rgba($color-white, .9) 0%,
+      rgba($color-white, .9) 50%,
       transparent 50%
     ),
     url(../img/nat-10.jpg);
-  // cover and 100% both give same effect as value of background-size
+  // cover and 100% both give same effect as value of background-size 
   background-size: 100%;
   height: 50rem;
   border-radius: 3px;
   box-shadow: $box-shadow-1;
 
+  // .book__form contains form part taking just 60% of its parent, .book which has background image, so .book__form spreads just over solid white gradient. Clearly .book__form is also home page specific but it has .form which can be used as component 
   &__form {
-    width: 50%;
+    width: 60%;
     padding: 6rem;
   }
 }
+
+
+
+
+

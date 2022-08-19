@@ -464,18 +464,56 @@ body {
   transform: translateY(-1.5rem) scale(1.03);
 }
 
-/* line 2, ../sass/components/_form.scss */
+/* line 3, ../sass/components/_form.scss */
 .form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
-/* line 5, ../sass/components/_form.scss */
+/* line 8, ../sass/components/_form.scss */
 .form__input {
   font-size: 1.5rem;
   font-family: inherit;
+  color: inherit;
   padding: 1.5rem 2rem;
   border-radius: 2px;
   background-color: rgba(255, 255, 221, 0.5);
   border: none;
+  border-bottom: 3px solid transparent;
+  width: 70%;
+  display: block;
+  transition: all .5s;
+}
+/* line 26, ../sass/components/_form.scss */
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+/* line 35, ../sass/components/_form.scss */
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+/* line 41, ../sass/components/_form.scss */
+.form__input::placeholder {
+  color: #999;
+}
+/* line 45, ../sass/components/_form.scss */
+.form__input::-webkit-input-placeholder {
+  color: #999;
+}
+/* line 51, ../sass/components/_form.scss */
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  display: block;
+  margin-top: .7rem;
+  transition: all .5s;
+}
+/* line 63, ../sass/components/_form.scss */
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
 }
 
 /* line 1, ../sass/components/_story.scss */
@@ -655,11 +693,11 @@ body {
 
 /* line 41, ../sass/pages/_home.scss */
 .section-book {
-  padding: 15px 0;
+  padding: 15rem 0;
   background-image: linear-gradient(to bottom right, #7ed56f, #28b485);
 }
 
-/* line 52, ../sass/pages/_home.scss */
+/* line 53, ../sass/pages/_home.scss */
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 221, 0.9) 0%, rgba(255, 255, 221, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: 100%;
@@ -667,9 +705,9 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
-/* line 67, ../sass/pages/_home.scss */
+/* line 69, ../sass/pages/_home.scss */
 .book__form {
-  width: 50%;
+  width: 60%;
   padding: 6rem;
 }
 
