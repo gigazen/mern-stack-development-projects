@@ -1,6 +1,8 @@
 // BUTTON OF HEADING 
 
+// :link, :visited pseudo class selectors only applicable for anchor element, means when .btn class here is used with anchor, a element. Give the .btn class all properties defined under .btn:link, .btn:visited then only .btn will work with button element also, write it as &  
 .btn {
+    &,
     &:link,
     &:visited {
         text-decoration: none;
@@ -11,8 +13,13 @@
         transition: all 0.2s;
         position: relative;
         font-size: $default-font-size;
+
+        // changes for using with button element 
+        border: none;
+        cursor: pointer;
     }
 
+    // :hover pseudo class selector can be used with all elements, anchor, button all, so no need for &, 
     &:hover {
         transform: translateY(-0.3rem);
         box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
@@ -23,7 +30,10 @@
         }
     }
 
-    &:active {
+    // :active pseudo class selector can be used with all elements, anchor, button all, so no need for &,. Also if :hover defn is present then :active defn must come after :hover defn otherwise :active won't work 
+    &:active, &:focus {
+        // remove the blue outline around button when in focused state (using tab), instead apply same effects as in :active state. For accessibility reasons, focus state must have some effects 
+        outline: none;
         transform: translateY(-0.1rem);
         box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     }

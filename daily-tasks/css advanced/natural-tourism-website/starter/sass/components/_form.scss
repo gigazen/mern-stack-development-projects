@@ -4,7 +4,7 @@
     margin-bottom: 2rem;
   }
 
-  // form input boxes 
+  // form input boxes
   &__input {
     font-size: 1.5rem;
     // inherit font-family and color from body element inside typography file
@@ -14,72 +14,120 @@
     border-radius: 2px;
     background-color: rgba($color-white, 0.5);
     border: none;
-    // keep the space for custom outline in normal state also but as transparent outline, otherwise after clicking an input box, the below input box will go down by 3px 
+    // keep the space for custom outline in normal state also but as transparent outline, otherwise after clicking an input box, the below input box will go down by 3px
     border-bottom: 3px solid transparent;
     width: 70%;
     // only input box is in a line
     display: block;
-    // any type of transition or change will be animated, so color change of border-bottom of .form-input is animated 
-    transition: all .5s;
+    // any type of transition or change will be animated, so color change of border-bottom of .form-input is animated
+    transition: all 0.5s;
 
-    // form input in focus state 
+    // form input in focus state
     &:focus {
-      // remove default outline in focused state. But for accessibility reasons user must understand that a particular input box is clicked. That's why give custom outline for focused state of input box 
+      // remove default outline in focused state. But for accessibility reasons user must understand that a particular input box is clicked. That's why give custom outline for focused state of input box
       outline: none;
-      // custom outline with border and box-shadow upon clicking, also keep border space reserved in normal state of .form__input, otherwise upon clicking one input box, below input box will go down by 3px 
+      // custom outline with border and box-shadow upon clicking, also keep border space reserved in normal state of .form__input, otherwise upon clicking one input box, below input box will go down by 3px
       border-bottom: 3px solid $color-primary;
-      // rgba(red) is not valid but rgba(red, .5) is valid in sass only, but not in css 
+      // rgba(red) is not valid but rgba(red, .5) is valid in sass only, but not in css
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
 
-      // while input box is in focus state, keep different border color for invalid input, .form__input:focus:invalid { } 
+      // while input box is in focus state, keep different border color for invalid input, .form__input:focus:invalid { }
       &:invalid {
         border-bottom: 3px solid $color-secondary-dark;
       }
     }
 
-    // select the placeholder text of input box using .form__input::placeholder selector. Placeholder text will be of light grey and while writing, text color will be of dark grey. So also inherit default dark grey text color from body to .form__input 
+    // select the placeholder text of input box using .form__input::placeholder selector. Placeholder text will be of light grey and while writing, text color will be of dark grey. So also inherit default dark grey text color from body to .form__input
     &::placeholder {
       color: $color-grey-dark-2;
     }
-    // for edge, also supports -ms prefix 
+    // for edge, also supports -ms prefix
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
   }
 
-  // align form labels right below placeholder text. While writing starts in input box, placeholders are not shown and it should look like placeholders converted to labels 
+  // align form labels right below placeholder text. While writing starts in input box, placeholders are not shown and it should look like placeholders converted to labels
   &__label {
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: 2rem;
-    // as label is inline element that's why without converting to block element, margin-top cannot be applied 
+    // as label is inline element that's why without converting to block element, margin-top cannot be applied
     display: block;
-    margin-top: .7rem;
-    transition: all .5s; 
+    margin-top: 0.7rem;
+    transition: all 0.5s;
   }
 
-  // placeholders inside input boxes shown, labels get hidden on top of input boxes. Writing starts inside box i.e. placeholders not shown then using animation labels go to original positions below input boxes 
-  // + is adjacent sibling selector, also can use general sibling selector, ~ here  
+  // placeholders inside input boxes shown, labels get hidden on top of input boxes. Writing starts inside box i.e. placeholders not shown then using animation labels go to original positions below input boxes
+  // + is adjacent sibling selector, also can use general sibling selector, ~ here
   &__input:placeholder-shown + &__label {
-    // just visibility hidden can't help in animation as labels will go hidden abruptly. Using opacity helps animation to go from opacity 0 to 1 smoothly 
+    // just visibility hidden can't help in animation as labels will go hidden abruptly. Using opacity helps animation to go from opacity 0 to 1 smoothly
     opacity: 0;
-    // opacity 0 makes label hidden just from view but it still will be there on top of input boxes, that's why mouse pointer won't change to text cursor or caret while hovering over text input boxes. Using visibility hidden, make the label text gone completely 
-    visibility: hidden;
+    // opacity 0 makes label hidden just from view but it still will be there on top of input boxes, that's why mouse pointer won't change to text cursor or caret while hovering over text input boxes. Using visibility hidden, make the label text gone completely
+    visibility: hidden;       // cannot use display: none also as it won't help in animation 
     transform: translateY(-4rem);
   }
+
+  // radio buttons
+  &__radio-group {
+    // keep each radio button side by side
+    display: inline-block;
+    width: 43%;
+  }
+
+  // text inside label element
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  // convert the span element inside label element into a circular ring
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    // without display inline-block or block, desired shape cannot be obtained
+    display: inline-block;
+    border-radius: 50%; // from square make it circular
+    position: absolute;
+    top: -0.4rem;
+    left: 0;
+
+    // after the above span element inside label, create a green dot and place it at the center of the above circular span element
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%; // make the pseudo element round
+      background-color: $color-primary;
+      // place the pseudo element at the center of above circular ring
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // normally the dot cannot be seen
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  // after clicking on radio label when radio input (.form__radio-input) gets checked then select the sibling of that radio input i.e. the label element (.form__radio-label) in turn select the child of that label i.e. the span element (.form__radio-button) in turn select the after pseudo element (.form__radio-button::after) of the span element
+  // <div class="form__radio-group">
+  //   <input class="form__radio-input">
+  //   <label class="form__radio-label">
+  //     <span class="form__radio-button">
+  //       ::after
+  //     </span></label></div></div>
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    // upon clicking on label, green dot of ::after pseudo element appears at the center of green circular ring
+    opacity: 1;
+  }
+
+  // disappear the original radio input button as the above ::after pseudo element now works similarly 
+  &__radio-input {
+    display: none;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
