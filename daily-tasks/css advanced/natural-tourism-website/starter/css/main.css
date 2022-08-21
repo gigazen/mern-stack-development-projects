@@ -204,25 +204,25 @@ body {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-/* line 41, ../sass/components/_button.scss */
+/* line 42, ../sass/components/_button.scss */
 .btn--white {
   background-color: #ffd;
   color: #777;
 }
-/* line 45, ../sass/components/_button.scss */
+/* line 46, ../sass/components/_button.scss */
 .btn--white::after {
   background-color: #ffd;
 }
-/* line 50, ../sass/components/_button.scss */
+/* line 51, ../sass/components/_button.scss */
 .btn--green {
   background-color: #55c57a;
   color: #ffd;
 }
-/* line 54, ../sass/components/_button.scss */
+/* line 55, ../sass/components/_button.scss */
 .btn--green::after {
   background-color: #55c57a;
 }
-/* line 59, ../sass/components/_button.scss */
+/* line 60, ../sass/components/_button.scss */
 .btn::after {
   content: "";
   display: inline-block;
@@ -235,13 +235,13 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-/* line 72, ../sass/components/_button.scss */
+/* line 73, ../sass/components/_button.scss */
 .btn--animated {
   animation: moveToTop 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
 
-/* line 80, ../sass/components/_button.scss */
+/* line 81, ../sass/components/_button.scss */
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
   color: #55c57a;
@@ -249,16 +249,16 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #55c57a;
   padding: 3px;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-/* line 89, ../sass/components/_button.scss */
+/* line 91, ../sass/components/_button.scss */
 .btn-text:hover {
   background-color: #55c57a;
   color: #ffd;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
-/* line 95, ../sass/components/_button.scss */
+/* line 97, ../sass/components/_button.scss */
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translate(0);
@@ -631,6 +631,23 @@ body {
 .story:hover .story__img {
   transform: translateX(-4rem) scale(1);
   filter: blur(3px) brightness(80%);
+}
+
+/* line 1, ../sass/layout/_footer.scss */
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+}
+/* line 6, ../sass/layout/_footer.scss */
+.footer__logo-box {
+  text-align: center;
+}
+/* line 11, ../sass/layout/_footer.scss */
+.footer__logo {
+  width: 15rem;
+  height: auto;
+  display: inline-block;
 }
 
 /* line 1, ../sass/layout/_grid.scss */
