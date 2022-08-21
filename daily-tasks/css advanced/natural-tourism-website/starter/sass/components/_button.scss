@@ -1,110 +1,102 @@
-// BUTTON OF HEADING 
+// BUTTON OF HEADING
 
-// :link, :visited pseudo class selectors only applicable for anchor element, means when .btn class here is used with anchor, a element. Give the .btn class all properties defined under .btn:link, .btn:visited then only .btn will work with button element also, write it as &  
+// :link, :visited pseudo class selectors only applicable for anchor element, means when .btn class here is used with anchor, a element. Give the .btn class all properties defined under .btn:link, .btn:visited then only .btn will work with button element also, write it as &
 .btn {
-    &,
-    &:link,
-    &:visited {
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 1.5rem 4rem;
-        display: inline-block;
-        border-radius: 10rem;
-        transition: all 0.2s;
-        position: relative;
-        font-size: $default-font-size;
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: $default-font-size;
 
-        // changes for using with button element 
-        border: none;
-        cursor: pointer;
-    }
+    // changes for using with button element
+    border: none;
+    cursor: pointer;
+  }
 
-    // :hover pseudo class selector can be used with all elements, anchor, button all, so no need for &, 
-    &:hover {
-        transform: translateY(-0.3rem);
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
-
-        &::after {
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
-    }
-
-    // :active pseudo class selector can be used with all elements, anchor, button all, so no need for &,. Also if :hover defn is present then :active defn must come after :hover defn otherwise :active won't work 
-    &:active, &:focus {
-        // remove the blue outline around button when in focused state (using tab), instead apply same effects as in :active state. For accessibility reasons, focus state must have some effects 
-        outline: none;
-        transform: translateY(-0.1rem);
-        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
-    }
-
-    &--white {
-        background-color: $color-white;
-        color: $color-grey-dark-1;
-
-        &::after {
-            background-color: $color-white;
-        }
-    }
-
-    &--green {
-        background-color: $color-primary;
-        color: $color-white;
-
-        &::after {
-            background-color: $color-primary;
-        }
-    }
+  // :hover pseudo class selector can be used with all elements, anchor, button all, so no need for &,
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
 
     &::after {
-        content: "";
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        border-radius: 10rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: all 0.4s;
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
     }
+  }
 
-    &--animated {
-        animation: moveToTop 0.5s ease-out 0.75s;
-        animation-fill-mode: backwards;
+  // :active pseudo class selector can be used with all elements, anchor, button all, so no need for &,. Also if :hover defn is present then :active defn must come after :hover defn otherwise :active won't work
+  &:active,
+  &:focus {
+    // remove the blue outline around button when in focused state (using tab), instead apply same effects as in :active state. For accessibility reasons, focus state must have some effects
+    outline: none;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark-1;
+
+    &::after {
+      background-color: $color-white;
     }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveToTop 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }
 
 // SMALL BUTTON
 .btn-text {
-    &:link, &:visited {
-        font-size: $default-font-size;
-        color: $color-primary;
-        display: inline-block;   // helps to give padding around the text, also width   
-        text-decoration: none;   // delete default underline  
-        border-bottom: 1px solid $color-primary; // but create custom underline
-        padding: 3px;   // so that distance between text and padding can be controlled 
-        transition: all .2s;
-    }
-    &:hover {
-        background-color: $color-primary;
-        color: $color-white;
-        box-shadow: 0 1rem 2rem rgba($color-black, .15);
-        transform: translateY(-2px);  // moves the button up 
-    }
-    &:active {
-        // upon clicking, shorten the vertical shadow and make the shadow darker, less blur
-        box-shadow: 0 .5rem 1rem rgba($color-black, .15);  
-        transform: translate(0);      // brings the button back to initial position 
-    }
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block; // helps to give padding around the text, also width
+    text-decoration: none; // delete default underline
+    border-bottom: 1px solid $color-primary; // but create custom underline
+    padding: 3px; // so that distance between text and padding can be controlled
+    transition: all 0.2s;
+  }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px); // moves the button up
+  }
+  &:active {
+    // upon clicking, shorten the vertical shadow and make the shadow darker, less blur
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translate(0); // brings the button back to initial position
+  }
 }
-
-
-
-
-
-
-
-
-
-

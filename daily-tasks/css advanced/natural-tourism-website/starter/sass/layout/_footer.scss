@@ -1,0 +1,36 @@
+.footer {
+    background-color: $color-grey-dark-3;
+    padding: 10rem 0;
+    font-size: 1.4rem;
+
+    &__logo-box {
+        // img is an inline element, so to center an image in a container, just apply text-align center to that container 
+        text-align: center;
+    }
+
+    &__logo {
+        width: 15rem;
+        height: auto;
+        display: inline-block;
+    }
+
+    &__navigation {
+
+    }
+
+    &__list {
+
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+
+    }
+
+    &__copyright {
+
+    }
+}
