@@ -638,16 +638,60 @@ body {
   background-color: #333;
   padding: 10rem 0;
   font-size: 1.4rem;
+  color: #f7f7f7;
 }
-/* line 6, ../sass/layout/_footer.scss */
+/* line 7, ../sass/layout/_footer.scss */
 .footer__logo-box {
   text-align: center;
+  margin-bottom: 8rem;
 }
-/* line 11, ../sass/layout/_footer.scss */
+/* line 13, ../sass/layout/_footer.scss */
 .footer__logo {
   width: 15rem;
   height: auto;
   display: inline-block;
+}
+/* line 19, ../sass/layout/_footer.scss */
+.footer__navigation {
+  border-top: 1px solid #777;
+  padding-top: 2rem;
+  display: inline-block;
+}
+/* line 26, ../sass/layout/_footer.scss */
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+/* line 31, ../sass/layout/_footer.scss */
+.footer__item {
+  display: inline-block;
+}
+/* line 34, ../sass/layout/_footer.scss */
+.footer__item:not(:last-child) {
+  margin-right: 2.5rem;
+}
+/* line 40, ../sass/layout/_footer.scss */
+.footer__link:link, .footer__link:visited {
+  color: inherit;
+  background-color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.4s;
+}
+/* line 50, ../sass/layout/_footer.scss */
+.footer__link:hover, .footer__link:active {
+  color: #55c57a;
+  text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg) scale(1.3);
+}
+/* line 58, ../sass/layout/_footer.scss */
+.footer__copyright {
+  border-top: 1px solid #777;
+  padding-top: 2rem;
+  margin-top: 0;
+  width: 80%;
+  float: right;
 }
 
 /* line 1, ../sass/layout/_grid.scss */
@@ -727,6 +771,30 @@ body {
 /* line 35, ../sass/layout/_header.scss */
 .logo {
   height: 3.5rem;
+}
+
+/* line 6, ../sass/layout/_navigation.scss */
+.navigation__button {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  background-color: #ffd;
+  z-index: 2000;
+  border: 2px solid red;
+}
+/* line 20, ../sass/layout/_navigation.scss */
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: 1000;
 }
 
 /* line 2, ../sass/pages/_home.scss */
