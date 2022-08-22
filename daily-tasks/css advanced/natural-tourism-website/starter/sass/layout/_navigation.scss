@@ -1,0 +1,48 @@
+.navigation {
+    &__checkbox {
+
+    }
+
+    &__button {
+        // make hamburger button 1rem wider than below background so that in normal condn button can hide the background underneath. Only upon clicking button, enlarged round background reveals 
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        // using fixed position, element will be out of flow, but unlike absolute it does not change position with scroll, fixed on page. Also unlike absolute, fixed position does not need relative position for parent 
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        background-color: $color-white;
+        z-index: 2000;
+        border: 2px solid red;
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        // button is 1rem wider so to hide background beneath it, push the background extra .5rem downward and .5rem leftwards 
+        top: 6.5rem;
+        right: 6.5rem;
+        // radial gradient starts from middle of an element and grows to all outside directions from there, whereas linear gradient goes from one side to other 
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
+        z-index: 1000;
+    }
+
+    &__nav {
+
+    }
+
+    &__list {
+
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+
+    }
+}
