@@ -22,19 +22,24 @@
   <body>
     <!-- NAVIGATION SECTION -->
     <div class="navigation">
+      <!-- checkbox will be checked upon clicking the hamburger button in label. To sense the click use :checked pseudo class and display hidden nav background and nav list, hide the checkbox -->
       <input type="checkbox" name="" class="navigation__checkbox" id="navi-toggle">
-      
+
+      <!-- hamburger button resides in label of checkbox -->
       <label for="navi-toggle" class="navigation__button">MENU</label>
 
+      <!-- in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list container appears, both are fixed positioned, takes whole viewport --> 
       <div class="navigation__background">&nbsp;</div>
 
+      <!-- nav list container is normally hidden, alongwith nav background, appears upon clicking the hamburger button, covers entire viewport, has fixed position w.r.t. viewport -->
       <nav class="navigation__nav">
+        <!-- . navigation__list contains navigation items, absolutely positioned at the center of fixed positioned nav list container -->
         <ul class="navigation__list">
-          <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Your Benfits</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Popular Tours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Book now</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Us</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your Benefits</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Tours</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
         </ul>
       </nav>
     </div>
