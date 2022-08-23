@@ -1,48 +1,108 @@
+// NAVIGATION SCREEN, MENUS AND HAMBURGER
 .navigation {
-    &__checkbox {
+  &__checkbox {
+    // hide the checkbox, but use it's :checked pseudo class to sense click on label containing hamburger button and reveal the hidden navigation screen
+    display: none;
+  }
 
+  &__button {
+    // make hamburger button 1rem wider than below round background so that in normal condn button can hide the background underneath. Only upon clicking the button, enlarged round background reveals 
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    // using fixed position, element will be out of flow, but unlike absolute it does not change position with scroll, fixed on page. Also unlike absolute, fixed position does not need relative position for parent
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    background-color: $color-white;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+  }
+
+  // in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list appears, both are fixed, takes whole viewport 
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    // button is 1rem wider so to hide background beneath it, push the background extra .5rem downwards and .5rem leftwards
+    top: 6.5rem;
+    right: 6.5rem;
+    // radial gradient starts from middle of an element and grows to all outside directions from there, whereas linear gradient goes from one side to other
+    background-image: radial-gradient(
+      $color-primary-light 0%,
+      $color-primary-dark 30%
+    );
+    z-index: 1000;
+
+    transform: scale(80);
+  }
+
+  // navigation__nav contains the navigation list, spreads over entire viewport and on top of previous navigation background 
+  &__nav {
+    // cannot give 100vw to width as it will then overflow body element which here has outer margin and will introduce horizontal scroll. As nav is block element so we may or may not specify width as it will certainly take 100% width of body
+    height: 100vh;
+    width: 100%;
+    // upon scrolling, navigation list container shouldn't move, using top left 0 position w.r.t. viewport center the absolute positioned list inside this container  
+    position: fixed;
+    top: 0;
+    left: 0;
+    // top to bottom : hamburger button > navigation list container > navigation background 
+    z-index: 1500;
+
+    // opacity: 0;
+    // width: 0;
+  }
+
+  // navigation list will be at the center of viewport
+  &__list {
+    @include center-horizontal-vertical;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 3rem;
+      font-weight: 300;
+      // anchor, a is inline element, means padding cannot be applied, so convert it to inline-block
+      display: inline-block;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      // upon hovering the nav links, link background slowly becomes white at an angle
+      // 0 to 50% of background image is transparent and 50% to 100% is white, and their division line is at 120deg angle
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      // increase the background size, then size of above background-image will increase and extra part moves to the right side. But only part having content can be seen. 100% is default size
+      // because of increasing background size, background color will be changed from half transparent, half white to complete transparent as white part hides to the right
+      background-size: 250%;
+      transition: all 0.5s;
+
+      // give space between number and link name
+      span {
+        display: inline-block;
+        margin-right: 1.5rem;
+      }
     }
-
-    &__button {
-        // make hamburger button 1rem wider than below background so that in normal condn button can hide the background underneath. Only upon clicking button, enlarged round background reveals 
-        height: 7rem;
-        width: 7rem;
-        border-radius: 50%;
-        // using fixed position, element will be out of flow, but unlike absolute it does not change position with scroll, fixed on page. Also unlike absolute, fixed position does not need relative position for parent 
-        position: fixed;
-        top: 6rem;
-        right: 6rem;
-        background-color: $color-white;
-        z-index: 2000;
-        border: 2px solid red;
+    &:hover,
+    :active {
+      // as extra part of background image is hidden on right side, so to view right side part of it i.e. white part, we have to shift the background image to left
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(
+        1rem
+      ); // upon hovering the link, text moves slightly to right side
     }
-
-    &__background {
-        height: 6rem;
-        width: 6rem;
-        border-radius: 50%;
-        position: fixed;
-        // button is 1rem wider so to hide background beneath it, push the background extra .5rem downward and .5rem leftwards 
-        top: 6.5rem;
-        right: 6.5rem;
-        // radial gradient starts from middle of an element and grows to all outside directions from there, whereas linear gradient goes from one side to other 
-        background-image: radial-gradient($color-primary-light, $color-primary-dark);
-        z-index: 1000;
-    }
-
-    &__nav {
-
-    }
-
-    &__list {
-
-    }
-
-    &__item {
-
-    }
-
-    &__link {
-
-    }
+  }
 }

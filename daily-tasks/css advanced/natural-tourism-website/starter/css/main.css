@@ -63,7 +63,7 @@ body {
 
 /* line 10, ../sass/base/_typography.scss */
 .heading-primary {
-  color: #ffd;
+  color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -206,17 +206,17 @@ body {
 }
 /* line 42, ../sass/components/_button.scss */
 .btn--white {
-  background-color: #ffd;
+  background-color: #fff;
   color: #777;
 }
 /* line 46, ../sass/components/_button.scss */
 .btn--white::after {
-  background-color: #ffd;
+  background-color: #fff;
 }
 /* line 51, ../sass/components/_button.scss */
 .btn--green {
   background-color: #55c57a;
-  color: #ffd;
+  color: #fff;
 }
 /* line 55, ../sass/components/_button.scss */
 .btn--green::after {
@@ -254,7 +254,7 @@ body {
 /* line 91, ../sass/components/_button.scss */
 .btn-text:hover {
   background-color: #55c57a;
-  color: #ffd;
+  color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
@@ -285,7 +285,7 @@ body {
 }
 /* line 25, ../sass/components/_card.scss */
 .card__side--front {
-  background-color: #ffd;
+  background-color: #fff;
 }
 /* line 28, ../sass/components/_card.scss */
 .card__side--back {
@@ -337,7 +337,7 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   text-align: right;
-  color: #ffd;
+  color: #fff;
   position: absolute;
   top: 12rem;
   right: 2rem;
@@ -393,7 +393,7 @@ body {
 }
 /* line 176, ../sass/components/_card.scss */
 .card__price-box {
-  color: #ffd;
+  color: #fff;
   margin-bottom: 8rem;
 }
 /* line 181, ../sass/components/_card.scss */
@@ -449,7 +449,7 @@ body {
 
 /* line 1, ../sass/components/_feature-box.scss */
 .feature-box {
-  background-color: rgba(255, 255, 221, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
   padding: 2.5rem;
   text-align: center;
@@ -483,7 +483,7 @@ body {
   color: inherit;
   padding: 1.5rem 2rem;
   border-radius: 2px;
-  background-color: rgba(255, 255, 221, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: 3px solid transparent;
   width: 70%;
@@ -575,7 +575,7 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 221, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -614,7 +614,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 20%);
-  color: #ffd;
+  color: #fff;
   font-size: 1.7rem;
   text-transform: uppercase;
   text-align: center;
@@ -773,7 +773,11 @@ body {
   height: 3.5rem;
 }
 
-/* line 6, ../sass/layout/_navigation.scss */
+/* line 3, ../sass/layout/_navigation.scss */
+.navigation__checkbox {
+  display: none;
+}
+/* line 8, ../sass/layout/_navigation.scss */
 .navigation__button {
   height: 7rem;
   width: 7rem;
@@ -781,11 +785,11 @@ body {
   position: fixed;
   top: 6rem;
   right: 6rem;
-  background-color: #ffd;
+  background-color: #fff;
   z-index: 2000;
-  border: 2px solid red;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
 }
-/* line 20, ../sass/layout/_navigation.scss */
+/* line 23, ../sass/layout/_navigation.scss */
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -793,8 +797,56 @@ body {
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
-  background-image: radial-gradient(#7ed56f, #28b485);
+  background-image: radial-gradient(#7ed56f 0%, #28b485 30%);
   z-index: 1000;
+  transform: scale(80);
+}
+/* line 42, ../sass/layout/_navigation.scss */
+.navigation__nav {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+}
+/* line 58, ../sass/layout/_navigation.scss */
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+/* line 64, ../sass/layout/_navigation.scss */
+.navigation__item {
+  margin: 1rem;
+}
+/* line 69, ../sass/layout/_navigation.scss */
+.navigation__link:link, .navigation__link:visited {
+  font-size: 3rem;
+  font-weight: 300;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 250%;
+  transition: all 0.5s;
+}
+/* line 93, ../sass/layout/_navigation.scss */
+.navigation__link:link span, .navigation__link:visited span {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+/* line 98, ../sass/layout/_navigation.scss */
+.navigation__link:hover,
+.navigation__link :active {
+  background-position: 100%;
+  color: #55c57a;
+  transform: translateX(1rem);
 }
 
 /* line 2, ../sass/pages/_home.scss */
@@ -838,7 +890,7 @@ body {
 
 /* line 53, ../sass/pages/_home.scss */
 .book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 221, 0.9) 0%, rgba(255, 255, 221, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: 100%;
   height: 50rem;
   border-radius: 3px;
