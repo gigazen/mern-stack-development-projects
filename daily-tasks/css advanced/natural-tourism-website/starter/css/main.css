@@ -789,8 +789,9 @@ body {
   z-index: 2000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
+  cursor: pointer;
 }
-/* line 24, ../sass/layout/_navigation.scss */
+/* line 25, ../sass/layout/_navigation.scss */
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -802,7 +803,7 @@ body {
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
 }
-/* line 43, ../sass/layout/_navigation.scss */
+/* line 45, ../sass/layout/_navigation.scss */
 .navigation__nav {
   height: 100vh;
   position: fixed;
@@ -813,7 +814,7 @@ body {
   width: 0;
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
-/* line 60, ../sass/layout/_navigation.scss */
+/* line 63, ../sass/layout/_navigation.scss */
 .navigation__list {
   position: absolute;
   top: 50%;
@@ -823,11 +824,11 @@ body {
   text-align: center;
   width: 100%;
 }
-/* line 67, ../sass/layout/_navigation.scss */
+/* line 70, ../sass/layout/_navigation.scss */
 .navigation__item {
   margin: 1rem;
 }
-/* line 72, ../sass/layout/_navigation.scss */
+/* line 75, ../sass/layout/_navigation.scss */
 .navigation__link:link, .navigation__link:visited {
   font-size: 3rem;
   font-weight: 300;
@@ -840,53 +841,79 @@ body {
   background-size: 250%;
   transition: all 0.5s;
 }
-/* line 96, ../sass/layout/_navigation.scss */
+/* line 99, ../sass/layout/_navigation.scss */
 .navigation__link:link span, .navigation__link:visited span {
   display: inline-block;
   margin-right: 1.5rem;
 }
-/* line 101, ../sass/layout/_navigation.scss */
+/* line 104, ../sass/layout/_navigation.scss */
 .navigation__link:hover,
 .navigation__link :active {
   background-position: 100%;
   color: #55c57a;
   transform: translateX(1rem);
 }
-/* line 114, ../sass/layout/_navigation.scss */
+/* line 117, ../sass/layout/_navigation.scss */
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80);
 }
-/* line 118, ../sass/layout/_navigation.scss */
+/* line 121, ../sass/layout/_navigation.scss */
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
   width: 100%;
 }
-/* line 125, ../sass/layout/_navigation.scss */
+/* line 129, ../sass/layout/_navigation.scss */
 .navigation__icon {
   position: relative;
   margin-top: 3.5rem;
-  cursor: pointer;
 }
-/* line 132, ../sass/layout/_navigation.scss */
+/* line 135, ../sass/layout/_navigation.scss */
 .navigation__icon, .navigation__icon::before, .navigation__icon::after {
   width: 3rem;
   height: 2px;
   background-color: #333;
   display: inline-block;
 }
-/* line 142, ../sass/layout/_navigation.scss */
+/* line 145, ../sass/layout/_navigation.scss */
 .navigation__icon::before, .navigation__icon::after {
   content: "";
   position: absolute;
   left: 0;
+  transition: all .2s;
 }
-/* line 150, ../sass/layout/_navigation.scss */
+/* line 156, ../sass/layout/_navigation.scss */
 .navigation__icon::before {
-  top: -.8rem;
+  top: -0.8rem;
 }
-/* line 154, ../sass/layout/_navigation.scss */
+/* line 160, ../sass/layout/_navigation.scss */
 .navigation__icon::after {
-  top: .8rem;
+  top: 0.8rem;
+}
+/* line 166, ../sass/layout/_navigation.scss */
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+  height: 1px;
+}
+/* line 171, ../sass/layout/_navigation.scss */
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+  height: 1px;
+}
+/* line 177, ../sass/layout/_navigation.scss */
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+/* line 181, ../sass/layout/_navigation.scss */
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  transform: rotate(135deg);
+  top: 0;
+  height: 1px;
+}
+/* line 188, ../sass/layout/_navigation.scss */
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  transform: rotate(-135deg);
+  top: 0;
+  height: 1px;
 }
 
 /* line 2, ../sass/pages/_home.scss */

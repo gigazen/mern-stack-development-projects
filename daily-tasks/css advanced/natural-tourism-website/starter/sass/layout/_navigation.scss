@@ -1,4 +1,4 @@
-// NAVIGATION SCREEN, MENUS AND HAMBURGER
+// NAVIGATION SCREEN, MENUS AND HAMBURGER BUTTON 
 .navigation {
   &__checkbox {
     // hide the checkbox, but use it's :checked pseudo class to sense click on label containing hamburger button and reveal the hidden navigation screen
@@ -18,6 +18,7 @@
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     text-align: center;
+    cursor: pointer;
   }
 
   // in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list appears, both are fixed, takes whole viewport
@@ -35,6 +36,7 @@
       $color-primary-dark 30%
     );
     z-index: 1000;
+    // keep the transition in normal state to get smooth animation in :checked, :hover etc. states
     // Cubic bezier works as custom transition timing function. Here use cubic-bezier of easeInOutQuint easing function from easings.net
     transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   }
@@ -52,6 +54,7 @@
     // normally nav list container is hidden, element will be on page if we just use opacity 0, that's why also make the width 0. Cannot use visibility: hidden then visible as unlike opacity, visibility does not animate
     opacity: 0;
     width: 0;
+    // keep the transition in normal state to get smooth animation in :checked, :hover etc. states
     // Cubic bezier works as custom transition timing function. Here use cubic-bezier of easeInOutBack easing function from easings.net
     transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
@@ -122,11 +125,11 @@
   }
 
   // ICON
+  // hamburger button resides in label of checkbox. 3 lines in button are 3 elements. Middle line is span element, top line is ::before pseudo element, bottom line is ::after pseudo element
   &__icon {
     position: relative;
-    // to center the hamburger icon use text-center inside label element parent and to bring the icon downwards give margin-top to this span element 
+    // to center the hamburger icon use text-center inside label element parent and to bring the icon downwards give margin-top to this span element
     margin-top: 3.5rem;
-    cursor: pointer;
 
     // common style for 3 elements : 1 span i.e. navigation__icon itself, 1 before pseudo element i.e. navigation__icon::before, 1 after pseudo element i.e. navigation__icon::after
     &,
@@ -142,21 +145,51 @@
     &::before,
     &::after {
       content: "";
-      // absolute positined element is positioned relative to its closest positioned ancestor. To position these pseudo elements relative to their parent, navigation__icon, give relative position to navigation__icon parent  
+      // absolute positined element is positioned relative to its closest positioned ancestor. To position these pseudo elements relative to their parent, navigation__icon, give relative position to navigation__icon parent. Do not give absolute position to the span element
+      // also could have done using translateY property instead of absolute positioning
       position: absolute;
       left: 0;
+      // keep the transition in normal state to get smooth animation in :hover etc. states
+      transition: all .2s;
     }
 
     &::before {
-      top: -.8rem;
+      top: -0.8rem;
     }
 
     &::after {
-      top: .8rem;
+      top: 0.8rem;
+    }
+  }
+
+  // hover over the button and hamburger top line moves up, bottom line moves down a bit
+  &__button:hover &__icon::before {
+    top: -1rem;
+    height: 1px;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+    height: 1px;
+  }
+
+  // upon clicking the button, hamburger icon should become a cross. For this rotate the ::before and ::after pseudo elements and hide the span element in middle
+  &__checkbox:checked + &__button &__icon {
+    // as ::before and ::after both depend on span or navigation__icon, that's why cannot use opacity 0 or visibility hidden to hide the span element. But can make it's background color from grey to transparent. This transparent background property of span element will not propagate to ::before and ::after of span element
+    background-color: transparent;
+
+    &::before {
+      // upon clicking rotate the before element 135deg clockwise to make cross
+      transform: rotate(180deg-45deg);
+      top: 0;     // no upward movement 
+      height: 1px;
     }
 
-    &:hover ~ &::before {
-      // top: -1rem;
+    &::after {
+      // upon clicking rotate the after element 135deg counterclockwise to make cross 
+      transform: rotate(-(180deg-45deg));
+      top: 0;
+      height: 1px;
     }
   }
 }
