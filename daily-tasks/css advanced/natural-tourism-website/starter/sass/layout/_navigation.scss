@@ -6,7 +6,7 @@
   }
 
   &__button {
-    // make hamburger button 1rem wider than below round background so that in normal condn button can hide the background underneath. Only upon clicking the button, enlarged round background reveals 
+    // make hamburger button 1rem wider than below round background so that in normal condn button can hide the background underneath. Only upon clicking the button, enlarged round background reveals
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
@@ -16,10 +16,11 @@
     right: 6rem;
     background-color: $color-white;
     z-index: 2000;
-    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+    text-align: center;
   }
 
-  // in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list appears, both are fixed, takes whole viewport 
+  // in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list appears, both are fixed, takes whole viewport
   &__background {
     height: 6rem;
     width: 6rem;
@@ -34,24 +35,25 @@
       $color-primary-dark 30%
     );
     z-index: 1000;
-
-    transform: scale(80);
+    // Cubic bezier works as custom transition timing function. Here use cubic-bezier of easeInOutQuint easing function from easings.net
+    transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   }
 
-  // navigation__nav contains the navigation list, spreads over entire viewport and on top of previous navigation background 
+  // navigation__nav contains the navigation list, spreads over entire viewport and on top of previous navigation background
   &__nav {
-    // cannot give 100vw to width as it will then overflow body element which here has outer margin and will introduce horizontal scroll. As nav is block element so we may or may not specify width as it will certainly take 100% width of body
     height: 100vh;
-    width: 100%;
-    // upon scrolling, navigation list container shouldn't move, using top left 0 position w.r.t. viewport center the absolute positioned list inside this container  
+    // upon scrolling, navigation list container shouldn't move, using top left 0 position w.r.t. viewport center the absolute positioned list inside this container
     position: fixed;
     top: 0;
     left: 0;
-    // top to bottom : hamburger button > navigation list container > navigation background 
+    // top to bottom : hamburger button > navigation list container > navigation background
     z-index: 1500;
 
-    // opacity: 0;
-    // width: 0;
+    // normally nav list container is hidden, element will be on page if we just use opacity 0, that's why also make the width 0. Cannot use visibility: hidden then visible as unlike opacity, visibility does not animate
+    opacity: 0;
+    width: 0;
+    // Cubic bezier works as custom transition timing function. Here use cubic-bezier of easeInOutBack easing function from easings.net
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
 
   // navigation list will be at the center of viewport
@@ -59,6 +61,7 @@
     @include center-horizontal-vertical;
     list-style: none;
     text-align: center;
+    width: 100%;
   }
 
   &__item {
@@ -103,6 +106,57 @@
       transform: translateX(
         1rem
       ); // upon hovering the link, text moves slightly to right side
+    }
+  }
+
+  // FUNCTIONALITY
+  // upon clicking the hamburger in label, checkbox gets checked, click sensed by :checked pseudo class selector, then nav background and nav list container becomes visible
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    // cannot give 100vw to width as it will then overflow body element which here has outer margin and will introduce horizontal scroll
+    width: 100%;
+  }
+
+  // ICON
+  &__icon {
+    position: relative;
+    // to center the hamburger icon use text-center inside label element parent and to bring the icon downwards give margin-top to this span element 
+    margin-top: 3.5rem;
+    cursor: pointer;
+
+    // common style for 3 elements : 1 span i.e. navigation__icon itself, 1 before pseudo element i.e. navigation__icon::before, 1 after pseudo element i.e. navigation__icon::after
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      // span is inline element, and here it contains nothing, that's why to make the width property work for it, have to make it inline-block
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      // absolute positined element is positioned relative to its closest positioned ancestor. To position these pseudo elements relative to their parent, navigation__icon, give relative position to navigation__icon parent  
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -.8rem;
+    }
+
+    &::after {
+      top: .8rem;
+    }
+
+    &:hover ~ &::before {
+      // top: -1rem;
     }
   }
 }

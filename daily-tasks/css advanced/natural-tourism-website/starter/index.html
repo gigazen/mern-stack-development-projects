@@ -25,8 +25,11 @@
       <!-- checkbox will be checked upon clicking the hamburger button in label. To sense the click use :checked pseudo class and display hidden nav background and nav list, hide the checkbox -->
       <input type="checkbox" name="" class="navigation__checkbox" id="navi-toggle">
 
-      <!-- hamburger button resides in label of checkbox -->
-      <label for="navi-toggle" class="navigation__button">MENU</label>
+      <!-- hamburger button resides in label of checkbox. 3 lines in button are 3 elements. Middle line is span element, above line is ::before pseudo element, below line is ::after pseudo element -->
+      <label for="navi-toggle" class="navigation__button">
+        <!-- middle line in button is a span element -->
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
 
       <!-- in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list container appears, both are fixed positioned, takes whole viewport --> 
       <div class="navigation__background">&nbsp;</div>
