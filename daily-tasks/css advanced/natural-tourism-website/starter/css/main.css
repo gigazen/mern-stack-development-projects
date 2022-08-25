@@ -584,8 +584,11 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 }
-/* line 13, ../sass/components/_popup.scss */
+/* line 17, ../sass/components/_popup.scss */
 .popup__content {
   width: 70%;
   position: absolute;
@@ -597,25 +600,28 @@ body {
   border-radius: 3px;
   display: table;
   overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all .5s .2s;
 }
-/* line 26, ../sass/components/_popup.scss */
+/* line 38, ../sass/components/_popup.scss */
 .popup__left {
   width: 33.333333%;
   display: table-cell;
 }
-/* line 34, ../sass/components/_popup.scss */
+/* line 46, ../sass/components/_popup.scss */
 .popup__right {
   width: 66.6666667%;
   display: table-cell;
   vertical-align: middle;
   padding: 3rem 5rem;
 }
-/* line 43, ../sass/components/_popup.scss */
+/* line 55, ../sass/components/_popup.scss */
 .popup__img {
   display: block;
   width: 100%;
 }
-/* line 48, ../sass/components/_popup.scss */
+/* line 60, ../sass/components/_popup.scss */
 .popup__text {
   font-size: 1.4rem;
   margin-bottom: 4rem;
@@ -623,6 +629,32 @@ body {
   column-gap: 4rem;
   column-rule: 1px solid #ddd;
   hyphens: auto;
+}
+/* line 75, ../sass/components/_popup.scss */
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 82, ../sass/components/_popup.scss */
+.popup:target .popup__content {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* line 89, ../sass/components/_popup.scss */
+.popup__close:link, .popup__close:visited {
+  color: #777;
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 4rem;
+  text-decoration: none;
+  line-height: 1;
+  display: inline-block;
+  transition: all 0.5s;
+}
+/* line 104, ../sass/components/_popup.scss */
+.popup__close:hover {
+  color: #55c57a;
 }
 
 /* line 1, ../sass/components/_story.scss */

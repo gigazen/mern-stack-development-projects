@@ -60,7 +60,7 @@
           <span class="heading-primary--sub">Your #1 Travel Partner</span>
         </h1>
 
-        <a href="#" class="btn btn--white btn--animated">Discover Our Tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated">Discover Our Tours</a>
       </div>
     </header>
 
@@ -179,7 +179,7 @@
       </section>
 
       <!-- TOURS SECTION -->
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <!-- creates a centered heading at the top of tours section -->
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">Most popular tours</h2>
@@ -217,7 +217,8 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$297</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now!</a>
+                  <!-- upon clicking this link button, at the end of url, #popup gets added, so element with id="popup" becomes target element. In css under .popup specify properties when that is a target element so that it can popup -->
+                  <a href="#popup" class="btn btn--white">Book Now!</a>
                 </div>
               </div>
             </div>
@@ -249,7 +250,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$497</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now!</a>
+                  <a href="#popup" class="btn btn--white">Book Now!</a>
                 </div>
               </div>
             </div>
@@ -281,7 +282,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$897</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now!</a>
+                  <a href="#popup" class="btn btn--white">Book Now!</a>
                 </div>
               </div>
             </div>
@@ -453,7 +454,7 @@
     <!-- POPUP -->
     <!-- Popup can be placed anywhere in the document as it is not tied to any section -->
     <!-- dark background of popup -->
-    <div class="popup">
+    <div class="popup" id="popup">
       <!-- content of popup has 2 images on left, and 2 headings, 1 paragraph, 1 button on right -->
       <div class="popup__content">
 
@@ -463,6 +464,9 @@
         </div>
 
         <div class="popup__right">
+          <!-- upon clicking on popup close button with href="#section-tours", tours section will be target element then popup element no longer remains target element, so properties defined inside .popup:target no longer applies, and popup goes away. &times; is HTML entity displays cross -->
+          <a href="#section-tours" class="popup__close">&times;</a>
+
           <h2 class="heading-secondary u-margin-bottom-medium u-margin-top-small-4">Start booking now</h2>
           <h3 class="heading-tertiary u-margin-top-small-2">Important &ndash; Please read these terms before booking</h3>
           <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore excepturi numquam repudiandae reiciendis, tenetur possimus, consequatur, enim beatae esse illo at reprehenderit. Placeat expedita eius ipsam repellendus maxime autem ratione similique magni omnis vero, non ipsa, maiores nihil incidunt molestiae, corrupti blanditiis adipisci quod nobis. Magnam velit repudiandae, rerum eius aperiam architecto cumque quasi dolor culpa corporis dignissimos a.</p>
