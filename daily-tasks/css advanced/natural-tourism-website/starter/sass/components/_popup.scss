@@ -1,60 +1,108 @@
-// POPUP AND ITS CONTENT 
+// POPUP AND ITS CONTENT
 .popup {
-    height: 100vh;
+  height: 100vh;
+  width: 100%;
+  // create a black overlay on our page, it will be fixed on page covering total viewport and if scrolled, we can see page content getting scrolled behind the fixed overlay
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 9999;
+  // hide the popup in normal condition, opacity used to create animation from invisible to visible, and visibility used to remove the element altogether then to reappear
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  // contains left and right child containers
+  &__content {
+    width: 70%;
+    // position the popup content relative to its closest positioned ancestor, means .popup here. As .popup does not scroll so .popup__content also does not get scrolled, fixed at the center of viewport
+    @include absCenter;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    display: table;
+    // hide part of image which overlapping given border radius
+    overflow: hidden;
+
+    // animate the popup box as if it is coming towards user. Initially invisible and half sized. And upon clicking the Book now button of Tours section, as popup becomes target element, then popup content becomes half sized, invisible then full sized, visible
+    opacity: 0;
+    // cannot use transform twice, previously used transform to center the .popup__content by @include absCenter, so last declared transform will overwrite previous one and content box will not remain at center, will be at bottom right while being half sized
+    // transform: scale(.5);
+    // can combine both above and now required transform properties
+    transform: translate(-50%, -50%) scale(.5);
+    transition: all .5s .2s;
+  }
+
+  // contains 2 images
+  &__left {
+    width: 33.333333%;
+    // if we use float left for both popup__left and popup__right then text inside popup__right cannot take full height of popup__right container, will be at the top half. That's why instead of using float left, we have to use display table for parent container, popup__content, and display table-cell for both popup__left and popup__right child containers. They will act as if they are cells in a parent table
+    // float: left;
+    display: table-cell;
+  }
+
+  // contains headings and paragraphs
+  &__right {
+    width: 66.6666667%;
+    // float: left;
+    display: table-cell;
+    vertical-align: middle; // vertically center the text inside popup__right
+    padding: 3rem 5rem;
+  }
+
+  // convert the images from inline to block element so that they can be one in a single line, also should take 100% width of parent container
+  &__img {
+    display: block;
     width: 100%;
-    // create a black overlay on our page, it will be fixed on page covering total viewport and if scrolled, we can see page content getting scrolled behind the fixed overlay 
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba($color-black, .8);
-    z-index: 9999;
+  }
 
-    // contains left and right child containers 
-    &__content {
-        width: 70%;
-        // position the popup content relative to its closest positioned ancestor, means .popup here. As .popup does not scroll so .popup__content also does not get scrolled, fixed at the center of viewport 
-        @include absCenter;
-        background-color: $color-white;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
-        border-radius: 3px;
-        display: table;
-        // hide part of image which overlapping given border radius 
-        overflow: hidden;
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    // keep the text in multiple columns. Default column-gap is 1em which is 1.4rem or 14px here because em means current font size. column-rule puts a dividing line between columns
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-light-3;
+
+    // by default if a word is bigger than space available in a line then word goes to next line. But using hyphens auto, word will end with hyphens if little space available in a line, remaining parts of text on next line, like newspaper. For this to occur, in html document with html tag, lang value must be set. Like <html lang="en"></html>
+    hyphens: auto;
+  }
+
+  // upon clicking on a link button with href="#popup", when this element with popup class and popup id becomes target element then sense it using :target pseudo class selector and specify properties so that it can popup
+  // although we use #popup id to connect button with popup element but as id and class both points same element, that's why can define :target with .popup class of that element
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // when the popup is open that is popup is the target element at that time define style for .popup__content which is child of .popup
+  // animate the popup box as if it is coming towards user. Initially invisible and half sized. And upon clicking the Book now button of Tours section, as popup becomes target element, then popup content becomes half sized, invisible then full sized, visible
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  // upon clicking on popup close button with href="#section-tours", tours section will be target element then popup element no longer remains target element, so properties defined inside .popup:target no longer applies, and popup goes away
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark-1;
+      // give position to the close button w.r.t. its closest positioned ancestor i.e. .popup__content, although we are defining .popup__close inside .popup element but as .popup__content is nearest ancestor of .popup__close and .popup__content is absolute positioned so position of .popup__close will be w.r.t. it
+      position: absolute;
+      top: 1.5rem;
+      right: 2.5rem;
+      // anchor, a element acts like fonts, so fonts properties can be applied to it
+      font-size: 4rem;
+      text-decoration: none;
+      line-height: 1;
+      display: inline-block;
+      transition: all 0.5s;
     }
 
-    // contains 2 images 
-    &__left {
-        width: 33.333333%;
-        // if we use float left for both popup__left and popup__right then text inside popup__right cannot take full height of popup__right container, will be at the top half. That's why instead of using float left, we have to use display table for parent container, popup__content, and display table-cell for both popup__left and popup__right child containers. They will act as if they are cells in a parent table  
-        // float: left;
-        display: table-cell;
+    &:hover {
+      color: $color-primary;
     }
-
-    // contains headings and paragraphs 
-    &__right {
-        width: 66.6666667%;
-        // float: left;
-        display: table-cell;
-        vertical-align: middle;     // vertically center the text inside popup__right 
-        padding: 3rem 5rem;
-    }
-
-    // convert the images from inline to block element so that they can be one in a single line, also should take 100% width of parent container 
-    &__img {
-        display: block;
-        width: 100%;
-    }
-
-    &__text {
-        font-size: 1.4rem;
-        margin-bottom: 4rem;
-
-        // keep the text in multiple columns. Default column-gap is 1em which is 1.4rem or 14px here because em means current font size. column-rule puts a dividing line between columns 
-        column-count: 2;
-        column-gap: 4rem; 
-        column-rule: 1px solid $color-grey-light-3;
-
-        // by default if a word is bigger than space available in a line then word goes to next line. But using hyphens auto, word will end with hyphens if little space available in a line, remaining parts of text on next line, like newspaper. For this to occur, in html document with html tag, lang value must be set. Like <html lang="en"></html>
-        hyphens: auto;
-    }
+  }
 }
