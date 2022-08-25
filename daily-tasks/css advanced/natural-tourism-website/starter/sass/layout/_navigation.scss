@@ -61,7 +61,7 @@
 
   // navigation list will be at the center of viewport
   &__list {
-    @include center-horizontal-vertical;
+    @include absCenter;
     list-style: none;
     text-align: center;
     width: 100%;
