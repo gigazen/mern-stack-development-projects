@@ -4,7 +4,25 @@ html {
   padding: 0;
   box-sizing: border-box;
   // this defines 1rem which is the basis of our design, that's why it is inside _base, not in _typography
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem=10px, 10px/16px*100=62.5%
+
+  // media query in short form using mixin, $variable, @if, @content, @mixin, @include
+  // both for phone and tab-port, want 8px font size means 8px/16px*100=50%. So no need to define media query for root font size separately. Here 16px comes from browser default font size
+  // phone: <=600px, tab-port: <=900px, tab-land: <=1200px, big-desktop: >=1800px
+  // tab-port, tab-land both have max-width, tab-port is <=900px, tab-land is <=1200px, so tab-land must come before otherwise last one would apply and tab-port would never get to apply, tab-land -> tab-port
+  // no problem with big-desktop order as it has min-width, so only will apply above 1800px
+  
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px, 9px/16px*100=56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px, 8px/16px*100=50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px, 12px/16px*100=75%
+  }
 }
 
 *,
@@ -12,5 +30,3 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-
