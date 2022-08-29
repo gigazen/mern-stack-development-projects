@@ -1,4 +1,4 @@
-// NAVIGATION SCREEN, MENUS AND HAMBURGER BUTTON 
+// NAVIGATION SCREEN, MENUS AND HAMBURGER BUTTON
 .navigation {
   &__checkbox {
     // hide the checkbox, but use it's :checked pseudo class to sense click on label containing hamburger button and reveal the hidden navigation screen
@@ -150,7 +150,7 @@
       position: absolute;
       left: 0;
       // keep the transition in normal state to get smooth animation in :hover etc. states
-      transition: all .2s;
+      transition: all 0.2s;
     }
 
     &::before {
@@ -162,15 +162,21 @@
     }
   }
 
-  // hover over the button and hamburger top line moves up, bottom line moves down a bit
+  // hover over the button and hamburger top line moves up, bottom line moves down a bit, color of those lines also change 
   &__button:hover &__icon::before {
     top: -1rem;
     height: 1px;
+    background-color: $color-primary;
   }
 
   &__button:hover &__icon::after {
     top: 1rem;
     height: 1px;
+    background-color: $color-primary;
+  }
+
+  &__button:hover &__icon {
+    background-color: $color-primary;
   }
 
   // upon clicking the button, hamburger icon should become a cross. For this rotate the ::before and ::after pseudo elements and hide the span element in middle
@@ -181,12 +187,12 @@
     &::before {
       // upon clicking rotate the before element 135deg clockwise to make cross
       transform: rotate(180deg-45deg);
-      top: 0;     // no upward movement 
+      top: 0; // no upward movement
       height: 1px;
     }
 
     &::after {
-      // upon clicking rotate the after element 135deg counterclockwise to make cross 
+      // upon clicking rotate the after element 135deg counterclockwise to make cross
       transform: rotate(-(180deg-45deg));
       top: 0;
       height: 1px;

@@ -1,3 +1,16 @@
+/*
+0 - 600px : Phone
+600 - 900px : Tablet Portrait 
+900 - 1200px : Tablet Landscape 
+[1200 - 1800px] : our Desktop-first normal styles apply here 
+1800px + : Big Desktop 
+
+$breakpoint argument choices, no desktop here as that is normal style here 
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
 @keyframes moveToRight {
   0% {
     opacity: 0;
@@ -43,8 +56,26 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media (max-width: 75em) {
+  /* line 2, ../sass/base/_base.scss */
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  /* line 2, ../sass/base/_base.scss */
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  /* line 2, ../sass/base/_base.scss */
+  html {
+    font-size: 75%;
+  }
+}
 
-/* line 10, ../sass/base/_base.scss */
+/* line 28, ../sass/base/_base.scss */
 *,
 *::before,
 *::after {
@@ -966,7 +997,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 /* line 156, ../sass/layout/_navigation.scss */
 .navigation__icon::before {
@@ -980,23 +1011,29 @@ body {
 .navigation__button:hover .navigation__icon::before {
   top: -1rem;
   height: 1px;
+  background-color: #55c57a;
 }
-/* line 171, ../sass/layout/_navigation.scss */
+/* line 172, ../sass/layout/_navigation.scss */
 .navigation__button:hover .navigation__icon::after {
   top: 1rem;
   height: 1px;
+  background-color: #55c57a;
 }
-/* line 177, ../sass/layout/_navigation.scss */
+/* line 178, ../sass/layout/_navigation.scss */
+.navigation__button:hover .navigation__icon {
+  background-color: #55c57a;
+}
+/* line 183, ../sass/layout/_navigation.scss */
 .navigation__checkbox:checked + .navigation__button .navigation__icon {
   background-color: transparent;
 }
-/* line 181, ../sass/layout/_navigation.scss */
+/* line 187, ../sass/layout/_navigation.scss */
 .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
   transform: rotate(135deg);
   top: 0;
   height: 1px;
 }
-/* line 188, ../sass/layout/_navigation.scss */
+/* line 194, ../sass/layout/_navigation.scss */
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   transform: rotate(-135deg);
   top: 0;
