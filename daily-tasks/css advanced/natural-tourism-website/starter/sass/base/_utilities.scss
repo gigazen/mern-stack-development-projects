@@ -1,16 +1,29 @@
-// all utility classes will be used directly with html element so must have highest priority, that's why have to use !important with all properties to overwrite all other values 
+// all utility classes will be used directly with html element so must have highest priority, that's why have to use !important with all properties to overwrite all other values
 .u-center-text {
   text-align: center !important;
 }
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important;
+
+  // can also apply media query for utility classes which we directly apply on html elements
+  @include respond(tab-port) {
+    margin-bottom: 4rem !important;
+  }
 }
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important;
+
+  @include respond(tab-port) {
+    margin-bottom: 2rem !important;
+  }
 }
 .u-margin-bottom-small {
   margin-bottom: 1.5rem !important;
+
+  @include respond(tab-port) {
+    margin-bottom: .5rem !important;
+  }
 }
 
 .u-margin-top-huge {

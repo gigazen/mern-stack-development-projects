@@ -19,6 +19,16 @@
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   // in normal condn nav background is small circle and hides behind hamburger button of label. Upon clicking the button small circle scales up to big circle and takes up whole viewport. Above nav background, nav list appears, both are fixed, takes whole viewport
@@ -39,6 +49,16 @@
     // keep the transition in normal state to get smooth animation in :checked, :hover etc. states
     // Cubic bezier works as custom transition timing function. Here use cubic-bezier of easeInOutQuint easing function from easings.net
     transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   // navigation__nav contains the navigation list, spreads over entire viewport and on top of previous navigation background
@@ -53,7 +73,7 @@
 
     // normally nav list container is hidden, element will be on page if we just use opacity 0, that's why also make the width 0. Cannot use visibility: hidden then visible as unlike opacity, visibility does not animate
     opacity: 0;
-    width: 0;
+    width: 0%;
     // keep the transition in normal state to get smooth animation in :checked, :hover etc. states
     // Cubic bezier works as custom transition timing function. Here use cubic-bezier of easeInOutBack easing function from easings.net
     transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
@@ -162,7 +182,7 @@
     }
   }
 
-  // hover over the button and hamburger top line moves up, bottom line moves down a bit, color of those lines also change 
+  // hover over the button and hamburger top line moves up, bottom line moves down a bit, color of those lines also change
   &__button:hover &__icon::before {
     top: -1rem;
     height: 1px;

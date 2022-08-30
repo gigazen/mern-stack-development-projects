@@ -5,6 +5,17 @@
   // .row:not(:last-child){} means all except .row:last-child {}
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    // small amount of vertical margin gutters needed between columns 
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  // for <=900px, give maximum width to row element, so that there can be spaces on both sides of boxes, also give padding around boxes inside row element to get more spaces around boxes 
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include clearfix; // .row::after {}
@@ -14,6 +25,17 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      // as each row will have single column so horizontal margin gutters not needed between them  
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    // below 900px, there will be single column in each row 
+    @include respond(tab-port) {
+      width: 100% !important;     // without !important, width will be overwritten by below widths as media query has 0 specificity but below classes has 10 specificity 
     }
   }
 
