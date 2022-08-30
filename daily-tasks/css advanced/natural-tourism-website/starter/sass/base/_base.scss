@@ -9,9 +9,9 @@ html {
   // media query in short form using mixin, $variable, @if, @content, @mixin, @include
   // both for phone and tab-port, want 8px font size means 8px/16px*100=50%. So no need to define media query for root font size separately. Here 16px comes from browser default font size
   // phone: <=600px, tab-port: <=900px, tab-land: <=1200px, big-desktop: >=1800px
-  // tab-port, tab-land both have max-width, tab-port is <=900px, tab-land is <=1200px, so tab-land must come before otherwise last one would apply and tab-port would never get to apply, tab-land -> tab-port
+  // tab-port, tab-land both have max-width, tab-port is <=900px, tab-land is <=1200px, so tab-land must come before otherwise last one would apply and tab-port would never get to apply, tab-land -> tab-port -> phone. If using max-width then write the largest media query first, otherwise last one will apply and will overwrite the smaller ones before 
   // no problem with big-desktop order as it has min-width, so only will apply above 1800px
-  
+
   @include respond(tab-land) {
     font-size: 56.25%; // 1rem = 9px, 9px/16px*100=56.25%
   }
@@ -20,13 +20,30 @@ html {
     font-size: 50%; // 1rem = 8px, 8px/16px*100=50%
   }
 
+  // @include respond(tab-phone) {    // width <= 600px
+  //  font-size: 50%;                 // 1rem = 8px, 8px/16px*100 = 50%
+  // }
+
   @include respond(big-desktop) {
     font-size: 75%; // 1rem = 12px, 12px/16px*100=75%
   }
 }
 
+// standard way of reseting box-sizing to border-box
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  // no horizontal scrollbar 
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 3rem;
+
+  // remove padding in body for smaller viewport size  
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

@@ -4,10 +4,18 @@
   font-size: 1.4rem;
   color: $color-grey-light-1;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     // img is an inline element, so to center an image in a container, just apply text-align center to that container
     text-align: center;
     margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__logo {
@@ -21,6 +29,11 @@
     padding-top: 2rem;
     // make the navigation div container as inline-block then its width will be just the width needed for its content. This will make above border just as lengthy as its navigation items
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -62,5 +75,10 @@
     width: 80%;
     // float the copyright text more into right to create space in the middle. Cannot use display inline-block while using float property  
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
   }
 }
