@@ -16,7 +16,8 @@
     border: none;
     // keep the space for custom outline in normal state also but as transparent outline, otherwise after clicking an input box, the below input box will go down by 3px
     border-bottom: 3px solid transparent;
-    width: 70%;
+    // form input boxes should take 90% width of the form element 
+    width: 90%;
     // only input box is in a line
     display: block;
     // any type of transition or change will be animated, so color change of border-bottom of .form-input is animated
@@ -45,6 +46,11 @@
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
+
+    // for <=900px, when there won't be any back image beside form i.e. form will take 100% width of .book section then we want form input boxes to be longer along X-axis 
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   // align form labels right below placeholder text. While writing starts in input box, placeholders are not shown and it should look like placeholders converted to labels
@@ -64,15 +70,21 @@
     // just visibility hidden can't help in animation as labels will go hidden abruptly. Using opacity helps animation to go from opacity 0 to 1 smoothly
     opacity: 0;
     // opacity 0 makes label hidden just from view but it still will be there on top of input boxes, that's why mouse pointer won't change to text cursor or caret while hovering over text input boxes. Using visibility hidden, make the label text gone completely
-    visibility: hidden;       // cannot use display: none also as it won't help in animation 
+    visibility: hidden; // cannot use display: none also as it won't help in animation
     transform: translateY(-4rem);
   }
 
   // radio buttons
   &__radio-group {
-    // keep each radio button side by side
+    // keep each radio button and label side by side
     display: inline-block;
     width: 43%;
+
+    // for <=900px we want the radio buttons and labels to come one below another
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   // text inside label element
@@ -126,7 +138,7 @@
     opacity: 1;
   }
 
-  // disappear the original radio input button as the above ::after pseudo element now works similarly 
+  // disappear the original radio input button as the above ::after pseudo element now works similarly
   &__radio-input {
     display: none;
   }
