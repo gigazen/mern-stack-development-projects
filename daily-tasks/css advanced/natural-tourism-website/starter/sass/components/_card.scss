@@ -112,6 +112,7 @@
     top: 12rem;
     right: 2rem;
     width: 75%;
+    margin: 0;
   }
 
   &__heading-span {
@@ -180,7 +181,7 @@
   }
 
   &__price-only {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
   }
 
@@ -190,64 +191,51 @@
     margin-top: 0px;
   }
 
+  // -----------------------------------------
   // in small devices like, phone, tablet, hover effect doesn't work, so user cannot rotate card on hover. It means we must bring content on back of card to the front, so that user can see the price and click on BOOK NOW button
   // as it is huge code rewriting so write it at the end, copy all the above code and paste it in here then delete parts that are not needed
   @include respond(tab-port) {
-    // give automatic height to the card, it is default value of height. Must specify it here to overwrite normal given height before 
+    // give automatic height to the card, it is default value of height. Must specify it here to overwrite normal given height before
     height: auto;
+    // give border-radius, box-shadow to the entire card instead of just its sides 
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    background-color: $color-white;
 
     // side - 2d element, has 2 variants - front and back
     // make side as 1d element from 2d element
     &__side {
       height: auto;
-      // overwrite absolute position using relative 
+      // overwrite absolute position using relative
       position: relative;
-      border-radius: 3px;
+      box-shadow: none;
 
       &--back {
-        // overwrite back side from 180deg to 0, means it will be at the front side  
+        // overwrite back side from 180deg to 0, means it will be at the front side
         transform: rotateY(0);
-
-        &-1 {
-          background-image: linear-gradient(
-            to right bottom,
-            $color-secondary-light,
-            $color-secondary-dark
-          );
-        }
-
-        &-2 {
-          background-image: linear-gradient(
-            to right bottom,
-            $color-primary-light,
-            $color-primary-dark
-          );
-        }
-
-        &-3 {
-          background-image: linear-gradient(
-            to right bottom,
-            $color-tertiary-light,
-            $color-tertiary-dark
-          );
-        }
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
       }
     }
 
-    // for small screen width, upon hovering front side should not go from 0 to -180deg, it should stay still 
+    // for small screen width, upon hovering front side should not go from 0 to -180deg, it should stay still
     &:hover &__side--front {
       transform: rotateY(0);
     }
 
-    // FRONT SIDE STYLING will remain same, no need to overwrite 
+    &__details {
+      padding: 1rem 3rem;
+    }
 
-    // STYLING of BACK SIDE which is now on FRONT SIDE 
+    // FRONT SIDE STYLING will remain same, no need to overwrite
+
+    // STYLING of BACK SIDE which is now on FRONT SIDE
     &__cta {
       position: relative;
       top: 0%;
       left: 0%;
       transform: translate(0);
       width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
     }
 
     &__price-box {
@@ -255,8 +243,8 @@
     }
 
     &__price-value {
-      font-size: 6rem;
-      margin-bottom: 0;
+      font-size: 4rem;
+      margin-bottom: -5rem;
     }
   }
 }

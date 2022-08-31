@@ -15,10 +15,23 @@
   //     transform: skewX(12deg);
   //   }
 
+  // for <=900px, story section will take 100% available width 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 3rem;
+    padding-left: 7rem;
+  }
+
+  // for <=600px, story will be straight square box, instead of skewed box 
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   &:not(:last-child) {
     margin-bottom: 8rem;
   }
 
+  // round shape of the image in story 
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -30,8 +43,14 @@
     // figure itself takes circular shape
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
+    // distance between image and circular text around is -3rem and also as story section got skewed, we have to unskew the round image to make it look straight  
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+
+    // for <=600px distance between image and text around will be same as before but no need to unskew the image anymore as whole story section got unskewed and placed as normal, make the round image also normal 
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -44,6 +63,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {

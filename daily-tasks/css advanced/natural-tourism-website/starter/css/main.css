@@ -149,7 +149,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #7ed56f, #23916c);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -388,7 +388,7 @@ body {
 }
 /* line 40, ../sass/components/_card.scss */
 .card__side--back-2 {
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  background-image: linear-gradient(to right bottom, #7ed56f, #23916c);
 }
 /* line 47, ../sass/components/_card.scss */
 .card__side--back-3 {
@@ -416,7 +416,7 @@ body {
 }
 /* line 86, ../sass/components/_card.scss */
 .card__picture--2 {
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
+  background-image: linear-gradient(to right bottom, #7ed56f, #23916c), url(../img/nat-6.jpg);
 }
 /* line 94, ../sass/components/_card.scss */
 .card__picture--3 {
@@ -433,47 +433,48 @@ body {
   top: 12rem;
   right: 2rem;
   width: 75%;
+  margin: 0;
 }
-/* line 117, ../sass/components/_card.scss */
+/* line 118, ../sass/components/_card.scss */
 .card__heading-span {
   padding: 1rem 1.5rem;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-/* line 123, ../sass/components/_card.scss */
+/* line 124, ../sass/components/_card.scss */
 .card__heading-span--1 {
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
 }
-/* line 130, ../sass/components/_card.scss */
+/* line 131, ../sass/components/_card.scss */
 .card__heading-span--2 {
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85));
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(35, 145, 108, 0.85));
 }
-/* line 137, ../sass/components/_card.scss */
+/* line 138, ../sass/components/_card.scss */
 .card__heading-span--3 {
   background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
 }
-/* line 146, ../sass/components/_card.scss */
+/* line 147, ../sass/components/_card.scss */
 .card__details {
   padding: 3rem;
 }
-/* line 149, ../sass/components/_card.scss */
+/* line 150, ../sass/components/_card.scss */
 .card__details ul {
   list-style: none;
   width: 80%;
   margin: 0 auto;
   padding-left: 0;
 }
-/* line 155, ../sass/components/_card.scss */
+/* line 156, ../sass/components/_card.scss */
 .card__details ul li {
   text-align: center;
   font-size: 1.5rem;
   padding: 1rem;
 }
-/* line 160, ../sass/components/_card.scss */
+/* line 161, ../sass/components/_card.scss */
 .card__details ul li:not(:last-child) {
   border-bottom: 1.7px solid #eee;
 }
-/* line 168, ../sass/components/_card.scss */
+/* line 169, ../sass/components/_card.scss */
 .card__cta {
   position: absolute;
   top: 50%;
@@ -482,17 +483,17 @@ body {
   width: 90%;
   text-align: center;
 }
-/* line 177, ../sass/components/_card.scss */
+/* line 178, ../sass/components/_card.scss */
 .card__price-box {
   color: #fff;
   margin-bottom: 8rem;
 }
-/* line 182, ../sass/components/_card.scss */
+/* line 183, ../sass/components/_card.scss */
 .card__price-only {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
 }
-/* line 187, ../sass/components/_card.scss */
+/* line 188, ../sass/components/_card.scss */
 .card__price-value {
   font-size: 6rem;
   font-weight: 300;
@@ -502,49 +503,46 @@ body {
   /* line 3, ../sass/components/_card.scss */
   .card {
     height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    background-color: #fff;
   }
-  /* line 201, ../sass/components/_card.scss */
+  /* line 207, ../sass/components/_card.scss */
   .card__side {
     height: auto;
     position: relative;
-    border-radius: 3px;
+    box-shadow: none;
   }
-  /* line 207, ../sass/components/_card.scss */
+  /* line 213, ../sass/components/_card.scss */
   .card__side--back {
     transform: rotateY(0);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   }
-  /* line 211, ../sass/components/_card.scss */
-  .card__side--back-1 {
-    background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-  }
-  /* line 219, ../sass/components/_card.scss */
-  .card__side--back-2 {
-    background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
-  }
-  /* line 227, ../sass/components/_card.scss */
-  .card__side--back-3 {
-    background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
-  }
-  /* line 238, ../sass/components/_card.scss */
+  /* line 221, ../sass/components/_card.scss */
   .card:hover .card__side--front {
     transform: rotateY(0);
   }
-  /* line 245, ../sass/components/_card.scss */
+  /* line 225, ../sass/components/_card.scss */
+  .card__details {
+    padding: 1rem 3rem;
+  }
+  /* line 232, ../sass/components/_card.scss */
   .card__cta {
     position: relative;
     top: 0%;
     left: 0%;
     transform: translate(0);
     width: 100%;
+    padding: 7rem 4rem 4rem 4rem;
   }
-  /* line 253, ../sass/components/_card.scss */
+  /* line 241, ../sass/components/_card.scss */
   .card__price-box {
     margin-bottom: 8rem;
   }
-  /* line 257, ../sass/components/_card.scss */
+  /* line 245, ../sass/components/_card.scss */
   .card__price-value {
-    font-size: 6rem;
-    margin-bottom: 0;
+    font-size: 4rem;
+    margin-bottom: -5rem;
   }
 }
 
@@ -640,7 +638,7 @@ body {
   font-size: 6rem;
   margin-bottom: 0.5rem;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #7ed56f, #23916c);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -670,29 +668,35 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: 3px solid transparent;
-  width: 70%;
+  width: 90%;
   display: block;
   transition: all 0.5s;
 }
-/* line 26, ../sass/components/_form.scss */
+/* line 27, ../sass/components/_form.scss */
 .form__input:focus {
   outline: none;
   border-bottom: 3px solid #55c57a;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
-/* line 35, ../sass/components/_form.scss */
+/* line 36, ../sass/components/_form.scss */
 .form__input:focus:invalid {
   border-bottom: 3px solid #ff7730;
 }
-/* line 41, ../sass/components/_form.scss */
+/* line 42, ../sass/components/_form.scss */
 .form__input::placeholder {
   color: #999;
 }
-/* line 45, ../sass/components/_form.scss */
+/* line 46, ../sass/components/_form.scss */
 .form__input::-webkit-input-placeholder {
   color: #999;
 }
-/* line 51, ../sass/components/_form.scss */
+@media (max-width: 56.25em) {
+  /* line 8, ../sass/components/_form.scss */
+  .form__input {
+    width: 100%;
+  }
+}
+/* line 57, ../sass/components/_form.scss */
 .form__label {
   font-size: 1.2rem;
   font-weight: 700;
@@ -701,25 +705,32 @@ body {
   margin-top: 0.7rem;
   transition: all 0.5s;
 }
-/* line 63, ../sass/components/_form.scss */
+/* line 69, ../sass/components/_form.scss */
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem);
 }
-/* line 72, ../sass/components/_form.scss */
+/* line 78, ../sass/components/_form.scss */
 .form__radio-group {
   display: inline-block;
   width: 43%;
 }
-/* line 79, ../sass/components/_form.scss */
+@media (max-width: 56.25em) {
+  /* line 78, ../sass/components/_form.scss */
+  .form__radio-group {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+/* line 91, ../sass/components/_form.scss */
 .form__radio-label {
   font-size: 1.6rem;
   cursor: pointer;
   position: relative;
   padding-left: 4.5rem;
 }
-/* line 87, ../sass/components/_form.scss */
+/* line 99, ../sass/components/_form.scss */
 .form__radio-button {
   height: 3rem;
   width: 3rem;
@@ -730,7 +741,7 @@ body {
   top: -0.4rem;
   left: 0;
 }
-/* line 99, ../sass/components/_form.scss */
+/* line 111, ../sass/components/_form.scss */
 .form__radio-button::after {
   content: "";
   display: block;
@@ -745,11 +756,11 @@ body {
   opacity: 0;
   transition: opacity 0.2s;
 }
-/* line 124, ../sass/components/_form.scss */
+/* line 136, ../sass/components/_form.scss */
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1;
 }
-/* line 130, ../sass/components/_form.scss */
+/* line 142, ../sass/components/_form.scss */
 .form__radio-input {
   display: none;
 }
@@ -848,11 +859,25 @@ body {
   font-size: 1.6rem;
   transform: skewX(-12deg);
 }
-/* line 18, ../sass/components/_story.scss */
+@media (max-width: 56.25em) {
+  /* line 1, ../sass/components/_story.scss */
+  .story {
+    width: 100%;
+    padding: 3rem;
+    padding-left: 7rem;
+  }
+}
+@media (max-width: 37.5em) {
+  /* line 1, ../sass/components/_story.scss */
+  .story {
+    transform: skewX(0);
+  }
+}
+/* line 30, ../sass/components/_story.scss */
 .story:not(:last-child) {
   margin-bottom: 8rem;
 }
-/* line 22, ../sass/components/_story.scss */
+/* line 35, ../sass/components/_story.scss */
 .story__shape {
   width: 15rem;
   height: 15rem;
@@ -864,17 +889,29 @@ body {
   transform: translateX(-3rem) skewX(12deg);
   position: relative;
 }
-/* line 37, ../sass/components/_story.scss */
+@media (max-width: 37.5em) {
+  /* line 35, ../sass/components/_story.scss */
+  .story__shape {
+    transform: translateX(-3rem) skewX(0);
+  }
+}
+/* line 56, ../sass/components/_story.scss */
 .story__img {
   height: 100%;
   transform: translateX(-4rem) scale(1.4);
   transition: all 0.5s;
 }
-/* line 45, ../sass/components/_story.scss */
+/* line 64, ../sass/components/_story.scss */
 .story__text {
   transform: skewX(12deg);
 }
-/* line 49, ../sass/components/_story.scss */
+@media (max-width: 37.5em) {
+  /* line 64, ../sass/components/_story.scss */
+  .story__text {
+    transform: skewX(0);
+  }
+}
+/* line 72, ../sass/components/_story.scss */
 .story__caption {
   position: absolute;
   top: 50%;
@@ -888,12 +925,12 @@ body {
   transition: all 0.5s;
   backface-visibility: hidden;
 }
-/* line 66, ../sass/components/_story.scss */
+/* line 89, ../sass/components/_story.scss */
 .story:hover .story__caption {
   opacity: 1;
   transform: translate(-50%, -50%);
 }
-/* line 72, ../sass/components/_story.scss */
+/* line 95, ../sass/components/_story.scss */
 .story:hover .story__img {
   transform: translateX(-4rem) scale(1);
   filter: blur(3px) brightness(80%);
@@ -1063,7 +1100,7 @@ body {
 /* line 2, ../sass/layout/_header.scss */
 .header {
   height: 95vh;
-  background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.8), rgba(35, 145, 108, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: center top;
   position: relative;
@@ -1145,7 +1182,7 @@ body {
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
-  background-image: radial-gradient(#7ed56f 0%, #28b485 30%);
+  background-image: radial-gradient(#7ed56f 0%, #23916c 30%);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -1288,7 +1325,7 @@ body {
   padding: 25rem 0;
   margin-top: -20vh;
 }
-@media (max-width: 56.25em) {
+@media (max-width: 37.5em) {
   /* line 2, ../sass/pages/_home.scss */
   .section-about {
     padding: 20rem 0;
@@ -1298,7 +1335,7 @@ body {
 /* line 14, ../sass/pages/_home.scss */
 .section-features {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(35, 145, 108, 0.8)), url(../../img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem;
@@ -1342,7 +1379,7 @@ body {
 /* line 58, ../sass/pages/_home.scss */
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to bottom right, #7ed56f, #28b485);
+  background-image: linear-gradient(to bottom right, #7ed56f, #23916c);
 }
 @media (max-width: 56.25em) {
   /* line 58, ../sass/pages/_home.scss */
@@ -1355,14 +1392,39 @@ body {
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: 100%;
-  height: 50rem;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
-/* line 90, ../sass/pages/_home.scss */
+@media (max-width: 75em) {
+  /* line 74, ../sass/pages/_home.scss */
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+    background-size: cover;
+    margin: 0 2rem;
+  }
+}
+@media (max-width: 56.25em) {
+  /* line 74, ../sass/pages/_home.scss */
+  .book {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg);
+  }
+}
+/* line 112, ../sass/pages/_home.scss */
 .book__form {
   width: 60%;
   padding: 6rem;
+}
+@media (max-width: 75em) {
+  /* line 112, ../sass/pages/_home.scss */
+  .book__form {
+    width: 65%;
+  }
+}
+@media (max-width: 56.25em) {
+  /* line 112, ../sass/pages/_home.scss */
+  .book__form {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
