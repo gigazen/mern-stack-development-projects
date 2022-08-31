@@ -30,8 +30,13 @@
     // cannot use transform twice, previously used transform to center the .popup__content by @include absCenter, so last declared transform will overwrite previous one and content box will not remain at center, will be at bottom right while being half sized
     // transform: scale(.5);
     // can combine both above and now required transform properties
-    transform: translate(-50%, -50%) scale(.5);
-    transition: all .5s .2s;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.5s 0.2s;
+
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   // contains 2 images
@@ -40,6 +45,12 @@
     // if we use float left for both popup__left and popup__right then text inside popup__right cannot take full height of popup__right container, will be at the top half. That's why instead of using float left, we have to use display table for parent container, popup__content, and display table-cell for both popup__left and popup__right child containers. They will act as if they are cells in a parent table
     // float: left;
     display: table-cell;
+
+    @include respond(tab-land) {
+      display: flex;
+      width: 50%;
+      margin-bottom: 3rem;
+    }
   }
 
   // contains headings and paragraphs
@@ -49,6 +60,11 @@
     display: table-cell;
     vertical-align: middle; // vertically center the text inside popup__right
     padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   // convert the images from inline to block element so that they can be one in a single line, also should take 100% width of parent container
@@ -68,6 +84,10 @@
 
     // by default if a word is bigger than space available in a line then word goes to next line. But using hyphens auto, word will end with hyphens if little space available in a line, remaining parts of text on next line, like newspaper. For this to occur, in html document with html tag, lang value must be set. Like <html lang="en"></html>
     hyphens: auto;
+
+    @include respond(tab-land) {
+      column-count: auto;
+    }
   }
 
   // upon clicking on a link button with href="#popup", when this element with popup class and popup id becomes target element then sense it using :target pseudo class selector and specify properties so that it can popup
