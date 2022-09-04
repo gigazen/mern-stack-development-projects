@@ -44,7 +44,7 @@ $breakpoint argument choices, no desktop here as that is normal style here
         }
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) {          // <=1200px
+        @media (max-width: 75em) {           // <=1200px
             @content;
         }
     }
