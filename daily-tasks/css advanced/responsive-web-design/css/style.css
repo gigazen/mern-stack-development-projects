@@ -1,0 +1,40 @@
+.card {
+  background: black;
+  color: white;
+  width: 500px;
+  margin: 0 auto;
+  padding: 45px;
+}
+h1,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: 24px;
+}
+p {
+  font-size: 18px;
+}
+.links {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+strong {
+  background: yellow;
+  color: black;
+  /* width: 50px; does nothing */
+  /* height: 200px; does nothing */
+  /* margin-right: 50px; gives margin on right */
+  /* margin-top: 20px; does nothing */
+  /* padding-left: 100px; gives padding on left */
+  /* padding-top: 10px; gives padding on top but covers other elements in the back of padding, so should not be used */
+}
+.accent-color {
+  color: gold;
+}
+a:link {
+  color: gold;
+}
+a:visited {
+  color: white;
+}
