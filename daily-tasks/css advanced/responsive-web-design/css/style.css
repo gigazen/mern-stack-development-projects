@@ -32,9 +32,20 @@ strong {
 .accent-color {
   color: gold;
 }
-a:link {
+
+/* for link pseudo classes to work properly, order must be : link > visited > focus > hover > active. This is because these pseudo classes have same specificity, so last one gets used for any overlapping state */
+
+a:link,
+a:visited {
   color: gold;
 }
-a:visited {
-  color: white;
+/* use tab to focus */
+a:focus {
+  color: aquamarine;
+}
+a:hover {
+  color: firebrick;
+}
+a:active {
+  color: plum;
 }
