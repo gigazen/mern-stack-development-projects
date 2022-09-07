@@ -1,37 +1,26 @@
 body {
+  font-size: 16px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.container {
-  margin: 0 auto;
-  text-align: center;
-  width: 500px;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
 h1 {
+  font-size: 48px;
   color: #2e7ad3;
-  font-size: 40px;
-  margin-bottom: 45px;
+  text-align: center;
+  margin: 45px 0;
 }
 
 main {
   background-color: #f1f1f1;
+  width: 450px;
   padding: 25px;
-  text-align: left;
-  margin-top: 0px;
+  margin: 0 auto;
 }
 
-h3 {
+h2 {
+  font-size: 32px;
   color: #104c90;
-  font-size: 28px;
-  margin-bottom: 9px;
+  margin: 0 0 10px; /* also can use 3 values, last value will be 0 */
 }
 
 img {
@@ -44,5 +33,14 @@ img {
 
 a {
   color: #ff8000;
-  font-weight: 600;
+  font-weight: bold;
+}
+
+a:hover,
+a:focus {
+  color: #104c90;
+}
+
+.read-more {
+  margin: 0;
 }
