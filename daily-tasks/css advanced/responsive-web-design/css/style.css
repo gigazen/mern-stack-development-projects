@@ -1,12 +1,9 @@
-.card {
-  background: black;
-  color: white;
-  width: 500px;
-  margin: 0 auto;
-  padding: 45px;
+body {
+  margin: 0;
 }
 
 h1,
+h2,
 p {
   margin-top: 0;
 }
@@ -23,25 +20,41 @@ a {
   color: #ffe600;
 }
 
-.accent-color {
-  color: #ffe600;
+header,
+section {
+  padding: 50px;
 }
 
-.button {
-  display: inline-block;
-  background: gold;
+header {
+  background: #ffe600;
   color: #000;
-  padding: 15px 30px;
-  text-align: center;
+}
+
+.section-one {
+  background-color: #000;
+  color: #fff;
+}
+
+.section-two-link {
+  color: #000;
+}
+
+/* button styles */
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-weight: bold;
   text-decoration: none;
-  margin-bottom: 50px;
+  margin-right: 10px;
 }
 
-.button:hover {
-  background-color: orange;
+.btn-accent {
+  background: #ffe600;
+  color: #000;
 }
 
-.links {
-  margin-top: 0;
-  margin-bottom: 0;
+.btn-dark {
+  background: #000;
+  color: #fff;
 }
