@@ -1,3 +1,4 @@
+/* global style */
 body {
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -11,6 +12,47 @@ p {
   margin-top: 0;
 }
 
+/* buttons */
+.buttons {
+  padding-top: 20px;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  margin-right: 15px;
+  border-radius: 3px;
+}
+
+.btn-accent {
+  background-color: #ef5839;
+  color: #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-accent:focus {
+  border: 2px solid #fff;
+}
+
+.btn-white:focus {
+  border: 2px solid #ef5839;
+}
+
+.btn-accent:hover {
+  background-color: #d04c31;
+}
+
+.btn-white:hover {
+  background-color: rgb(223, 223, 223);
+}
+
+/* typography */
 .container {
   width: 620px;
   margin: 0 auto;
@@ -47,104 +89,3 @@ a {
 .section-two p {
   color: #fff;
 }
-
-.buttons {
-  padding-top: 20px;
-}
-
-.btn:link,
-.btn:visited {
-  padding: 10px;
-  text-decoration: none;
-  margin-right: 15px;
-  border-radius: 3px;
-}
-
-.btn-accent {
-  background-color: #ef5839;
-  color: #fff;
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #000;
-}
-
-.btn-accent:focus {
-  border: 2px solid #fff;
-}
-
-.btn-white:focus {
-  border: 2px solid #ef5839;
-}
-
-.btn-accent:hover {
-  background-color: #d04c31;
-}
-
-.btn-white:hover {
-  background-color: rgb(223, 223, 223);
-}
-
-/* body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-}
-
-h1,
-h2,
-p {
-  margin-top: 0;
-}
-
-h1 {
-  font-size: 24px;
-} */
-
-/* p { */
-/* font-weight: bold; */
-/* font-size: 18px;
-}
-
-a {
-  color: #ffe600;
-  font-style: italic;
-}
-
-header,
-section {
-  padding: 50px;
-}
-
-header {
-  background: #ffe600;
-  color: #000;
-}
-
-.section-one {
-  background-color: #000;
-  color: #fff;
-}
-
-.section-two-link {
-  color: #000;
-} */
-
-/* button styles */
-
-/* .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-right: 10px;
-}
-.btn-accent {
-  background: #ffe600;
-  color: #000;
-}
-
-.btn-dark {
-  background: #000;
-  color: #fff;
-} */
