@@ -1,4 +1,92 @@
 body {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  color: #2e354f;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+.container {
+  width: 620px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+header {
+  background: #2e354f;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin: auto 0;
+}
+
+h2 {
+  color: #ef5839;
+}
+
+.section-one p {
+  margin-top: 25px;
+}
+
+a {
+  color: #ef5839;
+}
+
+.section-two {
+  background-color: #2e354f;
+}
+
+.section-two p {
+  color: #fff;
+}
+
+.buttons {
+  padding-top: 20px;
+}
+
+.btn:link,
+.btn:visited {
+  padding: 10px;
+  text-decoration: none;
+  margin-right: 15px;
+  border-radius: 3px;
+}
+
+.btn-accent {
+  background-color: #ef5839;
+  color: #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-accent:focus {
+  border: 2px solid #fff;
+}
+
+.btn-white:focus {
+  border: 2px solid #ef5839;
+}
+
+.btn-accent:hover {
+  background-color: #d04c31;
+}
+
+.btn-white:hover {
+  background-color: rgb(223, 223, 223);
+}
+
+/* body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
@@ -11,14 +99,16 @@ p {
 
 h1 {
   font-size: 24px;
-}
+} */
 
-p {
-  font-size: 18px;
+/* p { */
+/* font-weight: bold; */
+/* font-size: 18px;
 }
 
 a {
   color: #ffe600;
+  font-style: italic;
 }
 
 header,
@@ -38,11 +128,11 @@ header {
 
 .section-two-link {
   color: #000;
-}
+} */
 
 /* button styles */
 
-.btn {
+/* .btn {
   display: inline-block;
   padding: 12px 25px;
   font-weight: bold;
@@ -57,4 +147,4 @@ header {
 .btn-dark {
   background: #000;
   color: #fff;
-}
+} */
