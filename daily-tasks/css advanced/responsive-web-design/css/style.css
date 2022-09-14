@@ -1,9 +1,13 @@
 /* global style */
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
-  font-size: 18px;
   margin: 0;
   color: #2e354f;
+  font-size: 1.5rem;
 }
 
 h1,
@@ -53,33 +57,29 @@ p {
 }
 
 /* typography */
-.container {
-  width: 620px;
-  margin: 0 auto;
-  padding: 60px;
-}
-
 header {
   background: #2e354f;
   color: #fff;
-  text-align: center;
 }
 
 h1 {
-  font-size: 36px;
+  /* font-size: 36px; */
+  font-size: 2rem;
   margin: auto 0;
 }
 
 h2 {
+  font-size: 2rem;
   color: #ef5839;
+}
+
+/* layout */
+.section-one {
+  font-size: 2rem;
 }
 
 .section-one p {
   margin-top: 25px;
-}
-
-a {
-  color: #ef5839;
 }
 
 .section-two {
@@ -88,4 +88,27 @@ a {
 
 .section-two p {
   color: #fff;
+}
+
+/* elements */
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 0;
+  /* border: 2px solid red; */
+}
+
+img {
+  width: 100%;
+  background-size: contain;
+}
+
+a {
+  color: #ef5839;
+}
+
+ul {
+  font-size: 1.5rem;
 }
