@@ -1,56 +1,66 @@
-.card {
-  background: #000;
-  color: white;
-  width: 560px;
-  margin: 0 auto;
-  padding: 45px;
+/* basic */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  color: #606060;
+  margin: 0;
 }
 
+/* typography */
 h1,
+h2,
 p {
   margin-top: 0;
 }
 
 h1 {
-  font-size: 24px;
-}
-
-p {
-  font-size: 18px;
-}
-
-a {
-  color: black;
-}
-
-.button {
-  display: inline-block;
-  background: #ffe600;
-  color: #000;
-  /* for padding, margin em is relative to font-size of current element */
-  padding: 0.5rem 1.25rem;
+  font-size: 3rem;
+  color: #212614;
   text-align: center;
-  text-decoration: none;
-  margin-bottom: 50px;
 }
 
-.button:hover {
-  background: orange;
-}
-
-.btn-big {
+h2 {
   font-size: 1.5rem;
 }
 
-.btn-small {
-  font-size: 0.75rem;
+/* layout */
+.container {
+  width: 95%;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-.accent-color {
-  color: #ffe600;
+h1 span {
+  color: #b7832f;
 }
 
-.links {
-  margin-top: 0;
-  margin-bottom: 0;
+img {
+  max-width: 100%;
+  /* height: 25%; */
+}
+
+.row {
+  display: flex;
+  margin: 1em 0;
+  justify-content: space-between;
+}
+
+/* assuming there are 4 flex boxes in a row, column 2 will take width of 2 columns, and column 3 width of 3 columns */
+/* to have space between boxes, take 5% width from each boxes */
+.col-1 {
+  width: 20%;
+}
+
+.col-2 {
+  width: 45%;
+}
+
+.col-3 {
+  width: 70%;
+}
+
+.col-bg {
+  background-color: #212614;
+  color: #fff;
+  padding: 1em;
 }
