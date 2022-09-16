@@ -43,6 +43,7 @@ img {
   display: flex;
   margin: 1em 0;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* assuming there are 4 flex boxes in a row, column 2 will take width of 2 columns, and column 3 width of 3 columns */
