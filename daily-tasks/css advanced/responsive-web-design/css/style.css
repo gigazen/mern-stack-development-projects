@@ -4,6 +4,19 @@ body {
   font-size: 1.125rem;
   color: #606060;
   margin: 0;
+  background: pink;
+}
+
+/* @media screen and (min-width: 400px) and (max-width: 649px) {
+  body {
+    background: lightcoral;
+  }
+} */
+
+@media (min-width: 500px) and (orientation: landscape) {
+  body {
+    background: aquamarine;
+  }
 }
 
 /* typography */
@@ -35,8 +48,7 @@ h1 span {
 }
 
 img {
-  max-width: 100%;
-  /* height: 25%; */
+  width: 100%;
 }
 
 .row {
@@ -44,6 +56,12 @@ img {
   margin: 1em 0;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
 /* assuming there are 4 flex boxes in a row, column 2 will take width of 2 columns, and column 3 width of 3 columns */
@@ -58,6 +76,14 @@ img {
 
 .col-3 {
   width: 70%;
+}
+
+@media screen and (max-width: 600px) {
+  .col-1,
+  .col-2,
+  .col-3 {
+    width: 100%;
+  }
 }
 
 .col-bg {
