@@ -1,50 +1,110 @@
-body {
+/* Basic */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+* {
   margin: 0;
-}
-
-h1,
-p {
-  margin-top: 0;
-}
-
-header {
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: gold;
-  margin: 0 auto;
-}
-
-h1 {
-  margin-top: 2em;
-  font-family: "Lora", serif;
-  font-size: 2.375rem;
-  margin-bottom: 0.3em;
-}
-
-p {
-  color: limegreen;
-  text-transform: uppercase;
+  padding: 0;
+  box-sizing: inherit;
+  color: #707070;
   font-family: "Ubuntu", sans-serif;
+}
+
+/* Typography */
+h1 {
+  font-family: "Lora", serif;
+  font-size: 3.4rem;
+  font-weight: 400;
+  margin: 0;
+  color: #143774;
+}
+
+.subtitle {
+  color: #1792d2;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 2.5px;
 }
 
-nav {
-  width: 70%;
+/* Layout  */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-nav ul {
+.container-nav {
   display: flex;
   justify-content: space-between;
 }
 
-nav li {
-  list-style: none;
-  text-transform: uppercase;
-  font-family: "Ubuntu", sans-serif;
+header {
+  background: #f8f8f8;
+  padding: 2em 0;
 }
 
-nav li a {
+/* Navigation */
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin-left: 2em;
+  text-transform: uppercase;
+}
+
+nav a {
   text-decoration: none;
+  font-weight: 700;
+  padding: 0.25em 0;
+}
+
+.current-page {
+  border-bottom: 1px solid #707070;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #1792d2;
+}
+
+.current-page:hover {
+  color: #707070;
+}
+
+/* Responsive */
+@media screen and (max-width: 750px) {
+  html {
+    font-size: 52%;
+  }
+  .container-nav {
+    flex-direction: column;
+  }
+  .site-title {
+    text-align: center;
+  }
+  header {
+    padding: 4em;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  nav li {
+    margin: 1em 0;
+  }
 }
