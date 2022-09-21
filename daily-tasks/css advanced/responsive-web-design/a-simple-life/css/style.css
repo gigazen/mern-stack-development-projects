@@ -1,0 +1,236 @@
+/* Mobile-first Approach  */
+/****************************** 
+General Basics 
+*******************************/
+html {
+  box-sizing: border-box;
+  font-size: 1.125rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: #707070;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/****************************** 
+Typography 
+*******************************/
+/* first keep the general selectors, then keep the specific selectors with class names */
+h1,
+h2,
+h3 {
+  font-family: "Lora", serif;
+  /* always use number for font-weight instead of keyword, as different keyword works differently in different browsers */
+  font-weight: 400;
+  color: #143774;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: #1792d2;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #143774;
+  text-decoration: underline;
+}
+
+/* subtitle with h1 in header */
+.subtitle {
+  color: #1792d2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+}
+
+/* title of each article */
+.article-title {
+  font-size: 1.5rem;
+}
+
+/* continue reading, date, number of comments */
+.article-read-more,
+.article-info {
+  font-size: 0.875rem;
+}
+
+/* continue reading */
+.article-read-more {
+  color: #1792d2;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  margin: 1.5em 0;
+}
+
+.article-read-more:hover,
+.article-read-more:focus {
+  color: #143774;
+  text-decoration: underline;
+}
+
+.article-info {
+  margin: 2em 0 0.8rem 0;
+}
+
+/****************************** 
+Layout 
+*******************************/
+/* general container, wrapping every section of page separately so that they can be of same width */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* there can be some containers without display flex, so create a modifier like, container-flex for containers with flex and specifically style it */
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background: #f8f8f8;
+  padding: 4em;
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+/* Navigation */
+/* make the ul inside nav to align at the center vertically */
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* font-size: 1.6rem; */
+}
+
+/* make the li's inside ul to come one below another for <675px */
+/* navigation items will be one below another instead of side by side, also at the center of page */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+
+/* give margin on left to each li so that they can be separated from each other */
+/* each navigation links will be separated from one another */
+nav li {
+  /* margin-left: 2em; */
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+
+/* each li inside nav is a link */
+nav a {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.25em 0;
+}
+
+/* whichever li will hold current-page class, a border will appear underneath it and upon hovering, it will remain default grey color */
+nav .current-page {
+  border-bottom: 1px solid #707070;
+  color: #707070;
+}
+
+/* each li or link upon hovering will turn green */
+nav a:hover,
+nav a:focus {
+  color: #1792d2;
+}
+
+/* to override green upon hovering, current page hovering must come after it, not before */
+.current-page:hover {
+  color: #707070;
+  text-decoration: none;
+}
+
+/* Responsiveness */
+/* Mobile-first Design so have to use min-width */
+@media screen and (min-width: 675px) {
+  .container-flex {
+    flex-direction: row;
+  }
+  main {
+    font-size: 0.95rem;
+    width: 75%;
+  }
+
+  aside {
+    font-size: 0.8rem;
+    width: 20%;
+  }
+}
+
+/* articles */
+.article-featured {
+  border-bottom: 1px solid #707070;
+}
+
+/* for mobile-first, in normal condition articles will have image and text one below another */
+.article-recent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+/* keep the image in secondary before the text in main */
+.article-recent-main {
+  order: 2;
+}
+
+.article-recent-secondary {
+  order: 1;
+}
+
+@media (min-width: 675px) {
+  /* for larger screens, image and text inside recent articles will be side by side */
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .article-recent-secondary {
+    width: 30%;
+  }
+  .article-recent-main {
+    width: 67%;
+  }
+  /* images inside recent articles should be longer, not tiny */
+  .article-image {
+  }
+
+  /* for larger screens, image and date info of featured article will come first then all the texts. For this to happen, make the featured article a flexbox then change orders */
+  /* default order of flex items is 0. So flex item with -ve order comes before those default ordered items */
+  .article-featured {
+    display: flex;
+    flex-direction: column;
+  }
+  .article-image {
+    order: -2;
+  }
+  .article-info {
+    order: -1;
+  }
+}
