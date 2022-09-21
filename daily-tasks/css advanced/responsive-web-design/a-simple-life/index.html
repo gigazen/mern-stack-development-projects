@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Ubuntu:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -16,7 +17,7 @@
 
   <body>
     <header>
-      <div class="container container-nav">
+      <div class="container container-flex">
         <div class="site-title">
           <h1>Living the simple life</h1>
           <p class="subtitle">a blog exploring minimalism in life</p>
@@ -32,20 +33,21 @@
       </div>
     </header>
 
-    <div class="container">
+    <!-- container has 2 sections : main and sidebar -->
+    <div class="container container-flex">
       <!-- for old browsers which cannot understand main, for them have to use role with main tag -->
       <!-- main section contains 1 featured article and 3 recent articles -->
       <main role="main">
         <article class="article-featured">
           <h2 class="article-title">Finding simplicity in life</h2>
-          <img src="" alt="" class="article-image" />
+          <img src="img/life.jpg" alt="" class="article-image" />
           <p class="article-info">July 23, 2022 | 3 comments</p>
           <p class="article-body">
-            Life can get complicated really quickly, but it doesn't have to be!
-            There are many ways to simplify your life, a few of which we've
-            explored in the past. This week we're taking a bit of a approach
-            though, in how you can find simplicity in the life you already
-            living
+            <strong>Life can get complicated really quickly</strong>, but it
+            doesn't have to be! There are many ways to simplify your life,
+            <a href="#">a few of which we've explored in the past</a>. This week
+            we're taking a bit of a approach though, in how you can find
+            simplicity in the life you already living
           </p>
           <a href="#" class="article-read-more">CONTINUE READING</a>
         </article>
@@ -62,7 +64,7 @@
           </div>
 
           <div class="article-recent-secondary">
-            <img src="" alt="" class="article-image" />
+            <img src="img/food.jpg" alt="" class="article-image" />
             <p class="article-info">July 23, 2022 | 3 comments</p>
           </div>
         </article>
@@ -80,7 +82,7 @@
           </div>
 
           <div class="article-recent-secondary">
-            <img src="" alt="" class="article-image" />
+            <img src="img/work.jpg" alt="" class="article-image" />
             <p class="article-info">July 23, 2022 | 3 comments</p>
           </div>
         </article>
@@ -98,7 +100,7 @@
           </div>
 
           <div class="article-recent-secondary">
-            <img src="" alt="" class="article-image" />
+            <img src="img/deco.jpg" alt="" class="article-image" />
             <p class="article-info">July 23, 2022 | 3 comments</p>
           </div>
         </article>
@@ -107,7 +109,7 @@
       <aside class="sidebar">
         <div class="sidebar-widget">
           <h2 class="widget-title">ABOUT ME</h2>
-          <img src="#" alt="" class="widget-image" />
+          <img src="img/about-me.jpg" alt="" class="widget-image" />
           <p class="width-body">
             I find life better, and I'm happier, when things are nice and
             simple.
@@ -118,17 +120,17 @@
           <h2 class="widget-title">RECENT POSTS</h2>
           <div class="widget-recent-post">
             <h3 class="widget-recent-post-title">Keeping cooking simple</h3>
-            <img src="" alt="" class="widget-image" />
+            <img src="img/food.jpg" alt="" class="widget-image" />
           </div>
 
           <div class="widget-recent-post">
             <h3 class="widget-recent-post-title">Simplicity and work</h3>
-            <img src="" alt="" class="widget-image" />
+            <img src="img/work.jpg" alt="" class="widget-image" />
           </div>
 
           <div class="widget-recent-post">
             <h3 class="widget-recent-post-title">Simple decorations</h3>
-            <img src="" alt="" class="widget-image" />
+            <img src="img/deco.jpg" alt="" class="widget-image" />
           </div>
         </div>
       </aside>
