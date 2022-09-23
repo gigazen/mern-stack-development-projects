@@ -4,14 +4,13 @@ General Basics
 *******************************/
 html {
   box-sizing: border-box;
-  font-size: 1.125rem;
+  font-size: 1.125rem; /* font size 18px */
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  color: #707070;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
 }
@@ -24,7 +23,7 @@ img {
 /****************************** 
 Typography 
 *******************************/
-/* first keep the general selectors, then keep the specific selectors with class names */
+/* first keep the general element selectors, then keep the specific selectors with class names */
 h1,
 h2,
 h3 {
@@ -53,6 +52,10 @@ a:focus {
   text-decoration: underline;
 }
 
+p {
+  color: #707070;
+}
+
 /* subtitle with h1 in header */
 .subtitle {
   color: #1792d2;
@@ -73,6 +76,74 @@ a:focus {
   font-size: 0.875rem;
 }
 
+/****************************** 
+Layout 
+*******************************/
+/* general container, wrapping every section of page separately so that they can be of same width */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* there can be some containers without display flex, so create a modifier like, container-flex for containers with flex and specifically style it */
+/* for mobile first, in normal condition main and sidebar will be one below another */
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+header {
+  background: #f8f8f8;
+  padding: 4em;
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+/* Navigation */
+/* make the ul inside nav to align at the center vertically */
+/* make the li's inside ul to come one below another in normal condition of mobile-first */
+/* navigation items will be one below another instead of side by side, also at the center of page */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* each navigation links will be separated from one another vertically */
+nav li {
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+
+/* nav link texts are contained in li > a, font weight and padding cannot be inherited so must be applied to the direct parent containing text */
+nav a {
+  font-weight: 700;
+  padding: 0.25em 0;
+}
+
+/* whichever li will hold current-page class, it will be in grey color and a border will appear underneath it and upon hovering, it will remain same with default grey color and border */
+nav .current-page {
+  border-bottom: 1px solid #707070;
+  color: #707070;
+}
+
+/* except current page, each li or link upon hovering will turn green */
+nav a:hover,
+nav a:focus {
+  color: #1792d2;
+}
+
+/* to override green upon hovering, current page hovering must come after it, not before */
+/* as IICE : Inline > ID > Class > Element, so class has more specificity than element that's why style applied on current-page class overwrites common style applied on anchor elements */
+.current-page:hover {
+  color: #707070;
+  text-decoration: none;
+}
+
+/* articles */
+
 /* continue reading */
 .article-read-more {
   color: #1792d2;
@@ -92,99 +163,6 @@ a:focus {
   margin: 2em 0 0.8rem 0;
 }
 
-/****************************** 
-Layout 
-*******************************/
-/* general container, wrapping every section of page separately so that they can be of same width */
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* there can be some containers without display flex, so create a modifier like, container-flex for containers with flex and specifically style it */
-.container-flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-header {
-  background: #f8f8f8;
-  padding: 4em;
-  text-align: center;
-  margin-bottom: 2.5em;
-}
-
-/* Navigation */
-/* make the ul inside nav to align at the center vertically */
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* font-size: 1.6rem; */
-}
-
-/* make the li's inside ul to come one below another for <675px */
-/* navigation items will be one below another instead of side by side, also at the center of page */
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
-}
-
-/* give margin on left to each li so that they can be separated from each other */
-/* each navigation links will be separated from one another */
-nav li {
-  /* margin-left: 2em; */
-  text-transform: uppercase;
-  margin: 1em 0;
-}
-
-/* each li inside nav is a link */
-nav a {
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.25em 0;
-}
-
-/* whichever li will hold current-page class, a border will appear underneath it and upon hovering, it will remain default grey color */
-nav .current-page {
-  border-bottom: 1px solid #707070;
-  color: #707070;
-}
-
-/* each li or link upon hovering will turn green */
-nav a:hover,
-nav a:focus {
-  color: #1792d2;
-}
-
-/* to override green upon hovering, current page hovering must come after it, not before */
-.current-page:hover {
-  color: #707070;
-  text-decoration: none;
-}
-
-/* Responsiveness */
-/* Mobile-first Design so have to use min-width */
-@media screen and (min-width: 675px) {
-  .container-flex {
-    flex-direction: row;
-  }
-  main {
-    font-size: 0.95rem;
-    width: 75%;
-  }
-
-  aside {
-    font-size: 0.8rem;
-    width: 20%;
-  }
-}
-
-/* articles */
 .article-featured {
   border-bottom: 1px solid #707070;
 }
@@ -197,16 +175,115 @@ nav a:focus {
 }
 
 /* keep the image in secondary before the text in main */
-.article-recent-main {
-  order: 2;
-}
-
 .article-recent-secondary {
   order: 1;
 }
 
-@media (min-width: 675px) {
-  /* for larger screens, image and text inside recent articles will be side by side */
+.article-recent-main {
+  order: 2;
+}
+
+/* widgets on sidebar */
+.sidebar-widget {
+  border: 20px solid #ebebeb;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.sidebar-widget p {
+  margin: 2rem 0 1rem 0;
+}
+
+.sidebar-widget h2 {
+  font-size: 1rem;
+}
+
+.widget-title,
+.widget-recent-post-title {
+  font-size: 1.125rem;
+}
+
+.widget-title {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+.widget-recent-post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  border-bottom: 2px solid #707070;
+}
+
+/* if widget-recent-post is the last child of sidebar-widget parent then make border, margin 0. But if any element say, <p>Example</p> is the last child then last widget-recent-post will have border and margin */
+.widget-recent-post:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.widget-image {
+  order: -1;
+}
+
+.widget-recent-post-title {
+  margin: 1em 0 1em 0;
+}
+
+/* footer */
+footer {
+  background: #143774;
+  text-align: center;
+  padding: 3em 0;
+}
+
+footer p {
+  color: white;
+}
+
+/* Responsiveness */
+/* Mobile-first Design so have to use min-width */
+@media screen and (min-width: 775px) {
+  header {
+    padding: 4em 0em;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  nav li {
+    margin-left: 2em;
+  }
+
+  /* for larger screen, main section and sidebar will be side by side, font-size of them will be smaller */
+  /* set main as 70% and sidebar as 25% of container width. Remaining 5% bring to the middle of them */
+  .container-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  main {
+    width: 70%;
+    font-size: 0.95rem;
+  }
+
+  /* for medium screen size, prevent the sidebar width getting too small by fixing a minimum width for it. But if we set min width for aside then even after using justify-content: space-between, main and aside will collide for some smaller screen sizes. Fix it by giving a min distance between main and aside, like a margin on left of aside */
+  aside {
+    width: 25%;
+    min-width: 200px;
+    margin-left: 1em;
+  }
+}
+
+@media (min-width: 775px) {
+  /* for larger screens, image in secondary and text in main inside recent articles will be side by side */
   .article-recent {
     flex-direction: row;
     justify-content: space-between;
@@ -219,10 +296,17 @@ nav a:focus {
   }
   /* images inside recent articles should be longer, not tiny */
   .article-image {
+    /* width: 100%; */
+    min-height: 250px;
+    /* object-fit cover makes the image larger while keeping aspect ratio. But crops any extra part of image outside its own specified content box */
+    /* cannot use object-fit: contain as it will make the image small to avoid cropping i.e. contains full image within its own specified content box */
+    object-fit: cover;
+    /* using object-position left can align to the left side of the image within its own content box */
+    /* object-position: left; */
   }
 
   /* for larger screens, image and date info of featured article will come first then all the texts. For this to happen, make the featured article a flexbox then change orders */
-  /* default order of flex items is 0. So flex item with -ve order comes before those default ordered items */
+  /* default order of flex items is 0. So flex item with -ve order comes before those default ordered items. More -ve order, more before */
   .article-featured {
     display: flex;
     flex-direction: column;
