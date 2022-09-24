@@ -11,13 +11,24 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
+  line-height: 1.6;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+.image-full {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 2em;
 }
 
 /****************************** 
@@ -37,6 +48,10 @@ h1 {
   font-size: 2rem;
 }
 
+h3 {
+  color: #1792d2;
+}
+
 strong {
   font-weight: 700;
 }
@@ -54,6 +69,7 @@ a:focus {
 
 p {
   color: #707070;
+  margin: 1em 0;
 }
 
 /* subtitle with h1 in header */
@@ -123,7 +139,8 @@ nav a {
   padding: 0.25em 0;
 }
 
-/* whichever li will hold current-page class, it will be in grey color and a border will appear underneath it and upon hovering, it will remain same with default grey color and border */
+/* make the current page link to be grey with underline */
+/* inside nav of each page, the li which holds current-page class, that li will be in grey color and a border will appear underneath it and upon hovering, it will remain same with default grey color and border */
 nav .current-page {
   border-bottom: 1px solid #707070;
   color: #707070;
@@ -151,6 +168,7 @@ nav a:focus {
   font-weight: 700;
   display: inline-block;
   margin: 1.5em 0;
+  text-transform: uppercase;
 }
 
 .article-read-more:hover,
@@ -201,6 +219,7 @@ nav a:focus {
 .widget-title,
 .widget-recent-post-title {
   font-size: 1.125rem;
+  line-height: 1.4;
 }
 
 .widget-title {
@@ -227,6 +246,7 @@ nav a:focus {
 
 .widget-recent-post-title {
   margin: 1em 0 1em 0;
+  color: #143774;
 }
 
 /* footer */
