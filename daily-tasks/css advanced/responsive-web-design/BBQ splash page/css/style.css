@@ -1,0 +1,25 @@
+/* Basic style */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.125rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Typography */
+
+/* Layout */
+header {
+  background-image: url(../images/dark-ribs.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
