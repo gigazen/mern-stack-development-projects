@@ -129,13 +129,14 @@ nav ul {
 
 /* each navigation links will be separated from one another vertically */
 nav li {
-  text-transform: uppercase;
   margin: 1em 0;
 }
 
 /* nav link texts are contained in li > a, font weight and padding cannot be inherited so must be applied to the direct parent containing text */
 nav a {
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 0.25em 0;
 }
 
@@ -225,6 +226,7 @@ nav a:focus {
 .widget-title {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
+  letter-spacing: 1.8px;
 }
 
 .widget-recent-post {
@@ -257,12 +259,12 @@ footer {
 }
 
 footer p {
-  color: white;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* Responsiveness */
 /* Mobile-first Design so have to use min-width */
-@media screen and (min-width: 775px) {
+@media screen and (min-width: 800px) {
   header {
     padding: 4em 0em;
   }
@@ -302,7 +304,7 @@ footer p {
   }
 }
 
-@media (min-width: 775px) {
+@media (min-width: 800px) {
   /* for larger screens, image in secondary and text in main inside recent articles will be side by side */
   .article-recent {
     flex-direction: row;
