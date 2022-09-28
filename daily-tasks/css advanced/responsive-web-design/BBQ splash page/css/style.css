@@ -4,22 +4,100 @@ html {
 }
 
 * {
+  /* makes width or height = content + padding + border, then 100vh becomes true 100vh, cannot scroll, if there is no element after it */
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-size: 1.125rem;
-  font-family: "Ubuntu", sans-serif;
+  /* margin: 0; */
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem; /* as it is default so no need to define it, but we should do it */
+  color: #404040;
+  text-align: center;
 }
 
 /* Typography */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 2em 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1 + p {
+  color: #f18119;
+  font-size: 1.3125rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.top-text {
+  color: #f18119;
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  order: -2;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+h2 + p {
+  color: #f18119;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.fine-print {
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+}
 
 /* Layout */
-header {
+/* Intro Section */
+.intro {
   background-image: url(../images/dark-ribs.jpg);
-  background-position: center;
+  background-color: #404040;
+  padding: 0 0.5em 2em;
   background-size: cover;
-  height: 100vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content Section */
+.main-content {
+  padding: 2em 1em;
+}
+
+/* Media Queries */
+@media screen and (min-width: 500px) {
+  body {
+    display: flex;
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2,
+  h1 + p {
+    font-size: 1.75rem;
+  }
+
+  .intro,
+  .main-content {
+    width: 50%;
+    min-height: 100vh;
+  }
 }
