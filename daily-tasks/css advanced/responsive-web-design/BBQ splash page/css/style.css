@@ -1,33 +1,36 @@
-/* Basic style */
+/********************** 
+Basic style 
+***********************/
 html {
   box-sizing: border-box;
 }
 
 * {
-  /* makes width or height = content + padding + border, then 100vh becomes true 100vh, cannot scroll, if there is no element after it */
+  /* for all elements, make width or height = content + padding + border, then 100vh becomes true 100vh, cannot scroll, i.e. no scrollbar if there is no element after it */
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
 body {
-  /* margin: 0; */
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem; /* as it is default so no need to define it, but we should do it */
   color: #404040;
   text-align: center;
 }
 
-/* Typography */
+/*********************** 
+Typography 
+***********************/
 h1 {
   font-size: 2.25rem;
   font-weight: 300;
   color: #fff;
-  margin: 2em 0;
 }
 
 strong {
-  font-weight: 700;
+  /* for font-weight always use numbers instead of keywords */
+  font-weight: 900;
 }
 
 h1 + p {
@@ -35,7 +38,6 @@ h1 + p {
   font-size: 1.3125rem;
   font-weight: 900;
   text-transform: uppercase;
-  margin: 0;
 }
 
 .top-text {
@@ -43,37 +45,41 @@ h1 + p {
   font-size: 0.625rem;
   font-weight: 900;
   text-transform: uppercase;
-  order: -2;
+  order: -1;
 }
 
 h2 {
   font-size: 1.3125rem;
-  margin: 0;
 }
 
 h2 + p {
   color: #f18119;
   font-size: 1rem;
   font-weight: 900;
-  margin-top: 0;
   text-transform: uppercase;
 }
 
 .fine-print {
   font-size: 0.625rem;
+  /* increase letter-spacing for small font size text */
   letter-spacing: 1px;
 }
 
-/* Layout */
+/*********************** 
+Layout 
+***********************/
 /* Intro Section */
+/* style for the image inside .intro */
 .intro {
   background-image: url(../images/dark-ribs.jpg);
+  /* set a background-color opposite to the text as backup if the background-image cannot be loaded for some reason */
   background-color: #404040;
-  padding: 0 0.5em 2em;
+  /* padding: top horizontal bottom */
+  padding: 0.3em 0.5em 2em;
+  /* background image will cover whole container while maintaining aspect ratio but will crop extra parts outside the container  */
   background-size: cover;
+  /* image will get fixed at its center */
   background-position: center;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Main Content Section */
@@ -81,9 +87,28 @@ h2 + p {
   padding: 2em 1em;
 }
 
-/* Media Queries */
+/* long texts are unreadable, so to improve readability set the maximum width for the container having text content in 2 sections */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* style for the text inside .intro. Make the text inside .intro to be in column and separated by spaces */
+.container-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* prevent .intro to just take content height in small screen */
+  min-height: 50vh;
+}
+
+/***********************
+Responsiveness
+***********************/
+/* Media Queries for larger screen */
 @media screen and (min-width: 500px) {
   body {
+    /* bring .intro and .main-content sections side by side, for larger screen, increase font size of all elements */
     display: flex;
     font-size: 1.125rem;
   }
@@ -95,9 +120,24 @@ h2 + p {
     font-size: 1.75rem;
   }
 
+  /* both sections will be take 100 viewport height and equally divided */
   .intro,
   .main-content {
     width: 50%;
+    /* instead of height, give min-height so that when screen height gets smaller, the content inside those containers cannot come out of them */
     min-height: 100vh;
+  }
+
+  /* make the main content on right which is containing form, to be vertically at the center of page */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* .intro has 100vh height so unscrollable (as no element after it) and has padding around its content i.e. around .container-intro. So if we give height: 100vh for .container-intro then .intro height will be more than 100vh as padding will get added to .intro height. So page will become scrollable */
+  /* that's why set .container-intro to get 100% of available height inside .intro then page will remain unscrollable */
+  .container-intro {
+    height: 100%;
   }
 }
