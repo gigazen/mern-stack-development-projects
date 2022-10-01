@@ -48,7 +48,6 @@ h1 + p {
   order: -1;
   border-top: 5px solid #f18119;
   padding-top: 2px;
-  /* border-image works like background-image in the sense both accepts image url() or linear-gradient(), here it is called border-image-source. But border-image takes weird border-image-slice property to divide the image into number of regions. Always give 1 as border-image-slice */
   border-image: linear-gradient(to right, orange, tomato) 1;
   /* make the block element to fit within the content width */
   width: fit-content;
@@ -81,7 +80,7 @@ Layout
   background-image: url(../images/ribs.jpg);
   /* set a background-color opposite to the text as backup if the background-image cannot be loaded for some reason */
   background-color: #404040;
-  background-blend-mode: multiply;
+  background-blend-mode: overlay;
   /* padding: top horizontal bottom */
   padding: 0 0.5em 2em;
   /* background image will cover whole container while maintaining aspect ratio but will crop extra parts outside the container  */
