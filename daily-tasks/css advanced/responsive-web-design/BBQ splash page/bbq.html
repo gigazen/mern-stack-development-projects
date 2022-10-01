@@ -1,43 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BBQ Splash</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/bbq-style.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: space-around;
+        height: 300px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .box {
+        padding: 40px;
+        width: 100px;
+      }
+      .box-1 {
+        background-image: linear-gradient(to right, red, blue);
+      }
+      .box-2 {
+        background-image: linear-gradient(
+            100deg,
+            rgba(0, 255, 0, 0.405),
+            rgba(255, 149, 0, 0.386)
+          ),
+          url(../images/bird.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .box-3 {
+        background-image: linear-gradient(to bottom right, red, #fff);
+      }
+      .box-4 {
+        background-image: linear-gradient(0deg, pink, dodgerblue);
+      }
+      .box-5 {
+        background-image: linear-gradient(180deg, red, dodgerblue);
+      }
+      .box-6 {
+        background-image: linear-gradient(90deg, lightgreen 65%, orange);
+      }
+      .box-7 {
+        background-image: linear-gradient(90deg, orange 65%, lightgreen 65%);
+      }
+      .box-8 {
+        background-image: linear-gradient(
+          to right,
+          red 20%,
+          lime 20% 40%,
+          gold 40% 60%,
+          blue 60% 80%,
+          plum 80%
+        );
+      }
+      .box-9 {
+        background-image: radial-gradient(red, blue);
+        width: 100px;
+        height: 100px;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <p>Mouthwateringly delicious</p>
-        <h1>Learn how to make <strong>the best BBQ ribs</strong> in town</h1>
-        <h2 class="subtitle">Join us for this live webinar</h2>
-      </header>
-
-      <div class="myform">
-        <h2 class="form-heading">Become a BBQ master!</h2>
-        <h3 class="form-heading-subtitle">Register Today</h3>
-        <p>
-          BBQ isn't just standing in front of your grill with it on full blast
-          and hoping for the best. It's an art! One way to speed up the process
-          is to learn from the best. You can do just that by signing up for this
-          free webinar!
-        </p>
-        <form action="">
-          <input type="text" name="" id="" placeholder="first name" />
-          <input type="email" name="" id="" placeholder="email" />
-          <button>REGISTER</button>
-          <p>We'll never share your information without your permission</p>
-        </form>
-      </div>
-    </div>
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+    <div class="box box-3"></div>
+    <div class="box box-4"></div>
+    <div class="box box-5"></div>
+    <div class="box box-6"></div>
+    <div class="box box-7"></div>
+    <div class="box box-8"></div>
+    <div class="box box-9"></div>
   </body>
 </html>
