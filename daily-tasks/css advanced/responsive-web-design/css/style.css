@@ -1,135 +1,28 @@
-/* Basic */
 html {
   box-sizing: border-box;
-  font-size: 1.125rem;
 }
-
 * {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-  color: #707070;
-  font-family: "Ubuntu", sans-serif;
 }
 
-/* Typography */
-h1,
-h2,
-h3 {
-  font-family: "Lora", serif;
-  font-weight: 400;
-  color: #143774;
+body {
+  background: #2c73d2;
+  color: #fff;
+  text-align: center;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-/* subtitle with h1 in header */
-.subtitle {
-  color: #1792d2;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2.4px;
-}
-
-.article-title {
-  font-size: 1.5rem;
-}
-
-.article-read-more,
-.article-info {
-  font-size: 0.875rem;
-}
-
-.article-read-more {
-  color: #1792d2;
-}
-
-/* Layout  */
-.container {
-  width: 90%;
-  max-width: 900px;
+.flex-container {
+  border: 10px solid #f9f871;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 0.25em;
 }
 
-.container-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-header {
-  background: #f8f8f8;
-  padding: 2em 0;
-}
-
-/* Navigation */
-/* make the ul inside nav to align at the center vertically */
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* font-size: 1.6rem; */
-}
-
-/* make the li's inside ul to come side by side for >750px */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-/* give margin on left to each li so that they can be separated from each other */
-nav li {
-  margin-left: 2em;
-  text-transform: uppercase;
-}
-
-/* each li inside nav is a link */
-nav a {
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.25em 0;
-}
-
-/* whichever li will hold current-page class, a border will appear underneath it, upon hovering, it will remain default grey color */
-.current-page {
-  border-bottom: 1px solid #707070;
-}
-
-/* each li or link upon hovering will turn green */
-nav a:hover,
-nav a:focus {
-  color: #1792d2;
-}
-
-/* to override green upon hovering, current page hovering must come after it, not before */
-.current-page:hover {
-  color: #707070;
-}
-
-/* Responsiveness */
-@media screen and (max-width: 750px) {
-  /* main heading and navigation items will come one below another, no need to write display: flex again */
-  .container-nav {
-    flex-direction: column;
-  }
-  /* both main heading and subtitle will be center aligned */
-  .site-title {
-    text-align: center;
-  }
-  header {
-    padding: 4em;
-  }
-  /* navigation items will be one below another instead of side by side, also at the center of page */
-  nav ul {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  /* each navigation links will be separated from one another */
-  nav li {
-    margin: 1em 0;
-  }
+.flex-item {
+  background: #8bee86;
+  margin: 0.5em;
+  padding: 0.5em;
+  color: #424656;
 }
