@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 * {
   box-sizing: inherit;
   margin: 0;
@@ -14,10 +15,12 @@ body {
 }
 
 .flex-container {
-  border: 10px solid #f9f871;
-  max-width: 600px;
+  border: 10px solid gold;
+  width: 80%;
   margin: 0 auto;
   padding: 0.25em;
+
+  display: flex;
 }
 
 .flex-item {
@@ -25,4 +28,9 @@ body {
   margin: 0.5em;
   padding: 0.5em;
   color: #424656;
+  text-transform: uppercase;
+  font-family: lato, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
