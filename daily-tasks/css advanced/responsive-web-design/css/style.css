@@ -2,7 +2,9 @@ html {
   box-sizing: border-box;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -19,8 +21,11 @@ body {
   width: 80%;
   margin: 0 auto;
   padding: 0.25em;
+  height: 50vh;
 
   display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
 }
 
 .flex-item {
@@ -33,4 +38,17 @@ body {
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 1px;
+  width: 100px;
+}
+
+.flex-item-1 {
+  background: plum;
+}
+
+.flex-item-2 {
+}
+
+.flex-item-3 {
+  margin-top: auto;
+  margin-bottom: auto;
 }
