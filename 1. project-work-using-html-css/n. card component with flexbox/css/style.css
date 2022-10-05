@@ -1,0 +1,109 @@
+/* can also apply display: flex to body element */
+body {
+  display: flex;
+  /* without giving width, justify-content can horizontally center an element */
+  justify-content: center;
+  align-items: center;
+  /* without giving height, align-items cannot vertically center an element */
+  /* for screen with very small height, height: 100vh doesn't allow scrolling to get rest of the content. But min-height: 100vh ensures that if whole content cannot appear within viewport height then user can scroll to get rest of the content */
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  width: 90%;
+  max-width: 800px;
+  background: #111d4a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  object-fit: cover;
+  /* flex-basis works as dimension along main axis. For mobile-first, in normal condn image and text will come one below another so flex-direction column required. Then flex-basis will define height. But for larger screen, flex-direction row, so flex-basis will define width of a flex item */
+  flex-basis: 150px;
+
+  /* correct the bug caused by flex-basis for image while flex-direction column, image won't get bigger in this way, don't use fixed height for image */
+  min-width: 0;
+  min-height: 0;
+
+  /* cannot use height to fix this bug as while flex-direction is column, height is expressed by flex-basis */
+  /* height: 150px; */
+
+  background-color: red;
+}
+
+.card-content {
+  padding: 1em;
+}
+
+.card-title,
+.card-read-time,
+.card-btn {
+  font-family: "Blinker", sans-serif;
+}
+
+.card-title {
+  color: #05cbe9;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.card-body {
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.6;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 2em;
+}
+
+.card-btn {
+  font-size: 1.25rem;
+  background: #05cbe9;
+  color: #111d4a;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.35em 1em;
+  letter-spacing: 1px;
+}
+
+.card-read-time {
+  margin: 0;
+  opacity: 0.6;
+  line-height: 1;
+}
+
+.card-read-time span {
+  font-weight: 700;
+  display: block;
+  /* exception case where font-size is set in em unit so that this element can have font size relative to other elements in the same container */
+  font-size: 1.25em;
+}
+
+@media all and (min-width: 600px) {
+  .card {
+    flex-direction: row;
+  }
+  .card-img {
+    /* for larger screen, flex-direction is row so flex-basis defines width. That's why need to set height then */
+    height: 300px;
+  }
+  .card-body {
+    font-size: 1.125rem;
+    /* there must be maximum 45 to 75 characters in a line, long characters in a line are hard to read */
+    max-width: 500px;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-footer {
+    margin-top: auto;
+  }
+}
