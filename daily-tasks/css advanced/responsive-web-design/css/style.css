@@ -1,54 +1,20 @@
-html {
-  box-sizing: border-box;
+.grid {
+  display: grid;
+  grid-template: 100px 100px 100px / 200px 200px 200px;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #2c73d2;
+.grid-item {
+  background: #b823c1;
   color: #fff;
-  text-align: center;
-}
-
-.flex-container {
-  border: 10px solid gold;
-  width: 80%;
-  margin: 0 auto;
-  padding: 0.25em;
-  height: 50vh;
-
+  padding: 1em 2em;
+  border: 2px solid purple;
   display: flex;
-  flex-direction: column;
-  /* align-items: flex-start; */
-}
+  align-items: center;
+  justify-content: center;
 
-.flex-item {
-  background: #8bee86;
-  margin: 0.5em;
-  padding: 0.5em;
-  color: #424656;
-  text-transform: uppercase;
-  font-family: lato, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  width: 100px;
-}
+  grid-column-start: 1;
+  grid-column-end: 4;
 
-.flex-item-1 {
-  background: plum;
-}
-
-.flex-item-2 {
-}
-
-.flex-item-3 {
-  margin-top: auto;
-  margin-bottom: auto;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
