@@ -1,6 +1,8 @@
 .grid {
   display: grid;
-  grid-template: 100px 100px 100px / 200px 200px 200px;
+  grid-template-columns: 150px 150px 200px;
+  justify-items: end;
+  align-items: start;
 }
 
 .grid-item {
@@ -11,10 +13,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  grid-column-start: 1;
-  grid-column-end: 4;
+.big {
+  padding: 3em 2em;
+  background: #ff5670;
+}
 
-  grid-row-start: 2;
-  grid-row-end: 4;
+.start {
+  align-self: center;
+  justify-self: center;
+}
+
+.end {
+  justify-self: stretch;
+  align-self: end;
 }
