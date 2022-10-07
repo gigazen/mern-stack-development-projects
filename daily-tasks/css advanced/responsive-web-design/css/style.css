@@ -1,8 +1,9 @@
 .grid {
   display: grid;
   grid-template-columns: 150px 150px 200px;
-  justify-items: end;
-  align-items: start;
+  /* column-gap: 2em;
+  row-gap: 1em; */
+  gap: 0 2em;
 }
 
 .grid-item {
@@ -10,7 +11,7 @@
   color: #fff;
   padding: 1em 2em;
   border: 2px solid purple;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
@@ -18,14 +19,4 @@
 .big {
   padding: 3em 2em;
   background: #ff5670;
-}
-
-.start {
-  align-self: center;
-  justify-self: center;
-}
-
-.end {
-  justify-self: stretch;
-  align-self: end;
 }
