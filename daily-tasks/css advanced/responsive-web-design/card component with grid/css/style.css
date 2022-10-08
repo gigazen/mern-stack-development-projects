@@ -26,18 +26,18 @@ body {
   display: grid;
   /* 1em is for padding around content after card image */
   /* auto means browser will set size of those grid tracks acc. to their content */
-  /* to responsively set width of image, always set size of cells determining width of image as auto */
+  /* to responsively set width of image, always set size as auto for the cells determining width of image */
   grid-template: 200px 1em auto auto 150px 1em / 1em auto auto 1em;
 }
 
 .card-img {
-  object-fit: cover;
   /* if we just set grid-column and do not set grid-row then each grid item will appear sequentially one after another once the specified column ends */
   grid-column: 1 / -1;
   /* no need to use flex-basis to give width height to the image */
   /* but must set width, height of the image as 100% so that it can take full width height of the set row and column. Otherwise image will remain same to keep entire image and its aspect ratio intact */
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .card-title,
@@ -93,7 +93,8 @@ body {
 @media all and (min-width: 600px) {
   .card {
     /* to responsively set width of image, always set size of cells determining width of image as auto */
-    /* set 4 columns with auto width to get 1em column gap at the end. No grid item at last column so its width will be 0 but we will get column gap at the end and it will work as padding */
+    /* 3 columns are required to place content but set 4 columns with auto width to get 1em column gap at the end. No grid item at last column so its width will be 0 but we will get column gap at the end and it will work as padding */
+    /* repeat(3, auto) 0px also can be used */
     grid-template: 1em auto auto 150px 1em / repeat(4, auto);
     column-gap: 1em;
   }
