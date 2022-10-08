@@ -1,9 +1,6 @@
 .grid {
   display: grid;
-  grid-template-columns: 150px 150px 200px;
-  /* column-gap: 2em;
-  row-gap: 1em; */
-  gap: 0 2em;
+  grid-template-columns: 1fr minmax(auto, 300px) 1fr;
 }
 
 .grid-item {
@@ -11,7 +8,7 @@
   color: #fff;
   padding: 1em 2em;
   border: 2px solid purple;
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
