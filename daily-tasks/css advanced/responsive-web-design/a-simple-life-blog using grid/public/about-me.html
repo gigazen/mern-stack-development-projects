@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container container-flex">
+        <div class="site-title">
+          <h1>Living the simple life</h1>
+          <p class="subtitle">a blog exploring minimalism in life</p>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about-me.html" class="current-page">about me</a></li>
+            <li><a href="recent-posts.html">recent posts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- container has 2 sections : main and sidebar -->
+    <div class="container container-flex">
+      <!-- for old browsers which cannot understand main, for them have to use role with main tag -->
+      <!-- main section contains -->
+      <main role="main">
+        <img src="img/about-me.jpg" alt="" class="image-full" />
+        <h2>My name is John and living the simple life saved my life</h2>
+        <p>
+          <strong>I used to be a pack rat</strong>. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Eos doloremque sint voluptatibus
+          perspiciatis atque in accusamus dolores facere soluta iste.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          error cum perspiciatis vero. Aperiam, eaque!
+        </p>
+
+        <h3>How I turned things around</h3>
+        <p>
+          <strong
+            >I was on the verge of breakdown when I got rid of
+            everything</strong
+          >. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+          placeat, quis quam iste nisi atque?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+          molestiae nisi. Exercitationem harum facere commodi quo eum culpa,
+          consequuntur recusandae.
+        </p>
+
+        <h3>Now I live the simple life</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          quas nemo voluptates inventore aliquam qui totam aliquid, officia quis
+          repellat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet.
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reiciendis.</strong
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+          mollitia quibusdam soluta!
+        </p>
+      </main>
+
+      <!-- sidebar has 2 widgets : about me and recent posts -->
+      <aside class="sidebar">
+        <!-- recent post widget has heading and image of 3 recent posts -->
+        <div class="sidebar-widget">
+          <h2 class="widget-title">RECENT POSTS</h2>
+          <div class="widget-recent-post">
+            <h3 class="widget-recent-post-title">Keeping cooking simple</h3>
+            <img src="img/food.jpg" alt="" class="widget-image" />
+          </div>
+
+          <div class="widget-recent-post">
+            <h3 class="widget-recent-post-title">Simplicity and work</h3>
+            <img src="img/work.jpg" alt="" class="widget-image" />
+          </div>
+
+          <div class="widget-recent-post">
+            <h3 class="widget-recent-post-title">Simple decorations</h3>
+            <img src="img/deco.jpg" alt="" class="widget-image" />
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p><strong>Living the Simple Life</strong></p>
+      <p>Copyright 2019</p>
+    </footer>
+  </body>
+</html>
