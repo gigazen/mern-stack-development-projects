@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="gigazen" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>A Simple Life</title>
+    <title>Document</title>
   </head>
 
   <body>
@@ -26,10 +25,10 @@
 
         <nav>
           <ul>
-            <li><a href="index.html" class="current-page">home</a></li>
+            <li><a href="index.html">home</a></li>
             <li><a href="about-me.html">about me</a></li>
             <li>
-              <a href="recent-posts.html">recent posts</a>
+              <a href="recent-posts.html" class="current-page">recent posts</a>
             </li>
           </ul>
         </nav>
@@ -39,22 +38,8 @@
     <!-- container has 2 sections : main and sidebar -->
     <div class="container container-flex">
       <!-- for old browsers which cannot understand main, for them have to use role with main tag -->
-      <!-- main section contains 1 featured article and 3 recent articles -->
+      <!-- main section contains 4 recent articles -->
       <main role="main">
-        <article class="article-featured">
-          <h2 class="article-title">Finding simplicity in life</h2>
-          <img src="img/life.jpg" alt="" class="article-image" />
-          <p class="article-info">July 23, 2022 | 3 comments</p>
-          <p class="article-body">
-            <strong>Life can get complicated really quickly</strong>, but it
-            doesn't have to be! There are many ways to simplify your life,
-            <a href="#">a few of which we've explored in the past</a>. This week
-            we're taking a bit of a approach though, in how you can find
-            simplicity in the life you already living
-          </p>
-          <a href="#" class="article-read-more">CONTINUE READING</a>
-        </article>
-
         <!-- each recent article has text and image -->
         <article class="article-recent">
           <h2 class="article-title">Keeping cooking simple</h2>
@@ -132,7 +117,7 @@
 
     <footer>
       <p><strong>Living the Simple Life</strong></p>
-      <p>Copyright 2022</p>
+      <p>Copyright 2019</p>
     </footer>
   </body>
 </html>
