@@ -3,136 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="gigazen" />
+    <!-- viewport meta to render pages on mobile properly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>A Simple Life</title>
+
+    <!-- fontawesome all icons link from cdnjs -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- after all the links from outside servers, keep css file link -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Jake & Elwood</title>
   </head>
 
   <body>
-    <header>
-      <div class="container container-flex">
-        <div class="site-title">
-          <h1>Living the simple life</h1>
-          <p class="subtitle">a blog exploring minimalism in life</p>
-        </div>
+    <!-- header section contains a container which has one image logo link and 3 nav links -->
+    <header class="header main-grid">
+      <div class="header-content">
+        <a href="index.html" class="logo-link">
+          <img src="img/logo.png" alt="" class="logo" />
+        </a>
 
-        <nav>
-          <ul>
-            <li><a href="index.html" class="current-page">home</a></li>
-            <li><a href="about-me.html">about me</a></li>
-            <li>
-              <a href="recent-posts.html">recent posts</a>
+        <nav class="nav">
+          <!-- put an html entity for cross -->
+          <!-- aria-label is like alt text for an element, screen reader will come across this and will read it loud -->
+          <button aria-label="Close Navigation" class="close-nav">
+            &times;
+          </button>
+
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">about us</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">contact</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- container has 2 sections : main and sidebar -->
-    <div class="container container-flex">
-      <!-- for old browsers which cannot understand main, for them have to use role with main tag -->
-      <!-- main section contains 1 featured article and 3 recent articles -->
-      <main role="main">
-        <article class="article-featured">
-          <h2 class="article-title">Finding simplicity in life</h2>
-          <img src="img/life.jpg" alt="" class="article-image" />
-          <p class="article-info">July 23, 2022 | 3 comments</p>
-          <p class="article-body">
-            <strong>Life can get complicated really quickly</strong>, but it
-            doesn't have to be! There are many ways to simplify your life,
-            <a href="#">a few of which we've explored in the past</a>. This week
-            we're taking a bit of a approach though, in how you can find
-            simplicity in the life you already living
-          </p>
-          <a href="#" class="article-read-more">CONTINUE READING</a>
-        </article>
+    <main>
+      <!-- main has hero section over background image and info section containing 3 parts, main-grid is the common grid structure containing 3 grid columns for mobile and 5 grid columns for desktop -->
+      <section class="hero main-grid">
+        <h1 class="hero-title">
+          The only marketing agency on
+          <span class="accent-color">a mission from God</span>, fully dedicated
+          to increase your web traffic.
+        </h1>
+        <p class="subtitle">
+          We’re two brothers from Chicago that are trying to pay back our debt.
+          We can help you with <strong>SEO, SEM, content marketing</strong> and
+          whatever else.
+        </p>
+        <!-- make anchor element a button -->
+        <a href="" class="btn btn-primary">contact us</a>
+      </section>
 
-        <!-- each recent article has text and image -->
-        <article class="article-recent">
-          <h2 class="article-title">Keeping cooking simple</h2>
-          <p class="article-body">
-            Food is a very important part of everyone's life. If you want to be
-            healthy, you have to eat healthy. One of the easiest ways to do that
-            is to keep your cooking nice and simple.
-          </p>
-          <a href="#" class="article-read-more">CONTINUE READING</a>
-
-          <img src="img/food.jpg" alt="" class="article-image" />
-          <p class="article-info">July 23, 2022 | 3 comments</p>
-        </article>
-
-        <article class="article-recent">
-          <h2 class="article-title">Simplicity and work</h2>
-          <p class="article-body">
-            Work is often a major source of stress. People get frustrated, it
-            ruins their relationship with others and it leads to burnout. By
-            keeping your work life as simple as possible, it will help balance
-            everything out.
-          </p>
-          <a href="#" class="article-read-more">CONTINUE READING</a>
-
-          <img src="img/work.jpg" alt="" class="article-image" />
-          <p class="article-info">July 23, 2022 | 3 comments</p>
-        </article>
-
-        <article class="article-recent">
-          <h2 class="article-title">Simple decorations</h2>
-          <p class="article-body">
-            A home isn't a home until you've decorated a little. People either
-            don't decorate, or they go overboard and it doesn't have the impact
-            they were hoping for. Staying simple will help draw the eye where
-            you want it to and make things pop like never before.
-          </p>
-          <a href="#" class="article-read-more">CONTINUE READING</a>
-
-          <img src="img/deco.jpg" alt="" class="article-image" />
-          <p class="article-info">July 23, 2022 | 3 comments</p>
-        </article>
-      </main>
-
-      <!-- sidebar has 2 widgets : about me and recent posts -->
-      <aside class="sidebar">
-        <div class="sidebar-widget">
-          <h2 class="widget-title">ABOUT ME</h2>
-          <img src="img/about-me.jpg" alt="" class="widget-image" />
-          <p class="width-body">
-            I find life better, and I'm happier, when things are nice and
-            simple.
+      <section class="info main-grid">
+        <div class="col">
+          <!-- give a modifier class name to specifically style the element and put common style into general class so that general class can be reused -->
+          <h2 class="section-title section-title-center">About Us</h2>
+          <p>
+            We grew up in downtown Chicago, and we used to play in a band.
+            <strong>Jake loves fried chicken</strong>, and
+            <strong>Elwood loves dry white toast</strong>.
           </p>
         </div>
 
-        <!-- recent post widget has heading and image of 3 recent posts -->
-        <div class="sidebar-widget">
-          <h2 class="widget-title">RECENT POSTS</h2>
-          <div class="widget-recent-post">
-            <h3 class="widget-recent-post-title">Keeping cooking simple</h3>
-            <img src="img/food.jpg" alt="" class="widget-image" />
-          </div>
-
-          <div class="widget-recent-post">
-            <h3 class="widget-recent-post-title">Simplicity and work</h3>
-            <img src="img/work.jpg" alt="" class="widget-image" />
-          </div>
-
-          <div class="widget-recent-post">
-            <h3 class="widget-recent-post-title">Simple decorations</h3>
-            <img src="img/deco.jpg" alt="" class="widget-image" />
-          </div>
+        <div class="col">
+          <h2 class="section-title section-title-center">Our skills</h2>
+          <p>
+            Elwood is an expert in
+            <strong>SEO, SEM, and driving from the police</strong>. Jake is our
+            <strong>social media specialist</strong>, and he has an amazing
+            voice.
+          </p>
         </div>
-      </aside>
-    </div>
 
-    <footer>
-      <p><strong>Living the Simple Life</strong></p>
-      <p>Copyright 2022</p>
+        <div class="col">
+          <h2 class="section-title section-title-center">Get in touch</h2>
+          <p>
+            Send us an email with some info about what help you need and
+            <strong>we’ll drive over to your place</strong> in our Bluesmobile
+            the following day to discuss the deal.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer main-grid">
+      <!-- footer has 2 sections : logo image, text and social media icon links -->
+      <div class="footer-main">
+        <img src="img/logo.png" alt="" class="footer-logo" />
+        <p class="footer-text">
+          Two brothers from Chicago that are just trying to pay back their debt
+          by helping others with their SEO, SEM, and Content Marketing needs.
+        </p>
+        <p class="footer-fineprint">© Jake&Elwood 2022</p>
+      </div>
+
+      <!-- social media icons are 3 list items having icon links -->
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </li>
+      </ul>
     </footer>
+
+    <!-- javascript files must be at the end before closing of body, because browser takes time to process js files so putting js file at the top will cause browser to first read js file then loading our page which will slow our site -->
+    <script src="app/script.js"></script>
   </body>
 </html>

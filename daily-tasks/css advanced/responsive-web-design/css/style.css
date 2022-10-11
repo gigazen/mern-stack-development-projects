@@ -1,375 +1,297 @@
-/* Mobile-first Approach  */
-/****************************** 
-General Basics 
-*******************************/
+/* Mobile-first design */
+/************************
+      General style
+************************/
+
+/* css reset */
+
 html {
   box-sizing: border-box;
-  font-size: 1.125rem; /* font size 18px */
 }
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  /* set color for paragraph as color for body */
+  color: #404040;
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+/************************
+      Typography
+************************/
 
-.image-full {
-  max-height: 300px;
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 2em;
-}
-
-/****************************** 
-Typography 
-*******************************/
-/* first keep the general element selectors, then keep the specific selectors with class names */
 h1,
 h2,
-h3 {
-  font-family: "Lora", serif;
-  /* always use number for font-weight instead of keyword, as different keyword works differently in different browsers */
-  font-weight: 400;
-  color: #143774;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h3 {
-  color: #1792d2;
-}
-
 strong {
   font-weight: 700;
 }
 
-a {
-  color: #1792d2;
-  text-decoration: none;
+.accent-color {
+  color: #ffe600;
 }
 
-a:hover,
-a:focus {
-  color: #143774;
-  text-decoration: underline;
-}
-
-p {
-  color: #707070;
-  margin: 1em 0;
-}
-
-/* subtitle with h1 in header */
-.subtitle {
-  color: #1792d2;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2.2px;
-}
-
-/* title of each article */
-.article-title {
+.hero-title {
   font-size: 1.5rem;
+  /* for larger font size, decrease line-height */
+  line-height: 1.4;
+  margin-bottom: 0.8em;
 }
 
-/* continue reading, date, number of comments */
-.article-read-more,
-.article-info {
-  font-size: 0.875rem;
+/* title in info section */
+.section-title {
+  font-size: 1.125rem;
+  color: #000;
+  margin-top: 1.25em;
 }
 
-/****************************** 
-Layout 
-*******************************/
-/* general container, wrapping every section of page separately so that they can be of same width */
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
+/************************
+        Layout
+************************/
+
+/* buttons */
+.btn {
+  /* to make it a button, instead of width, height give padding to anchor element, x should be at least double of y */
+  padding: 0.5em 1.75em;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 1.5em;
 }
 
-/* there can be some containers without display flex, so create a modifier like, container-flex for containers with flex and specifically style it */
-/* for mobile first, in normal condition main and sidebar will be one below another */
-.container-flex {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
+/* button at hero is inside hero grid container which takes middle grid column, means this button is a grid item and as no width, height is set for it so by default it will stretch */
+.btn-primary {
+  background-color: #ffe600;
+  color: #000;
+  justify-self: start;
 }
+
+/* navigation */
 
 header {
-  background: #f8f8f8;
-  padding: 4em;
-  text-align: center;
-  margin-bottom: 2.5em;
+  background: #000;
 }
 
-/* Navigation */
-/* make the ul inside nav to align at the center vertically */
-/* make the li's inside ul to come one below another in normal condition of mobile-first */
-/* navigation items will be one below another instead of side by side, also at the center of page */
-nav ul {
+/* as header has main-grid class, so header is a grid container and header-content is a grid item. Set header-content to take the 2nd column in small screen. Also make the header-content a flex container to keep its content side by side */
+.header-content {
+  display: flex;
+  grid-column: 2 / -2;
+}
+
+/* here logo has transparent background */
+.logo-link {
+  background: #ffe600;
+  padding-top: 2em;
+}
+
+/* if there is no positioned ancestor for an absolute positioned element then it will be positioned relative to body */
+.nav {
+  background: #000;
+  width: 100%;
+  /* for mobile view, normally when hamburger is not clicked, keep the nav items to 100% left of the screen i.e. out of sight */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  /* normally no translate along X axis, but upon clicking hamburger menu, this transform property will get replaced by another with -100% */
+  transform: translateX(0);
+}
+
+/* if we add .navigation-open class to nav element then it will bring the nav menus from right to left side along X axis by 100%. And if we remove this class then nav menus will slide out */
+.navigation-open {
+  transform: translateX(-100%);
+}
+
+.nav-list {
+  list-style: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffe600;
+}
+
+/* style the html entity for cross */
+.close-nav {
+  border: 0;
+  background: 0;
+  color: #ffe600;
+  font-size: 3rem;
+  font-weight: 700;
+  cursor: pointer;
+  /* give padding so that area surrounding cross entity can increase, then its click area will also increase, pointer cursor will be shown long before user reaches the cross */
+  padding: 0.5em;
+  /* pull the cross out of the flow so that it cannot affect position of the nav links */
+  position: absolute;
+}
+
+/************************
+      general layout
+************************/
+
+/* sections with main-grid class will have 3 columns for smaller screen and 5 columns for larger screen */
+/* for smaller screen, using minmax(1em, 1fr) set first and last columns of min 1em width which will act as min padding beside content but max padding can be acc to screen width. Then using minmax(0px, 500px) set maximum width for middle column */
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px) minmax(1em, 1fr);
+  gap: 0 2em;
+}
+
+/* for larger screen, width of content inside middle column should increase, so replace the single middle column with 3 columns of fixed minimum and maximum acc. to screen width, now content will take 2 or 3 of these new columns */
+@media screen and (min-width: 600px) {
+  .main-grid {
+    grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 320px)) minmax(
+        1em,
+        1fr
+      );
+  }
+}
+
+/************************
+        hero section
+************************/
+
+.hero {
+  color: #fff;
+  background-image: url(../img/hero-bg.jpg);
+  /* backup color if background image cannot load */
+  background-color: #404040;
+  /* background image will cover whole area but will remove extra parts */
+  background-size: cover;
+  /* image goes to bottom with screen change, prevent it by fixing the image position at bottom */
+  background-position: bottom;
+  /* give height using padding, to keep containers responsive, never use height property for containers otherwise for small screen widths, content will come out of it */
+  padding: 4em 0;
+}
+
+/* hero section has main-grid class, so hero is a grid container. For smaller screen, every element inside hero section should take middle column, * selects just html elements so this excludes background image of hero section, as it is not coming from html */
+.hero > * {
+  grid-column: 2 / -2;
+}
+
+/* for larger screen, everything inside hero section should take 2 columns from middle, starting from grid line number 2 */
+@media (min-width: 600px) {
+  .hero {
+    /* increase hero section height by using padding */
+    padding: 6em 0;
+  }
+
+  .hero > * {
+    grid-column: 2 / span 2;
+  }
+}
+
+/************************
+        info section
+************************/
+/* info section has main-grid class, so info is a grid container. For mobile view, inside info section each grid item named col should take middle column, as no width, height is set for it so by default it will stretch, could have been understood better using border and small content inside any col */
+.col {
+  grid-column: 2 / -2;
+}
+
+.info {
+  padding: 3em 0;
+  text-align: center;
+}
+
+/* trick : for larger screen, there are 5 columns, we want each col to take 1 column from middle 3 columns, so set each col to take 1 column and tell first col to start from 2nd column, then rest of the cols will automatically take next columns */
+@media (min-width: 600px) {
+  .col {
+    grid-column: span 1;
+  }
+
+  .col:first-child {
+    grid-column: 2 / span 1;
+  }
+}
+
+/************************
+        footer
+************************/
+
+.footer {
+  background: #ebebeb;
+  padding: 3em 0;
+  text-align: center;
+
+  grid-template-areas: ". social ." ". main .";
+}
+
+/* footer also has main-grid, so footer is a grid container. For smaller screen, logo-text and social icon grid item sections should come one below another inside middle column. These grid item sections also get stretched by default */
+.footer-main,
+.social-list {
+  grid-column: 2 / -2;
+}
+
+.footer-main {
+  grid-area: main;
+}
+
+.footer-logo,
+.footer-text,
+.footer-fineprint {
+  opacity: 0.5;
+}
+
+.footer-text {
+  margin: 1em 0 2em;
+}
+
+.footer-fineprint {
+  font-size: 0.75rem;
+}
+
+.social-list {
   list-style: none;
   display: flex;
-  flex-direction: column;
-}
-
-/* each navigation links will be separated from one another vertically */
-nav li {
-  margin: 1em 0;
-}
-
-/* nav link texts are contained in li > a, font weight and padding cannot be inherited so must be applied to the direct parent containing text */
-nav a {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 0.25em 0;
-}
-
-/* make the current page link to be grey with underline */
-/* inside nav of each page, the li which holds current-page class, that li will be in grey color and a border will appear underneath it and upon hovering, it will remain same with default grey color and border */
-nav .current-page {
-  border-bottom: 1px solid #707070;
-  color: #707070;
-}
-
-/* except current page, each li or link upon hovering will turn green */
-nav a:hover,
-nav a:focus {
-  color: #1792d2;
-}
-
-/* to override green upon hovering, current page hovering must come after it, not before */
-/* as IICE : Inline > ID > Class > Element, so class has more specificity than element that's why style applied on current-page class overwrites common style applied on anchor elements */
-.current-page:hover {
-  color: #707070;
-  text-decoration: none;
-}
-
-/* articles */
-
-/* continue reading */
-.article-read-more {
-  color: #1792d2;
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-  margin: 1.5em 0;
-  text-transform: uppercase;
-}
-
-.article-read-more:hover,
-.article-read-more:focus {
-  color: #143774;
-  text-decoration: underline;
-}
-
-.article-info {
-  margin: 2em 0 0.8rem 0;
-}
-
-.article-featured {
-  border-bottom: 1px solid #707070;
-}
-
-/* for mobile-first, in normal condition articles will have image and text one below another */
-.article-recent {
-  margin-top: 2em;
-  /* prevent margin collapsing of normal block elements by converting into a grid container */
-  display: grid;
-  /* for very small to medium screen, image and text should shrink and expand acc. to screen width so set their width as 1fr. But keep the width of date info same as its longest word width i.e. set it to min-content */
-  grid-template-columns: 1fr min-content;
-  grid-template-areas:
-    "image image"
-    "title info"
-    "body body"
-    "read-more .";
-  /* give a column gap so that article title and info do not collide each other, don't give row gap unnecessarily*/
-  gap: 0 1em;
-}
-
-.article-image {
-  grid-area: image;
-}
-.article-title {
-  grid-area: title;
-}
-.article-info {
-  grid-area: info;
-  justify-self: end;
-}
-.article-body {
-  grid-area: body;
-}
-.article-read-more {
-  grid-area: read-more;
-}
-
-/* keep the base of first line of article title and info in same line */
-.article-title,
-.article-info {
-  align-self: baseline;
-}
-
-/* widgets on sidebar */
-.sidebar-widget {
-  border: 20px solid #ebebeb;
-  padding: 1em;
+  justify-content: center;
   margin-bottom: 2em;
+  grid-area: social;
 }
 
-.sidebar-widget p {
-  margin: 2rem 0 1rem 0;
+.social-link {
+  font-size: 1.5rem;
+  color: #000;
+  margin-right: 1em;
 }
 
-.sidebar-widget h2 {
-  font-size: 1rem;
+.social-link:hover {
+  color: #777;
 }
 
-.widget-title,
-.widget-recent-post-title {
-  font-size: 1.125rem;
-  line-height: 1.4;
-}
-
-.widget-title {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-}
-
-.widget-recent-post {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2em;
-  border-bottom: 2px solid #707070;
-}
-
-/* if widget-recent-post is the last child of sidebar-widget parent then make border, margin 0. But if any element say, <p>Example</p> is the last child then last widget-recent-post will have border and margin */
-.widget-recent-post:last-child {
-  border: 0;
-  margin: 0;
-}
-
-.widget-image {
-  order: -1;
-}
-
-.widget-recent-post-title {
-  margin: 1em 0 1em 0;
-  color: #143774;
-}
-
-/* footer */
-footer {
-  background: #143774;
-  text-align: center;
-  padding: 3em 0;
-}
-
-footer p {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* Responsiveness */
-/* Mobile-first Design so have to use min-width */
-@media screen and (min-width: 750px) {
-  header {
-    padding: 4em 0em;
-  }
-  nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 0.73rem;
+@media (min-width: 600px) {
+  .footer {
+    grid-template-areas: ". main main social .";
   }
 
-  nav ul {
-    flex-direction: row;
+  .footer-main {
+    text-align: left;
+  }
+
+  .social-list {
+    /* social-list is a flex container plus a grid item, so to align its content horizontally, we can either use justify-content (for flex container) or justify-self (for grid item), on another note, remember justify-self is not valid for flex items */
     justify-content: flex-end;
-  }
-
-  nav li {
-    margin-left: 2em;
-  }
-
-  /* for larger screen, main section and sidebar will be side by side, font-size of them will be smaller */
-  /* set main as 70% and sidebar as 25% of container width. Remaining 5% bring to the middle of them */
-  .container-flex {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  main {
-    width: 70%;
-    font-size: 0.95rem;
-  }
-
-  /* for medium screen size, prevent the sidebar width getting too small by fixing a minimum width for it. But if we set min width for aside then even after using justify-content: space-between, main and aside will collide for some smaller screen sizes. Fix it by giving a min distance between main and aside, like a margin on left of aside */
-  aside {
-    width: 25%;
-    min-width: 200px;
-    margin-left: 1em;
-  }
-}
-
-@media (min-width: 750px) {
-  /* for larger screens, image and text inside recent articles will be side by side */
-  .article-recent {
-    /* for medium screen, keep a minimum width for image and text otherwise it will shrink badly. For larger screen, limit the image width otherwise it will expand badly, but don't limit the text container */
-    grid-template-columns: minmax(100px, 250px) minmax(300px, 1fr);
-    grid-template-areas:
-      "image title"
-      "image body"
-      "image read-more"
-      "info .";
-  }
-
-  .article-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .article-info {
-    justify-self: start;
-  }
-
-  /* images inside recent articles should be longer, not tiny */
-  .article-image {
-    /* width: 100%; */
-    min-height: 250px;
-    /* object-fit cover makes the image larger while keeping aspect ratio. But crops any extra part of image outside its own specified content box */
-    /* cannot use object-fit: contain as it will make the image small to avoid cropping i.e. contains full image within its own specified content box */
-    object-fit: cover;
-    /* using object-position left can align to the left side of the image within its own content box */
-    /* object-position: left; */
-  }
-
-  /* for larger screens, image and date info of featured article will come first then all the texts. For this to happen, make the featured article a flexbox then change orders */
-  /* default order of flex items is 0. So flex item with -ve order comes before those default ordered items. More -ve order, more before */
-  .article-featured {
-    display: flex;
-    flex-direction: column;
-  }
-  .article-image {
-    order: -2;
-  }
-  .article-info {
-    order: -1;
+    /* justify-self: end; */
   }
 }
