@@ -3,18 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- viewport meta to render pages on mobile properly -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- google fonts link -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- fontawesome all icons link from cdnjs -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -22,48 +17,38 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- after all the links from outside servers, keep css file link -->
     <link rel="stylesheet" href="css/style.css" />
     <title>Jake & Elwood</title>
   </head>
 
   <body>
-    <!-- first design basic layout, after that design header section. For this at first comment out the header section with logo and navigation -->
-    <!-- header section contains a container which has one image logo link, 3 nav links, 2 buttons for open and close navigation -->
-    <header class="header header-home main-grid">
-      <div class="header-content">
-        <a href="index.html" class="logo-link">
-          <img src="img/logo.png" alt="" class="logo" />
-        </a>
+    <!-- <header class="header main-grid">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo.png" alt="" class="logo" />
+      </a>
 
-        <button aria-label="Open Navigation" class="open-nav">&#9776;</button>
+      <button aria-label="open navigation" class="open-nav">&#9776;</button>
 
-        <!-- navigation-open class gets added to nav when hamburger is clicked and gets removed from nav when cross is clicked -->
-        <nav class="nav">
-          <!-- put an html entity for cross, &times; -->
-          <!-- aria-label is like alt text for an element, screen reader will come across this and will read it loud -->
-          <button aria-label="Close Navigation" class="close-nav">
-            &times;
-          </button>
+      <nav class="nav">
+        <button aria-label="close navigation" class="close-nav">
+          &#10799;
+        </button>
 
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">home</a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">about us</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">about</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header> -->
 
     <main>
-      <!-- main has hero section over background image and then info section containing 3 parts, main-grid is the common grid structure containing 3 grid columns for mobile and 5 grid columns for desktop -->
       <section class="hero main-grid">
         <h1 class="hero-title">
           The only marketing agency on
@@ -75,15 +60,12 @@
           We can help you with <strong>SEO, SEM, content marketing</strong> and
           whatever else.
         </p>
-        <!-- make anchor element a button -->
         <a href="contact.html" class="btn btn-primary">contact us</a>
       </section>
 
-      <!-- info section has 3 columns in larger screen -->
       <section class="info main-grid">
         <div class="col">
-          <!-- give a modifier class name to specifically style the element and put common style into general class so that general class can be reused -->
-          <h2 class="section-title section-title-center">About Us</h2>
+          <h2 class="section-title section-title-center">About us</h2>
           <p>
             We grew up in downtown Chicago, and we used to play in a band.
             <strong>Jake loves fried chicken</strong>, and
@@ -100,7 +82,6 @@
             voice.
           </p>
         </div>
-
         <div class="col">
           <h2 class="section-title section-title-center">Get in touch</h2>
           <p>
@@ -113,17 +94,15 @@
     </main>
 
     <footer class="footer main-grid">
-      <!-- footer has 2 sections : logo image, text and social media icon links -->
       <div class="footer-main">
         <img src="img/logo.png" alt="" class="footer-logo" />
         <p class="footer-text">
           Two brothers from Chicago that are just trying to pay back their debt
           by helping others with their SEO, SEM, and Content Marketing needs.
         </p>
-        <p class="footer-fineprint">© Jake&Elwood 2022</p>
+        <p class="footer-fineprint">© Jake & Elwood 2022</p>
       </div>
 
-      <!-- social media icons are 3 list items having icon links -->
       <ul class="social-list">
         <li class="social-item">
           <a href="#" class="social-link"
@@ -143,7 +122,6 @@
       </ul>
     </footer>
 
-    <!-- javascript files must be at the end before closing of body, because browser takes time to process js files so putting js file at the top will cause browser to first read js file then loading our page which will slow our site -->
     <script src="app/script.js"></script>
   </body>
 </html>
