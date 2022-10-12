@@ -1,0 +1,212 @@
+/* Mobile-first design */
+/************************
+        General Style 
+************************/
+
+/* css reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #404040;
+  line-height: 1.6;
+}
+
+/************************
+        Typography 
+************************/
+
+h1,
+h2,
+strong {
+  font-weight: 700;
+}
+
+.accent-color {
+  color: #ffe600;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0.8em 0;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  color: #000;
+  margin-top: 1.25em;
+}
+
+/************************
+       general layout 
+************************/
+
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) minmax(0, 500px) minmax(1em, 1fr);
+  gap: 0 2em;
+}
+
+@media screen and (min-width: 600px) {
+  .main-grid {
+    grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 300px)) minmax(
+        1em,
+        1fr
+      );
+  }
+}
+
+/************************
+       hero section 
+************************/
+
+.hero {
+  color: #fff;
+  background-image: url(../img/hero-bg.jpg);
+  background-color: #404040;
+  background-size: cover;
+  background-position: bottom;
+  padding: 4em 0;
+}
+
+.hero > * {
+  grid-column: 2 / -2;
+}
+
+@media (min-width: 600px) {
+  .hero > * {
+    grid-column: 2 / span 2;
+  }
+
+  .hero {
+    padding: 6em 0;
+  }
+}
+
+/************************
+       buttons 
+************************/
+
+.btn {
+  padding: 0.5em 1.75em;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 1.5em;
+}
+
+.btn-primary {
+  background-color: #ffe600;
+  color: #000;
+  justify-self: start;
+}
+
+/************************
+       info section 
+************************/
+
+.col {
+  grid-column: 2 / -2;
+}
+
+.info {
+  padding: 3em 0;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .col {
+    grid-column: span 1;
+  }
+
+  .col:first-child {
+    grid-column: 2 / span 1;
+  }
+}
+
+/************************
+       footer section 
+************************/
+
+.footer {
+  background: #ebebeb;
+  padding: 3em 0;
+  text-align: center;
+
+  grid-template-areas: ". social ." ". main .";
+}
+
+.footer-main,
+.social-list {
+  grid-column: 2 / -2;
+}
+
+.social-list {
+  grid-area: social;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.social-link {
+  font-size: 1.5rem;
+  color: #000;
+  margin-right: 1em;
+}
+
+.social-link:hover {
+  color: #777;
+}
+
+.footer-main {
+  grid-area: main;
+}
+
+.footer-logo,
+.footer-text,
+.footer-fineprint {
+  opacity: 0.5;
+}
+
+.footer-text {
+  margin: 1em 0 2em;
+}
+
+.footer-fineprint {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    grid-template-areas: ". main main social .";
+  }
+
+  .footer-main {
+    text-align: left;
+  }
+
+  .social-list {
+    /* justify-content: flex-end; */
+    justify-self: end;
+  }
+}
+
+/************************
+       navigation 
+************************/
+
+.header {
+  background: #000;
+}
