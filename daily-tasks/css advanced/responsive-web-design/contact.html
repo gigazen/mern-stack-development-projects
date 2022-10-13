@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- viewport meta to render pages on mobile properly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- fontawesome all icons link from cdnjs -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- after all the links from outside servers, keep css file link -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Jake & Elwood</title>
+  </head>
+
+  <body>
+    <!-- first design basic layout, after that design header section. For this at first comment out the header section with logo and navigation -->
+    <!-- header section contains a container which has one image logo link, 3 nav links, 2 buttons for open and close navigation -->
+    <header class="header main-grid">
+      <div class="header-content">
+        <a href="index.html" class="logo-link">
+          <img src="img/logo.png" alt="" class="logo" />
+        </a>
+
+        <button aria-label="Open Navigation" class="open-nav">&#9776;</button>
+
+        <!-- navigation-open class gets added to nav when hamburger is clicked and gets removed from nav when cross is clicked -->
+        <nav class="nav">
+          <!-- put an html entity for cross, &times; -->
+          <!-- aria-label is like alt text for an element, screen reader will come across this and will read it loud -->
+          <button aria-label="Close Navigation" class="close-nav">
+            &times;
+          </button>
+
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">about us</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link current">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-template main-grid">
+      <h1 class="page-title">Contact.</h1>
+      <p class="subtitle">
+        Let us know how we can help you need and we’ll drive over to your place
+        in our Bluesmobile the following day to discuss the deal.
+      </p>
+      <img
+        src="img/contact.jpg"
+        alt="a bunch of mailboxes"
+        class="main-image"
+      />
+
+      <div class="secondary-text">
+        <h2 class="section-title">Getting in touch with us</h2>
+        <p>
+          You can either use the form or send us an email. I'll get back in
+          touch with you as soon as possible!
+        </p>
+      </div>
+
+      <div class="main-text">
+        <form class="contact-form" action="#" method="POST">
+          <label class="fname-label" for="fname">First Name</label>
+          <input class="fname-input" type="text" id="fname" />
+
+          <label class="lname-label" for="lname" id="lname-label"
+            >Last Name</label
+          >
+          <input class="lname-input" type="text" id="lname" />
+
+          <label class="message-label" for="message">Message</label>
+          <textarea class="message-textarea" id="message"></textarea>
+
+          <button class="btn btn-primary btn-form">send</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer main-grid">
+      <!-- footer has 2 sections : logo image, text and social media icon links -->
+      <div class="footer-main">
+        <img src="img/logo.png" alt="" class="footer-logo" />
+        <p class="footer-text">
+          Two brothers from Chicago that are just trying to pay back their debt
+          by helping others with their SEO, SEM, and Content Marketing needs.
+        </p>
+        <p class="footer-fineprint">© Jake&Elwood 2022</p>
+      </div>
+
+      <!-- social media icons are 3 list items having icon links -->
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- javascript files must be at the end before closing of body, because browser takes time to process js files so putting js file at the top will cause browser to first read js file then loading our page which will slow our site -->
+    <script src="app/script.js"></script>
+  </body>
+</html>
