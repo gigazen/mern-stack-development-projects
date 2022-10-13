@@ -50,7 +50,60 @@ strong {
 .section-title {
   font-size: 1.125rem;
   color: #000;
-  margin-top: 1.25em;
+  margin: 1.25em 0;
+}
+
+/* after section title create an underline pseudo element in home and about us page */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin-top: 10px;
+  background: #ffe600;
+}
+
+/* center the underline pseudo element in home page */
+.section-title-center::after {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* give top margin 0 to section title of about us page only, to align it's top with the image on side for large screen */
+.main-text .section-title:first-child {
+  margin-top: 0;
+}
+
+/* title and subtitle of about us page, they will always take middle columns, 1 column for small screen, 3 columns for large screen, it is okay to write some associated layouts in typography area, to maintain dry principle */
+.page-title,
+.subtitle {
+  grid-column: 2 / -2;
+  color: #000;
+  /* center just the page title and subtitle */
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  /* center the pseudo element associated with page title */
+  justify-self: center;
+}
+
+/* create an underline below about us page title */
+.page-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 30px;
+  background: #ffe600;
+  margin-top: -40px;
+  margin-left: 15px;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  margin: 0.5em 0 3em;
 }
 
 /************************
@@ -90,12 +143,20 @@ strong {
   /* image goes to bottom with screen change, prevent it by fixing the image position at bottom */
   background-position: bottom;
   /* give height using padding, to keep containers responsive, never use height property for containers otherwise for small screen widths, content will come out of it */
-  padding: 4em 0;
+  padding: 8em 0 4em;
 }
 
 /* hero section has main-grid class, so hero is a grid container. For smaller screen, every direct child element of hero section should take middle column, * selects just html elements so this excludes background image of hero section, as it is not coming from html */
 .hero > * {
   grid-column: 2 / -2;
+}
+
+/* create breakpoint where the site is breaking or causing problem, not at specific device width */
+@media (min-width: 400px) {
+  /* prevent the hero section text to be on top of the guy's face for screen width just less than 600px */
+  .hero > * {
+    margin-right: 20%;
+  }
 }
 
 /* for larger screen, everything inside hero section should take 2 columns from middle, starting from grid line number 2, among available 5 columns */
@@ -106,7 +167,7 @@ strong {
 
   .hero {
     /* increase hero section height by using padding */
-    padding: 6em 0;
+    padding: 10em 0 6em;
   }
 }
 
@@ -166,6 +227,7 @@ strong {
 }
 
 /* footer also has main-grid, so footer is a grid container and its available grid columns are set from main-grid. For smaller screen, social icon and logo-text grid item sections should come one below another inside middle column. These grid item sections also get stretched by default */
+/* this is repetition as using grid areas we already defined positions */
 .footer-main,
 .social-list {
   grid-column: 2 / -2;
@@ -227,56 +289,29 @@ strong {
         navigation
 ************************/
 
+/* give generic header a black background so that it can be used in other pages */
 .header {
   background: #000;
 }
 
-/* make the header containing logo and navigation, to have transparent background so that header can be directly seen over the background image. As there is nothing behind the header that's why it will look white after making it transparent background. Pull it out of document flow by giving absolute position then it will be over background image */
+/* make the home page specific header containing logo and navigation, to have transparent background but it will look white then. Pull it out of document flow by giving absolute position then it will be over background image with transparent background */
 .header-home {
   background: transparent;
   position: absolute;
+  /* prevent shrinking behavior of absolute positioned element for very large screen by making the element to take 100% of parent body element, this will prevent misalignment of header in home page for large screen */
+  width: 100%;
 }
 
 /* as header has main-grid class, so header is a grid container and header-content is a grid item. Set header-content to take the 2nd column in small screen. Also make the header-content a flex container to keep its content side by side */
 .header-content {
-  display: flex;
   grid-column: 2 / -2;
+  display: flex;
 }
 
-/* here logo has transparent background */
+/* here logo image has transparent background, so any color we set as background will be applied */
 .logo-link {
   background: #ffe600;
   padding-top: 2em;
-}
-
-/* if there is no positioned ancestor for an absolute positioned element then it will be positioned relative to body */
-.nav {
-  background: #000;
-  width: 100%;
-  /* for mobile view, normally when hamburger is not clicked, keep the nav items to 100% left of the screen i.e. out of sight */
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 100%;
-  /* normally no translate along X axis, but upon clicking hamburger menu, this transform property will get replaced by another with -100% */
-  transform: translateX(0);
-  transition: transform 0.25s;
-}
-
-/* if we add .navigation-open class to nav element then it will bring the nav menus from right to left side along X axis by 100%. And if we remove this class then nav menus will slide out */
-.navigation-open {
-  transform: translateX(-100%);
-}
-
-.nav-list {
-  list-style: none;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .nav-link {
@@ -291,20 +326,32 @@ strong {
   color: #e7d002;
 }
 
-/* style for the cross html entity */
-.close-nav {
-  border: 0;
-  background: 0;
-  color: #ffe600;
-  font-size: 3rem;
-  font-weight: 700;
-  cursor: pointer;
-  /* give padding so that area surrounding cross entity can increase, then its click area will also increase, pointer cursor will be shown long before user reaches the cross */
-  padding: 0.5em;
-  /* pull the cross out of the flow so that it cannot affect position of the nav links */
-  position: absolute;
-  top: -10px;
-  left: 85%;
+.nav-list {
+  list-style: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* if there is no positioned ancestor for an absolute positioned element then it will be positioned relative to body */
+.nav {
+  background: #000;
+  width: 100%;
+  /* for mobile view, normally when hamburger is not clicked, keep the nav items to 100% left of the screen i.e. out of sight */
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /* normally no translate along X axis, but upon clicking hamburger menu, this transform property will get replaced by another transform with -100% translate i.e. nav will appear from right */
+  transform: translateX(0);
+  transition: transform 0.25s;
+}
+
+/* using javascript, if we add .navigation-open class to nav element then for smaller screen, it will bring the normally hidden nav menus from right to left side along X axis by 100%. And if we remove this class then nav menus will slide out */
+.navigation-open {
+  transform: translateX(-100%);
 }
 
 /* style for the hamburger html entity  */
@@ -312,19 +359,37 @@ strong {
   border: 0;
   background: 0;
   color: #fff;
-  cursor: pointer;
-  padding: 0.5em;
+  font-size: 1.5rem;
   /* push all the space to the left of hamburger menu means move it to the right */
   margin-left: auto;
-  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+/* style for the cross html entity, style it by commenting out left: 100% in nav style */
+.close-nav {
+  border: 0;
+  background: 0;
+  color: #ffe600;
+  font-size: 3rem;
+  font-weight: 700;
+  /* pull the cross out of the flow so that it cannot affect position of the nav links */
+  position: absolute;
+  top: 0;
+  left: 85%;
+  cursor: pointer;
+  /* give padding so that area surrounding cross entity can increase, then its click area will also increase, pointer cursor will be shown long before user reaches the cross */
+  padding: 0.5em;
 }
 
 @media (min-width: 600px) {
+  /* no hamburger and cross buttons in larger screen */
   .open-nav,
   .close-nav {
     display: none;
   }
 
+  /* for larger screen, nav will get it's original static position from fixed position in case of smaller screen i.e. will return into document flow */
   .nav {
     position: initial;
   }
@@ -336,16 +401,50 @@ strong {
     justify-content: flex-start;
   }
 
-  .nav-item {
-    margin-left: 2em;
-  }
-
   .nav-link {
     font-size: 1rem;
   }
 
-  /* make the navigation menu for large screen, to have transparent background */
+  .nav-item {
+    margin-left: 2em;
+  }
+
+  /* make the home page navigation menu for large screen, to have transparent background */
   .header-home .nav {
     background: transparent;
+  }
+}
+
+/************************
+      template page
+
+      common style 
+      for about us 
+      and contact 
+      page
+************************/
+
+.main-template {
+  padding: 4em 0;
+}
+
+.main-template > * {
+  grid-column: 2 / -2;
+}
+
+/* to fit the image within its container, always use width: 100%, max-width won't work to fit it */
+.main-image {
+  width: 100%;
+  margin-bottom: 1.5em;
+  box-shadow: 5px 5px 0px black, 10px 10px 0px #ffe600;
+}
+
+@media (min-width: 600px) {
+  .main-image {
+    grid-column: 2;
+  }
+
+  .main-text {
+    grid-column: 3 / span 2;
   }
 }
