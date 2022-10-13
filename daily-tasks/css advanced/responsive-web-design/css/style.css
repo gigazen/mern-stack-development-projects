@@ -46,6 +46,10 @@ strong {
   margin: 0.8em 0;
 }
 
+.hero-subtitle {
+  font-size: 1.125rem;
+}
+
 /* title in info section */
 .section-title {
   font-size: 1.125rem;
@@ -181,6 +185,8 @@ strong {
   font-weight: 700;
   text-decoration: none;
   margin-top: 1.5em;
+  cursor: pointer;
+  border: 0;
 }
 
 /* button at hero is inside hero grid container which takes middle grid column, means this button is a grid item and as no width, height is set for it so by default it will stretch */
@@ -188,6 +194,17 @@ strong {
   background-color: #ffe600;
   color: #000;
   justify-self: start;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #ffc400;
+}
+
+/* push the button inside form to the end horizontally, as we make form container a grid container so button inside it is a grid item */
+.btn-form {
+  justify-self: end;
+  /* margin-left: auto; */
 }
 
 /************************
@@ -415,6 +432,11 @@ strong {
   }
 }
 
+/* for larger screen, underline the current page in navigation, html document of current page has `current` class in its navigaiton link, so when that page opens only its navigation link will have border */
+.current {
+  border-bottom: 1px solid #ffe600;
+}
+
 /************************
       template page
 
@@ -446,5 +468,67 @@ strong {
 
   .main-text {
     grid-column: 3 / span 2;
+    grid-row: span 2;
+  }
+
+  /* in markup of contact page, image > sec-text > main-text form, by giving order to sec-text push it to the end */
+  .secondary-text {
+    order: 20;
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+  }
+}
+
+/************************
+        form
+************************/
+
+/* make the form a grid container so that form field grid items, labels and button inside it can stretch along their width */
+.contact-form {
+  display: grid;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  margin-bottom: 0.75em;
+  padding: 0.4em;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* for larger screen first name and last name boxes come side by side */
+@media (min-width: 600px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+    /* densely pack the grid items by closing all the empty grid cells in grid */
+    grid-auto-flow: dense;
+    gap: 0 1em;
+  }
+
+  .fname-label,
+  .fname-input {
+    grid-column: 1;
+  }
+
+  .lname-label,
+  .lname-input {
+    grid-column: 2;
+  }
+
+  .message-label,
+  .message-textarea {
+    grid-column: span 2;
+  }
+
+  .btn-form {
+    grid-column: 2;
   }
 }
