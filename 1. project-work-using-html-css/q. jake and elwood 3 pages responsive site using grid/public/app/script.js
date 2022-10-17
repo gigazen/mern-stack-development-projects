@@ -7,7 +7,7 @@ openButton.addEventListener("click", () => {
   nav.classList.add("navigation-open");
 });
 
-// when user clicks on cross button then from nav element .navigation-open class gets removed means then navigation closes or nav menu translates from left to right by 100% (because of left: 100%) i.e. navigation disappears for smaller screen.
+// when user clicks on cross button then from nav element .navigation-open class gets removed means then navigation closes or nav menu translates from left to right by 100% (because of left: 100%) i.e. navigation disappears for smaller screen
 closeButton.addEventListener("click", () => {
   nav.classList.remove("navigation-open");
 });
