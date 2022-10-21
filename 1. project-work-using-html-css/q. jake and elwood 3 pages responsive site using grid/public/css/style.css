@@ -67,7 +67,7 @@ strong {
   background: #ffe600;
 }
 
-/* center the underline pseudo element in home page. */
+/* center the underline pseudo element in home page */
 .section-title-center::after {
   margin-right: auto;
   margin-left: auto;
