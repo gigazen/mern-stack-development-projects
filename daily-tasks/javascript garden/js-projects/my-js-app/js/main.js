@@ -1,6 +1,2 @@
-function arraySum(arr) {
-  var sum = 0;
-  for (var i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-}
+jsbar = "5";
+// alert(10 + jsbar); // "105", no error as javascript implicitly coerces 10 to "10", so that it can be concatenated with other operand jsbar i.e. "5"
