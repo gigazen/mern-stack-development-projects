@@ -1,10 +1,12 @@
-if (true) {
-  // Declare month block variable
-  let month;
-  console.log(month); // => undefined
-  // Declare and initialize year block variable
-  let year = 1994;
-  console.log(year); // => 1994
+// Call the hoisted function
+addition(4, 7); // => 11
+// The variable is hoisted, but is undefined
+substraction(10, 7); // TypeError: substraction is not a function
+// Function declaration
+function addition(num1, num2) {
+  return num1 + num2;
 }
-// month and year or not accessible here, outside the block
-console.log(year); // ReferenceError: year is not defined
+// Function expression
+var substraction = function (num1, num2) {
+  return num1 - num2;
+};
