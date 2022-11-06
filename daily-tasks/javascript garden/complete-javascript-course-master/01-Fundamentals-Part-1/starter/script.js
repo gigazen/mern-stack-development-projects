@@ -1,2 +1,6 @@
-console.log(typeof 42);
-console.log(typeof "abc");
+let age = 100;
+
+// change the value to undefined
+age = undefined;
+
+alert(age); // "undefined"
