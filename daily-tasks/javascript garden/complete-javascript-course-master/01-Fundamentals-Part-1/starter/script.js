@@ -1,21 +1,8 @@
-// Use == when types are different or when implicit type coercion is required and for shorter code. To compare different items, if types are different then == allows implicit type coercion of those items, thus for ==, comparing types becomes immaterial, == only compares values
+// accessing properties of primitives
+// let studentName = prompt("What is the student name?");
 
-// Use === when types are same or when implicit type coercion is not required, but it creates lengthy code. To compare different items, === disallows any implicit type coercion of those items, thus === compares both types and values
-
-var workshop1 = { topic: null };
-var workshop2 = {};
-
-if (
-  (workshop1.topic === null || workshop1.topic === undefined) &&
-  (workshop2.topic === null || workshop2.topic === undefined)
-) {
-  console.log(
-    "validated using === that topics of workshop1 and workshop2 are empty"
-  );
-}
-
-if (workshop1.topic == null && workshop2.topic == null) {
-  console.log(
-    "validated using == that topics of workshop1 and workshop2 are empty"
-  );
+// studentName is primitive string, but we can access its length property
+// for string input, 'Deb Anjan Bhattacharjee', when we access its length property then the primitive string becomes object and length of the string object results in > 20. So if statement satisfies and we get the output
+if (studentName.length > 20) {
+  console.log("Student name is too long");
 }
