@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duotone Effect</title>
+  <style>
+    .duotone {
+      max-width: 800px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* place 2 layers before and after content inside duotone div then apply mix-blend-mode on those 2 color layers, one for highlight and another for lowlight */
+    .duotone::before,
+    .duotone::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .duotone img {
+      filter: grayscale() brightness(110%);
+    }
+
+    .duotone::after {
+      background: hotpink;
+      mix-blend-mode: multiply;
+    }
+
+    .duotone::before {
+      background: navy;
+      mix-blend-mode: lighten;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="duotone">
+    <img src="./img/seated-ladies-smiling.jpg" alt="seated ladies smiling">
+  </div>
+</body>
+
+</html>

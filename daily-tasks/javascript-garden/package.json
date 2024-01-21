@@ -1,0 +1,23 @@
+{
+  "name": "javascript-garden",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint js",
+    "lint-fix": "eslint js --fix"
+  },
+  "type": "module",
+  "author": "gigazen",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.33.2"
+  },
+  "dependencies": {
+    "eslevels": "^0.4.0",
+    "grapheme-splitter": "^1.0.4",
+    "lodash": "^4.17.21"
+  }
+}
